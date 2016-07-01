@@ -73,8 +73,9 @@ gulp.task('sass', function() {
         config.outputStyle = 'compressed';
     }
 
+
     return gulp.src('src/sass/main.scss')
-        .pipe(sass(config))
+        .pipe(sass(config).on('error', sass.logError))
         // .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
           browsers: [
@@ -93,7 +94,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('copyFonts', function() {
-  return gulp.src('src/files/fonts/**/*.{ttf,woff,eot,svg}')
+  return gulp.src('src/files/fonts/**/*.{ttf,woff,woff2,eot,svg}')
     .pipe(gulp.dest(outputDir + '/fonts'));
 });
 
@@ -101,7 +102,7 @@ gulp.task('copyFonts', function() {
 
 
 gulp.task('removeImages', function() {
-    return gulp.src(outputDir + '/images/**/*.*')
+    return gulp.src(outputDir + '/img/**/*.*')
       .pipe(clean( {read: false} ));
 });
 
@@ -109,8 +110,8 @@ gulp.task('removeImages', function() {
 
 
 gulp.task('copyImages', ['removeImages'], function() {
-  return gulp.src('src/files/images/**/*.{png,svg,jpg,ico}')
-    .pipe(gulp.dest(outputDir + '/images'));
+  return gulp.src('src/files/img/**/*.{png,svg,jpg,ico}')
+    .pipe(gulp.dest(outputDir + '/img'));
 });
 // first willremove old imgs, then copy new ones: https://github.com/gulpjs/gulp/issues/67
 
@@ -121,7 +122,7 @@ gulp.task('watch', function() {
     gulp.watch('src/templates/**/*.jade', ['jade']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/files/images/**/*.{png,svg,jpg,ico}', ['copyImages']);
+    gulp.watch('src/files/img/**/*.{png,svg,jpg,ico}', ['copyImages']);
     gulp.watch('bower.json', ['libs']);
 });
 
@@ -138,5 +139,5 @@ gulp.task('connect', function() {
 
 
 
-gulp.task('default', ['js', 'jade', 'sass', 'copyFonts', 'copyImages', 'watch', 'connect']);
+gulp.task('default', ['connect', 'js', 'jade', 'sass', 'copyFonts', 'copyImages', 'watch']);
 // we can run the task we just created by typing 'gulp jade' into our terminal
