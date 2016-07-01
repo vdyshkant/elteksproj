@@ -1,0 +1,55 @@
+block config
+  include config
+
+doctype
+html( lang="en" )
+  head
+    title #{PageTitle}
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    if MetaDesc
+      meta( name='description', content=MetaDesc )
+    meta( name='viewport', content='width=device-width, initial-scale=1' )
+    
+    //- Place favicon.ico in the root directory
+    if favicon
+      link( rel='apple-touch-icon' href='apple-touch-icon.png' )
+    
+    //- This will load from Google Fonts, but only if font names are specified in the config
+    if GoogleFonts
+      link( href='//fonts.googleapis.com/css?family=' + GoogleFonts, rel='stylesheet', type='text/css' )
+      
+    link( href='css/style.css', rel='stylesheet' )
+    block stylesheets
+  
+  
+  body(class=bodyClasses)
+  
+    include if-ie-8.html
+  
+    //- body content here
+    //- --------------------------------------------------------------
+    
+    
+    
+    block content
+    
+    
+    //- --------------------------------------------------------------
+    
+    
+    
+
+    //- This will load jQuery, but only if you switch it on in config
+    if jQuery
+      script( src='//code.jquery.com/jquery-3.0.0.min.js' )
+      
+    if mainJs 
+      script( src= mainJsSrc )
+
+    if googleAnalytics
+      // Google Analytics: change UA-XXXXX-X to be your site's ID.
+      
+      <script>
+      include googleAnalytics.js 
+      |     </script>

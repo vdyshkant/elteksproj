@@ -1,0 +1,68 @@
+extends partials/docwrapper
+
+
+append config
+  - var PageTitle = 'New Life of Heroes'
+  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  //- - var updateBodyClass = bodyClasses.push('extraclass', 'secondclass')
+  
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+//- mixin navmenu(menu_items)
+//-   .navmenu
+//-     ul
+//-       each top_item in menu_items
+//-         li
+//-           - var linkatts = { 'href': top_item.link }
+//-           - var classatts = { 'class': top_item.class }
+//-           a()&attributes(classatts, linkatts)= top_item.title
+//- 
+//- block nav
+//-   +navmenu([
+//-     { 'title':'Home', 'class':'', 'link':'index.html' },
+//-     { 'title':'Home', 'class':'', 'link':'index.html' },
+//-     { 'title':'Home', 'class':'', 'link':'index.html' },
+//-     { 'title':'Home', 'class':'', 'link':'index.html' }
+//-   ])
+//- block nav
+//- ------------------------------------------------
+
+
+block content  
+  .wrapper
+    //- Start nav
+    .top-nav
+    //- end nav
+
+
+    //- header
+    header.header
+      .wrap
+    //- eof header
+
+    
+
+    //- main
+    main.main
+      .wrap
+      
+        //- Section-1
+        section.section1Name
+        
+        //- Section-2
+        section.section2Name
+
+    //- eof main
+
+
+
+    //- footer
+    footer.footer
+      .wrap
+    //- eof footer
