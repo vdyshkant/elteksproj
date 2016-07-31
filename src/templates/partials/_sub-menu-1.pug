@@ -1,0 +1,86 @@
+.dropdown-menu.sub-menu
+  .wrap
+    .inner
+      //-
+      .column.column-1
+        .block-1.block
+          a.block-title(href="#") Оборудование PON
+          ul
+            li.block-item: a(href="#") Turbo GEPON
+        .block-2.block
+          a.block-title(href="#") Ethernet коммутаторы
+            ul
+              li.block-item: a(href="#") Ethernet коммутаторы для ЦОД
+              li.block-item: a(href="#") Коммутаторы агрегации
+              li.block-item: a(href="#") Коммутаторы доступа
+        .block-3.block
+          a.block-title(href="#") ЦАТС МС240
+
+        //- column 2
+      .column.column-2
+        .block-3.block
+          a.block-title(href="#") Оборудование VOIP
+            ul
+              li.block-item: a(href="#") MSAN
+              li.block-item: a(href="#") Абонентские шлюзы
+              li.block-item: a(href="#") Цифровые шлюзы
+        .block-4.block
+          a.block-title(href="#") ECSS-10 (SOFTSWITCH)
+            ul
+              li.block-item: a(href="#") SBC
+              li.block-item: a(href="#") Программный коммутатор
+              li.block-item: a(href="#") ECSS-10 (Softswitch)
+
+        //- column 3
+      .column.column-3
+        .block-5.block
+          a.block-title(href="#") IP DSLAM
+            ul
+              li.block-item: a(href="#") MXA-32
+              li.block-item: a(href="#") MXA-64
+              li.block-item: a(href="#") ECSS-10 (Softswitch)
+        .block-6.block
+          a.block-title(href="#") Транспорт
+            ul
+              li.block-item: a(href="#") Маком-МХ
+              li.block-item: a(href="#") SHDSL-модемы
+              li.block-item: a(href="#") Мультиплексоры TopGATE
+              li.block-item: a(href="#") Регенераторы DSL-линии
+
+        //- column 4
+      .column.column-4
+        .block-7.block
+          a.block-title(href="#") Оборудование доступа
+        .block-8.block
+          a.block-title(href="#") Оборудование ТЧ канала
+        .block-9.block
+          a.block-title(href="#") Устройства электропитания
+
+//- http://codepen.io/kkrueger/pen/qfoLa
+//- function handleMenu(menu, toggler){
+//-
+//- 	function onToggleClick(event){
+//- 		event.preventDefault();
+//- 		menu.classList.toggle("nav-list-active");
+//- 		toggler.classList.toggle("btn-burger-active");
+//- 	}
+//- 	toggler.addEventListener("click", onToggleClick);
+//-
+//- 	// если окно вьюпорта больше таблета - убираем toggle классы меню:
+//- 	window.addEventListener("resize", function(){
+//- 	if (window.matchMedia("(min-width: 1020px)").matches) {
+//- 		menu.classList.remove("nav-list-active");
+//- 		toggler.classList.remove("btn-burger-active");
+//- 	}
+//- })
+//- }
+//-
+//- (function(){
+//- 	// defining vars && selecting elements:
+//- 	var burger = document.querySelector(".btn-burger");
+//- 	var navList = document.querySelector(".nav-list");
+//-
+//- 	// invoking menu-toggler func:
+//- 	handleMenu(navList, burger);
+//-
+//- })();

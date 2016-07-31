@@ -1,0 +1,79 @@
+/* === common buttons === */
+
+// button
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    border-radius: 5px;
+    @include font(normal, 400, 15px, 18px, $pst)
+    padding: 10px 0 8px 0;
+    cursor: pointer;
+    min-width: 200px;
+    letter-spacing: .7px;
+    transition: all 200ms ease-out;
+    background: transparent;
+    color: #00111A; // default value
+    border: 2px solid #0084C4; // default value
+    white-space: nowrap;
+
+    &.request-callback {
+        // margin-top: 2px;
+        color: #00111A;
+        border: 2px solid #0084C4;
+        &:hover {
+            color: #FFF;
+            background: #0084C4;
+        }
+    }
+
+    &-search {
+        color: #023;
+        border: 2px solid #0084C4;
+        min-width: 110px;
+        // &:hover {
+        //   color: #fff;
+        //   background: #0084c4;
+        // }
+    }
+
+    &-slide,
+    &-overlay {
+        &:hover {
+            background: #FFF;
+            color: #385461;
+        }
+    }
+
+    &-slide {
+        color: #FFF;
+        border: 2px solid #FFF;
+    }
+    &-overlay {
+        color: #FFF;
+        border: 2px solid #FFF;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    // basic style for form button
+    &-form {
+        color: #023;
+        border: 2px solid #F39C12;
+        min-width: 400px;
+        display: block;
+        margin: 0 auto;
+    }
+    &-desc {
+        @extend .btn-form;
+        min-width: 440px;
+        margin: 0;
+    }
+}
+
+// eof button

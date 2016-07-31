@@ -1,0 +1,185 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Eltex init'
+  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var jQueryUI = true
+  - var animateNumber = true;
+  - var mainJsSrc = 'js/main.js'
+  - var mainCssSrc = 'css/main.css'
+  - var animateCss = true
+  - var wowJs = true
+  //- - var mainJsSrc = 'js/main.min.js'
+  //- - var updateBodyClass = bodyClasses.push('page-index')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- eof HEAD appends
+  //- –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+block content
+  .wrapper
+
+    //- header
+    include partials/header
+    include partials/sub-header
+    //- eof header
+
+
+
+    //- main
+    main.main
+
+        //- home-slider
+        section.home-slider
+          .wrap
+            .slide
+              .foreground
+              .overlay
+              .container
+                .img-item
+                .slide-content
+                  p.text
+                    | Элтекс завершает разработку нового гигабитного коммутатора с&nbsp;10G&nbsp;аплинками
+                  a.btn.btn-slide Подробнее
+
+
+        //- eof home-slider
+
+
+        //- counter
+        section.counter.wow.fadeInUp#stats(data-wow-offset="50")
+          .wrap
+            .inner
+              h1 О нашей компании в цифрах
+              .item.stat
+                i
+                  +svg([{'class': 'svg-counter-icn svg-counter-icn-1', 'pathid': 'svg-counter-icn-1', 'filename':'counter_icn_1'}])
+                h2 0
+                p.text Лет успешной работы на рынке телекоммуникационного оборудования
+
+              .item.stat
+                i
+                  +svg([{'class': 'svg-counter-icn svg-counter-icn-2', 'pathid': 'svg-counter-icn-2', 'filename':'counter_icn_2'}])
+                h2 0
+                p.text Установленных портов pon , voip, Media
+
+              .item.stat
+                i
+                  +svg([{'class': 'svg-counter-icn svg-counter-icn-3', 'pathid': 'svg-counter-icn-3', 'filename':'counter_icn_3'}])
+                h2 0
+                p.text Операторов связи оборудовано
+
+              .item.stat
+                i
+                  +svg([{'class': 'svg-counter-icn svg-counter-icn-4', 'pathid': 'svg-counter-icn-4', 'filename':'counter_icn_4'}])
+                h2 0
+                p.text Официальных диллеров и&nbsp;сервисных центров в 5 странах мира
+          .bottom-line
+        //- eof counter
+
+
+        //- products
+        section.products.wow.fadeInUp(data-wow-offset="100")
+          .wrap
+            .inner
+              h1 Новинки Элтекс
+              .products-list
+                .item
+                  .make3d
+                    .shadow
+                    .img-outer
+                      img(src='img/product-01.jpg')
+
+                    .stats
+                      .stats-container
+                        .title Коммутатор доступа MES2324B
+                        .short-desc
+                          ul
+                            li • 1 порт GPON
+                            li • гигабитный роутер
+                            li • порты FXS для подключения  телефо...
+                            li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .shadow
+                    .img-outer
+                      img(src='img/product-02.jpg')
+
+                    .stats
+                      .stats-container
+                        .title Коммутатор доступа MES2324B
+                        .short-desc
+                          ul
+                            li • 1 порт GPON
+                            li • гигабитный роутер
+                            li • порты FXS для подключения  телефо...
+                            li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .shadow
+                    .img-outer
+                      img(src='img/product-03.jpg')
+
+                    .stats
+                      .stats-container
+                        .title SOFTWLC
+                        .short-desc
+                          ul
+                            li • 1 порт GPON
+                            li • гигабитный роутер
+                            li • порты FXS для подключения  телефо...
+                            li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .shadow
+                    .img-outer
+                      img(src='img/product-04.jpg')
+
+                    .stats
+                      .stats-container
+                        .title Коммутатор доступа MES2124F
+                        .short-desc
+                          ul
+                            li • 1 порт GPON
+                            li • гигабитный роутер
+                            li • порты FXS для подключения  телефо...
+                            li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+              .pagination.wow.fadeInLeft(data-wow-offset="100")
+                .cntr
+                button.paginate.left
+                  i
+                  i
+                button.paginate.right
+                  i
+                  i
+        //- eof products
+
+    //- eof main
+
+
+
+    //- footer
+    include partials/footer
+    //- eof footer
+
+    //- modal content
+    include partials/__popup
+    //- eof modal content

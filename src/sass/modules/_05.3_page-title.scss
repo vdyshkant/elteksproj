@@ -1,0 +1,66 @@
+// page-title
+
+  // breadcrumbs
+
+  .breadcrumbs {
+    padding-top: 18px;
+    margin-bottom: 94px; // 90
+    & ul {
+      font-size: 0;
+    }
+    & li {
+      font-size: initial;
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 22px;
+      position: relative;
+      &:first-child {
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #002233;
+        border-right: 1px solid #002233;
+        transform: rotate(45deg);
+        left: 0;
+        top: 5px;
+      }
+    }
+    & a {
+      color: #023;
+      @include font(normal, 300, 18px, 18px, $ul);
+      letter-spacing: .5px;
+      text-decoration: none;
+    }
+  }
+
+  // eof breadcrumbs
+
+  .page-title {
+    & > h1 {
+      text-align: center;
+      margin: 0;
+      @include font(normal, 700, 36px, 36px, $ub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #385461;
+      margin-bottom: 40px;
+    }
+  }
+
+  //  где есть search forms, всегда уменьшаем pb
+  .page-documentation-grid {
+    & .page-title {
+      & > h1 {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+// eof page-title

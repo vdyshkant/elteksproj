@@ -1,0 +1,114 @@
+extends ../conf/docwrapper
+
+
+append config
+  - var PageTitle = 'New Life of Heroes'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-product1')
+  - var logoImgSrc = '../img/logo.png'
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include ../partials/header
+    include ../partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+
+        .page-title
+          +breadcrumbs([
+            { 'anchor':'Главная','link':'/index.html' },
+            { 'anchor':'Оборудование XPON','link':'javascript:void(0)' },
+            { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
+          ])
+
+          h1 Коммутатор доступа MES1124M
+
+        .content
+          .content-left
+            .product-info-top
+              .slider.block SLIDER MIXIN
+              // унифицировать стили так, чтоб на все модули{слайдера/etc} были одни и те же стили.
+              //- но если вдруг надо что-либо переписать, то уже надо просто дописать в файл стилей для конкретно этой страницы.
+              .desc-short
+                //- span/p
+                ul
+                  span.desc-short-title Ключевые преимущества
+                  li ♦  коммутаторы L2
+                  li ♦  поддержка стекирования
+                  li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
+                  li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
+                  li ♦  эффективная защита от скачков напряжения
+                .btn.btn-desc заказать бесплатную консультацию
+            .desc-full
+              .desc-nav
+                a.desc-full-title.active Описание товара
+                a.desc-full-title Технические характеристики
+                a.desc-full-title Материалы для скачивания
+              .desc-item-list
+                .desc-item
+                  P
+                    | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
+                  P
+                    | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+                .desc-item
+                .desc-item
+
+
+
+          //- CR8 MIXIN
+          .content-right.related-products
+            .wrap
+              span.related-title Рекомендованные товары
+              .item-list
+                .item
+                  .preview
+                    img(src="img/related-01.png")
+                  .item-title ELTEX.EMS
+                .item
+                  .preview
+                    img(src="img/related-02.png")
+                  .item-title ONT NTP-2C
+                .item
+                  .preview
+                    img(src="http://placebear.com/g/110/100")
+                  .item-title ONT NTP-RG-1402GC-W
+                .item
+                  .preview
+                    img(src="http://placebear.com/g/110/100")
+                  .item-title ONT NTP-2
+                .item
+                  .preview
+                    img(src="http://placebear.com/g/110/100")
+                  .item-title OLT LTP-8X rev.B
+
+
+
+
+        //- MIXIN form // origin==documentation.pug
+        .block MIXIN FORM MIXIN
+
+
+    //- footer
+    include ../partials/footer
+    //- eof footer

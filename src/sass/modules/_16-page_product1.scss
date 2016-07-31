@@ -1,0 +1,117 @@
+.page-product1 {
+
+  & .content {
+    @include clearfix;
+
+    &-left {
+      float: left;
+
+        outline: 2px dashed darkgoldenrod;
+        outline-offset: -2px;
+    }
+    &-right {
+      float: right;
+      width: 310px;
+
+        outline: 2px dashed lightcoral;
+        outline-offset: -2px;
+    }
+  }
+
+// content-right
+// empty
+// EOF content-right
+
+
+
+// content-LEFT
+  & .product-info-top {
+    margin-right: 20px;
+    @include clearfix;
+
+    & ul {
+
+      margin-bottom: 40px;
+      & li {
+        @include font(normal, 400, 18px, 39px, $pst);
+      }
+    }
+  }
+
+  & .slider.block {
+    width: 420px;
+    min-height: 430px ;
+    margin-right: 20px;
+    float: left;
+  }
+
+
+
+  & .desc {
+
+    &-short {
+      float: right;
+      width: 530px;
+
+      &-title {
+        color: #385461;
+        @include font(normal, 700, 18px, 18px, $ub);
+        display: block;
+        margin-bottom: 20px;
+
+      }
+    }
+
+    &-full {
+      width: 970px;
+
+      &-title {
+        display: block;
+        @include font(normal, 300, 14px, 16px, $ul);
+        padding: 17px 20px;
+        float: left;
+        background-color: #e1e1e1;
+        border-right: 1px solid #d1d4d8;
+
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &.active {
+          position: relative;
+          background-color: #fff;
+          border-right: 1px solid #c6cbd0;
+          // box-shadow
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 4px;
+            background-color: #f39c12;
+            background-color: rgba(243, 156, 18, 1);
+            background-color: hsla(37, 90%, 51%, 1);
+          }
+        }
+      }
+    }
+    &-nav {
+      @include clearfix;
+    }
+    &-item {
+      padding: 20px;
+
+      &-list {
+        @include font(normal, 400, 18px, 22iiipx, $pst);
+      }
+    }
+  }
+// EOF content-LEFT
+
+
+
+
+}  // EOF page-product1

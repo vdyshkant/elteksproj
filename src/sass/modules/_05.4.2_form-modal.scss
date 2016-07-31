@@ -1,0 +1,111 @@
+// modal content
+
+$mCloseFill: #385461;
+$mCloseSize: 24px;
+
+// callback form module
+
+.modal-content {
+  .callback {
+    & .title {
+      margin-bottom: 30px;
+    }
+    & p {
+      margin-bottom: 50px;
+    }
+    & input {
+      margin-bottom: 50px;
+      width: 285px;
+
+      &:nth-of-type(1) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+// EOF callback form module
+
+// modal content itself
+.modal {
+
+  &-overlay {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(200, 100%, 20%, 0.5);
+    z-index: 11;
+  }
+  &-content {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 260px;
+    left: 50%;
+    width: 918px;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 4px;
+    z-index: 12;
+    text-align: center;
+    padding: 50px;
+
+    & .wrap {
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    &-close {
+      position: absolute;
+      width: $mCloseSize;
+      height: $mCloseSize;
+      font-size: 0;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      background: transparent;
+      top: 21px;
+      right: 21px;
+      transition: .2s ease-out;
+      // outline: 2px dashed crimson;
+      // outline-offset: -2px;
+      &:hover {
+        transform: rotate(90deg) scale(1.1);
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: $mCloseSize * 1.375;
+        height: $mCloseSize / 12;
+        background: $mCloseFill;
+        border-radius: 3px;
+        top: $mCloseSize * 1.375 / 3; // 11
+        right: $mCloseSize * -0.625 / 3; // -5
+
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+    //
+
+    // form
+    & .callback-form {
+      font-size: 0;
+      & > * {
+        font-size: initial;
+      }
+    }
+
+
+  }
+}

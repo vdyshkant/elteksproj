@@ -1,0 +1,59 @@
+.related-products {
+
+    & .wrap {
+        min-width: auto;
+        max-width: auto;
+    }
+
+    & .related-title {
+        display: block;
+        @include font(normal, 700, 18px, 18px, $ub);
+        color: #385461;
+        margin-bottom: 34px;
+        letter-spacing: 0.5px;
+        padding-left: 5px;
+    }
+
+    & .item {
+        // @include clearfix;
+        background-color: tan;
+        min-height: 100px;
+        position: relative;
+        margin-bottom: 30px;
+
+        & > * {
+            font-size: initial;
+        }
+
+        &-list {
+        }
+
+        & .preview {
+            position: absolute;
+            width: 110px;
+            height: 100px;
+            top: 0;
+            left: 0;
+
+            & img {
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &-title {
+            @include font(normal, 700, 18px, 22px, $ub);
+            color: #385461;
+            width: 200px;
+            max-width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 110px;
+            transform: translateY(-50%);
+            padding: 10px;
+            letter-spacing: 0.5px;
+        }
+    }
+}

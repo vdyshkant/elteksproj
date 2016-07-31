@@ -1,1 +1,19 @@
 /* === Layout grid === */
+
+.wrapper {
+  overflow: hidden;
+}
+
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1360px;
+
+  // @media #{$tablet} {
+  //     max-width: 768px;
+  // }
+
+  @media #{$mobile} {
+      min-width: 320px;
+  }
+}

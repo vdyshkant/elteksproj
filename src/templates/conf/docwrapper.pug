@@ -1,0 +1,56 @@
+block config
+  include config
+
+include mixins
+
+doctype
+html( lang="en" )
+  include head
+
+
+  body(class=bodyClasses)
+
+    include if-ie-8.html
+
+    //- body content here
+    //- --------------------------------------------------------------
+
+
+
+    block content
+
+      block header
+
+
+    //- --------------------------------------------------------------
+
+
+
+
+    //- This will load jQuery, but only if you switch it on in config
+    if jQuery
+      script( src='//code.jquery.com/jquery-2.2.4.min.js' )
+
+    if jQueryUI
+      script( src='//code.jquery.com/ui/1.12.0/jquery-ui.min.js' )
+
+    if animateNumber
+      script( src='//nextendweb.com/demo/smartslider2/modules/mod_frontpage2/jquery.animateNumber.min.js' )
+
+    if bxSlider
+      script( src=bxSliderJsSrc )
+
+    if wowJs
+      script( src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js' )
+      //-script( src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js' )
+      script new WOW().init();
+
+    if mainJs
+      script( src= mainJsSrc )
+
+    if googleAnalytics
+      // Google Analytics: change UA-XXXXX-X to be your site's ID.
+
+      <script>
+      include googleAnalytics.js
+      |     </script>

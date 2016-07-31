@@ -1,0 +1,124 @@
+/* home slider */
+.home-slider {
+  // width: 1360px;
+  margin: 0 auto;
+  margin-bottom: 98px;
+
+  height: 600px;
+
+  // outline: 2px dashed gold;
+  // outline-offset: -2px;
+
+  transition: .6s;
+  @media #{$tablet}{
+    height: 405px;
+  }
+  @media #{$mobile}{
+    height: 212px;
+  }
+
+  & .wrap {
+    max-width: 100%;
+  }
+}
+
+.slide {
+  position: relative;
+  height: 600px;
+
+  transition: .6s;
+  @media #{$tablet} {
+    height: 405px;
+  }
+  @media #{$mobile} {
+    height: 212px;
+  }
+
+  & .foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/slide-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    // background-size: 100%;
+    background-size: cover;
+  }
+
+  & .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.41);
+  }
+
+  & .container {
+    // position: absolute;
+    // max-width: 1360px;
+    // min-width: 1200px;
+    height: 100%;
+    // margin: 0 auto;
+  }
+
+  & .img-item {
+    position: absolute;
+    width: 546px;
+    height: 369px;
+    top: 209px;
+    left: 0px;
+    background: url('../img/slider-frgd.png') no-repeat;
+    @media #{$tablet} {
+      background: url('../img/slider-frgd-tablet.png') no-repeat;
+      top: 150px;
+      width: 289px;
+      height: 247px;
+    }
+    @media #{$mobile} {
+      background: url('../img/slider-frgd-mobile.png') no-repeat;
+      top: 15px;
+      width: 186px;
+      height: 129px;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    left: 580px;
+    left: 42.6470588%;
+    top: 50%;
+    transform: translateY(-53%);
+    width: 640px;
+    // width: 47.0588235%;
+
+    transition: .6s;
+    @media #{$tablet} {
+      width: 430px;
+    }
+    @media #{$mobile} {
+      width: 235px;
+      top: 68%;
+      margin-left: 45px;
+      margin-left: 16.0714285%;
+      margin: 0 auto;
+      transform: translate(-25%, -53%);
+    }
+  }
+
+  & .text {
+    @include font(normal, 700, 36px, 43px, $ub);
+    margin: 0;
+    margin-bottom: 45px;
+    letter-spacing: 1px;
+    color: #fff;
+
+    transition: .6s;
+    @media #{$tablet} {
+      @include font(normal, 700, 24px, 29px, $ub);
+    }
+    @media #{$mobile} {
+      @include font(normal, 700, 13px, 16px, $ub);
+      margin-bottom: 15px;
+    }
+  }
+}
+  /* home slider */

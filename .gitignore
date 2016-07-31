@@ -1,4 +1,5 @@
-/node_modules/
+/001__psd/
 /bower_components/
+/node_modules/
 /src/files/_fonts
 /src/files/_psd

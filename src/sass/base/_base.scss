@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1;
+}
+
+body {
+    font-family: $pst;
+    font-size: 16px;
+    line-height: 1;
+
+    min-width: 320px; // общая ширина макета, которая может расширяться ещё
+    //themeover.com/mobile-first-vs-desktop-first-responsive-design/
+
+    margin: 0;
+    padding: 0;
+
+    color: #414252; // цвет шрифта
+
+    // шрифты цепляем в html через google.com/fonts под <title>. В настройках смотрим, нужен ли нам font-weight: 400 и/или 700, также добавляем при экспорте настройку cyrillic.
+    // Подключаем <link rel="stylesheet" href="css/normalize.css"> под аттачами шрифтов (у нас уже компилирован в начало)
+    // ^^^ там только умолчания
+
+    background-color: #fbfbfb;
+}
+
+img {
+    // max-width: 100%; // запрещаем картинке вылезать за границы своего блока по ширине
+    // height: auto; // чтоб при этом сохранялись пропорции.
+
+    // ^^^ там только умолчания
+}
+
+blockquote {
+  margin: 0;
+}
+
+.clearfix::after {
+    display: table;
+    clear: both;
+
+    content: "";
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

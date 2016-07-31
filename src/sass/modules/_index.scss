@@ -1,5 +1,40 @@
-@import "buttons";
-@import "nav";
-@import "header";
-@import "main";
-@import "footer";
+@import "01-buttons";
+@import "02-nav";
+@import "03-header";
+
+
+
+@import "05-main";
+@import "05.1_slider";
+@import "05.2_counter";
+@import "05.3_page-title";
+
+@import "05.4.1_form";
+@import "05.4.2_form-modal";
+@import "05.4.3_form-documentation";
+
+@import "05.5.1_search";
+@import "05.5.2_search-header";
+@import "05.5.3_search-content";
+
+@import "05.6_slider-content.scss";
+
+
+// BEM modules:
+@import "06.1.related-products.scss";
+@import "06.2.products-nav-menu.scss";
+
+
+// pages:
+@import "11-page_about";
+@import "12-page_contact-info";
+@import "13-page_documentation";
+@import "14-page_documentation-grid";
+@import "15-page_faq";
+@import "16-page_product1";
+@import "17-page_solutions";
+@import "19-page_projects";
+
+
+
+@import "99-footer";

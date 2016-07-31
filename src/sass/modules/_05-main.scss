@@ -1,0 +1,409 @@
+/* === Main module === */
+
+// temporary blocks
+// del for production version
+.block-mixin {
+    background-color: crimson;
+    color: white;
+    padding: 15px 10px;
+    outline: 2px dashed #FFF;
+    outline-offset: -2px;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+
+.block-1 {
+    width: 310px;
+    margin-right: 20px;
+    margin-right: 1.5384615%;
+}
+
+// EOF temporary blocks
+
+// products
+
+.products {
+    // width: 1360px;
+    margin: 0 auto;
+
+    & .wrap {
+    }
+
+    & .inner {
+        padding-left: 2.2058823%;
+        padding-right: 2.2058823%;
+        @media #{$mobile} {
+            padding-left: 6.25%;
+            padding-right: 6.25%;
+        }
+    }
+
+    & h1 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 63px;
+        @include font(normal, 700, 36px, 36px, $ub);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #385461;
+        @media #{$mobile} {
+            @include font(normal, 700, 24px, 36px, $ub);
+        }
+    }
+
+    &-list {
+        @include clearfix;
+        margin-bottom: 50px;
+        @media #{$tablet} {
+            text-align: center;
+            font-size: 0;
+            & > * {
+                font-size: initial;
+            }
+        }
+    }
+
+    & .item {
+        float: left;
+        width: 310px;
+        width: 23.8461538%;
+        min-height: 364px;
+        margin-right: 20px;
+        margin-right: 1.5384615%;
+        position: relative;
+        overflow: hidden;
+        background-color: #FFF;
+        border-radius: 4px;
+        z-index: 1;
+        box-shadow: 0 4px 7px 0 rgba(0, 34, 51, .16);
+
+        // outline: 2px dashed lightseagreen;
+        // outline-offset: -2px;
+
+        @media #{$tablet} {
+            display: inline-block;
+            float: none;
+            width: 42.5824175%;
+            &:nth-child(2n-1) {
+                margin-right: 54px;
+            }
+            // &:nth-child(2n) {
+            //   margin-right: 17px;
+            //   margin-right: 2.4011299%;
+            //   float: right;
+            // }
+        }
+
+        @media #{$mobile} {
+            margin: 0 auto;
+            float: none;
+            margin-bottom: 10px;
+            width: 280px;
+        }
+
+        &:last-child {
+            @media #{$tablet-desktop} {
+                margin-right: 0;
+            }
+        }
+
+        & img {
+            display: block;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            position: absolute;
+        }
+
+        & .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 392px;
+            width: 100%;
+            background-color: hsla(200, 100%, 38%, .34);
+            opacity: 0;
+            z-index: 0;
+        }
+
+        @media #{$tablet} {
+            &:nth-child(1n+3) {
+                display: none;
+            }
+        }
+
+        @media #{$mobile} {
+            &:nth-child(1n+5) {
+                display: none;
+            }
+        }
+    }
+
+    & .img-outer {
+        height: 240px;
+        position: relative;
+    }
+}
+
+.stats {
+    background: #FFF;
+    position: absolute;
+    top: 290px; //182
+    left: 0;
+    width: 310px;
+    width: 100%;
+    height: 182px;
+    padding: 25px 20px 15px 20px;
+    transition: all 200ms ease-out;
+    z-index: 2;
+
+    @media #{$mobile} {
+        width: 280px;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        background: url('../img/product_line.png');
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        // outline: 1px dotted red;
+    }
+
+    .title {
+        color: #385461;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        @include font(normal, 700, 18px, 22px, $ub);
+        height: 48px;
+    }
+    .short-desc {
+        @include font(normal, 300, 14px, 23px, $ul);
+        letter-spacing: .3px;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        & li {
+            line-height: 23px;
+        }
+    }
+}
+
+
+// default styles for animated product item blocks
+// @media #{$tablet-desktop} {
+.make3d {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    // width: 310px;
+    width: 100%;
+    height: 364px;
+    padding-top: 20px;
+    transform-style: preserve-3d;
+    transition: 100ms ease-out;
+
+    @media #{$mobile} {
+        width: 280px;
+    }
+
+    &.animate {
+        // top: 5px;
+        // left: 5px;
+        // width: 310px;
+        width: 100%;
+        height: 480px;
+        box-shadow: 0 5px 31px -1px rgba(0, 0, 0, .15);
+        transition: 100ms ease-out;
+
+        @media #{$mobile} {
+            width: 280px;
+        }
+
+        & .stats {
+            top: 182px;
+            transition: all 200ms ease-out;
+        }
+
+        & .btn-overlay {
+            opacity: 1;
+        }
+
+        & .image-overlay {
+            opacity: 1;
+            transition: all 200ms ease-out;
+        }
+    }
+}
+// }
+
+
+// eof products
+
+
+
+
+
+
+
+
+// pagination
+
+$size: 25px;
+$thickness: 5px;
+$angle: 40deg;
+$angleHover: 30deg;
+$angleActive: 25deg;
+
+@mixin arrowTransform( $angle, $x: 0, $y: 0) {
+    i:first-child {
+        transform: translate( $x, $y ) rotate( $angle );
+    }
+    i:last-child {
+        transform: translate( $x, -$y ) rotate( -$angle );
+    }
+}
+
+// common styles for both buttons:
+.paginate {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    position: relative;
+    margin: 10px;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+    transform: translate3d(0,0,0); // fixes flicker in webkit
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    -webkit-filter: drop-shadow( 0 2px 0px rgba(0,0,0,.2) );
+
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: $size;
+        height: $thickness;
+        border-radius: $thickness / 2;
+        background: #385461;
+        transition: all .15s ease;
+    }
+
+    &.left {
+        left: 50px;
+
+        i {
+            transform-origin: 0 50%;
+        }
+
+        @include arrowTransform( $angle, 0, -1px );
+
+        &:hover {
+            @include arrowTransform ( $angleHover, 0, -1px );
+        }
+
+        &:active {
+            @include arrowTransform ( $angleActive, 1px, -1px );
+        }
+
+        &[data-state=disabled] {
+            @include arrowTransform( 0deg, -5px, 0 );
+
+            &:hover {
+                @include arrowTransform( 0deg, -5px, 0 );
+            }
+        }
+    } // eof &.left
+
+    &.right {
+        right: 50px;
+
+        i {
+            transform-origin: 100% 50%;
+        }
+
+        @include arrowTransform( $angle, 0, 1px );
+
+        &:hover {
+            @include arrowTransform( $angleHover, 0, 1px );
+        }
+
+        &:active {
+            @include arrowTransform( $angleActive, 1px, 1px );
+        }
+
+        &[data-state=disabled] {
+            @include arrowTransform( 0deg, 5px, 0 );
+
+            &:hover {
+                @include arrowTransform( 0deg, 5px, 0 );
+            }
+        }
+    }
+
+    &[data-state=disabled] {
+        opacity: .3;
+        cursor: default;
+    }
+}
+
+
+.cntr {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -15px;
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    text-shadow: 0 2px 0 rgba( 0, 0, 0, .2);
+    color: #385461;
+}
+
+.pagination {
+    // width: 50%;
+    width: 280px;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    // outline: 2px dashed crimson;
+    // outline-offset: -1px;
+}
+
+// eof pagination
+
+
+
+
+
+
+
+
+
+
+
+
+
+// pagination
+
+.pagination {
+}
+
+.page-TAG {
+    .pagination {
+    }
+}
+
+// EOF pagination

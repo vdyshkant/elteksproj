@@ -1,0 +1,305 @@
+extends ../conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Документация для оборудования'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-documentation-grid')
+  - var logoImgSrc = '../img/logo.png';
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include ../partials/header
+    include ../partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Документация для оборудования', 'class':'active' }
+            ])
+
+            h1 Документация для оборудования
+
+            .search-content
+              form.search-form
+                p Здесь вы сможете найти весь печатный материал вашего устройства, а также необходимое ПО.
+                .field-wrap
+                  input.search-field(type="text" placeholder="Начните вводить название")
+                  button.btn.btn-search(type="button") Поиск
+
+          .content
+            section.content-left.products-nav-menu
+              span.column-title Категории
+              // Всё - upperCase + underlined потому что это всё(обобщение) или потому что это активное меню
+              ul.general-list
+                li.single.active
+                  a.link-category(href="#") Всё
+
+                li
+                  a.link-category(href="#") Оборудование PON
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") Turbo GEPON
+
+                li
+                  a.link-category(href="#") Ethernet коммутаторы
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") Ethernet коммутаторы для ЦОД
+                      li
+                        a.link-item(href="#") Коммутаторы агрегации
+                      li
+                        a.link-item(href="#") Коммутаторы доступа
+
+                li.single
+                  a.link-category(href="#") ЦАТС МС240
+
+                li
+                  a.link-category(href="#") Оборудование VOIP
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") MSAN
+                      li
+                        a.link-item(href="#") Абонентские шлюзы
+                      li
+                        a.link-item(href="#") Цифровые шлюзы
+
+                li
+                  a.link-category(href="#") ECSS-10 (SOFTSWITCH)
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") SBC
+                      li
+                        a.link-item(href="#") Программный коммутатор
+                      li
+                        a.link-item(href="#") ECSS-10 (Softswitch)
+
+                li
+                  a.link-category(href="#") IP DSLAM
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") MXA-32
+                      li
+                        a.link-item(href="#") MXA-64
+                      li
+                        a.link-item(href="#") ECSS-10 (Softswitch)
+
+                li
+                  a.link-category(href="#") Транспорт
+                    ul.sub-list
+                      li
+                        a.link-item(href="#") Маком-МХ
+                      li
+                        a.link-item(href="#") SHDSL-модемы
+                      li
+                        a.link-item(href="#") Мультиплексоры TopGATE
+                      li
+                        a.link-item(href="#") Регенераторы DSL-линии
+
+                li.single
+                  a.link-category(href="#") Оборудование доступа
+
+                li.single
+                  a.link-category(href="#") Оборудование ТЧ канала
+
+                li.single
+                  a.link-category(href="#") Устройства электропитания
+
+                li.single
+                  a.link-category(href="#") Телеком шкафы
+
+
+
+
+            // at this point animated product-item code block must be overRefactored very properly for all similar instances
+            section.content-right
+              span.column-title Всё
+              .products-list
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-01.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2324B
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-02.jpg')
+
+                    .stats
+                        .title Коммутатор доступа MES2324B
+                        .short-desc
+                          ul
+                            li • 1 порт GPON
+                            li • гигабитный роутер
+                            li • порты FXS для подключения  телефо...
+                            li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-03.jpg')
+
+                    .stats
+                      .title SOFTWLC
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+                .item
+                  .make3d
+                    .img-outer
+                      img(src='../img/product-04.jpg')
+
+                    .stats
+                      .title Коммутатор доступа MES2124F
+                      .short-desc
+                        ul
+                          li • 1 порт GPON
+                          li • гигабитный роутер
+                          li • порты FXS для подключения  телефо...
+                          li • порт USB 2.0 для подключения сетев...
+                    .image-overlay
+                    .btn.btn-overlay Подробнее
+
+              .pagination
+                .cntr
+                button.paginate.left
+                  i
+                  i
+                button.paginate.right
+                  i
+                  i
+
+
+    //- footer
+    include ../partials/footer
+    //- eof footer

@@ -1,0 +1,74 @@
+.page-projects {
+
+  & .wrap {
+    max-width: 1360px;
+  }
+  & .inner {
+    padding-left: 2.2058823%;
+    padding-right: 2.2058823%;
+
+    &.longwide {
+      background: url("../img/vert-separator_left.png"),
+                  url("../img/vert-separator_right.png");
+      background-repeat: no-repeat;
+      background-position: top left, top right;
+      position: relative;
+    }
+  }
+
+  .globe {
+    background: url('../img/projects-globe.png');
+    background-position: 0 17px;
+    width: 1128px;
+    margin: 0 auto;
+    height: 651px;
+  }
+
+  & .content {
+  // данные стили для параграфов которые - можно вынести в общак и редактировать только отдельные для каждой страницы, а общие если норм - то для каждой уже не придется прописывать отдельно.
+
+    min-width: 860px;
+    max-width: 860px;
+    margin: 0 auto;
+
+    & p {
+      margin: 0;
+      margin-bottom: 27px;
+      color: #385461;
+      @include font(normal, 400, 18px, 27px, $pslab);
+      letter-spacing: 0.5px;
+    }
+    & span {
+      color: #385461;
+      @include font(normal, 400, 18px, 27px, $pslab);
+    }
+  }
+
+  & h1.title {
+    @include font(normal, 700, 36px, 36px, $ub);
+    color: #385461;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 58px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  & ul.content-list {
+    margin-bottom: 27px;
+    & li {
+      color: #385461;
+      @include font(normal, 400, 18px, 27px, $pslab);
+      letter-spacing: 0.6px;
+    }
+  }
+
+  & figure {
+    padding-top: 27px;
+    & img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+} // EOF .page-projects {}

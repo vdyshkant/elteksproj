@@ -1,0 +1,76 @@
+extends ../conf/docwrapper
+
+
+append config
+  - var PageTitle = 'New Life of Heroes'
+  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-product-grid')
+  - var logoImgSrc = '../img/logo.png'
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include ../partials/header
+    include ../partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+
+        .page-title
+          +breadcrumbs([
+            { 'anchor':'Главная','link':'/index.html' },
+            { 'anchor':'Оборудование XPON','link':'javascript:void(0)' },
+            { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
+          ])
+
+          h1 Решения компании ЭЛТЕКС
+
+        .content
+
+
+          .column-left
+            .menu
+
+
+
+          .column-center
+            .content
+              .wrap
+                h3 title h3
+                p text1
+                p text2
+                figure
+                  img
+                p text 3
+
+
+          .column-right
+            //- MIXIN origin:product1
+
+
+
+        //- FORM MIXIN
+
+
+    //- footer
+    //- include ../partials/footer
+    //- eof footer

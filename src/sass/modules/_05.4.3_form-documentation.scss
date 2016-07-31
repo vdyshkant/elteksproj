@@ -1,0 +1,59 @@
+// callback form module
+
+.page-documentation {
+
+  & .form-content-wrap {
+    @include clearfix;
+    padding: 0 8.4615384%;
+  }
+  & .form-content-left,
+  & .form-content-right {
+    width: 530px;
+    width: 49.0740740%;
+    // outline: 2px dashed crimson;
+    // outline-offset: -2px;
+  }
+  & .form-content-left {
+    float: left;
+    margin-right: 20px;
+    margin-right: 1.8518518%;
+  }
+  & .form-content-right {
+    float: right;
+
+    // font-size fix ofr inline-block
+    font-size: 0;
+    & > * {
+      font-size: initial;
+    }
+  }
+
+
+  // callback
+  .callback {
+
+    float: left;
+    padding-top: 50px;
+
+    & .title {
+      margin-bottom: 20px;
+    }
+    & p {
+      margin-bottom: 50px;
+    }
+    & input {
+      margin-bottom: 30px;
+      &:nth-of-type(1) {
+        margin-right: 20px;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    .btn-form {
+      width: 100%;
+    }
+  }
+}
+
+// EOF callback form module

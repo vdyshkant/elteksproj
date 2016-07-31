@@ -1,0 +1,110 @@
+.page-solutions {
+
+  & .wrap {
+
+
+    & > .inner {
+      padding-left: 2.2058823%;
+      padding-right: 2.2058823%;
+    }
+  }
+// ^^^^^^ GRID.
+
+  // fix inner wraps!!!
+
+
+  & .sub-header {
+    & .phones {
+      text-align: left;
+    }
+    & address {
+      text-align: right;
+    }
+  }
+
+  // module page-title
+  & .page-title {
+
+    & .breadcrumbs {
+      margin-bottom: 92px;
+    }
+    & h1 {
+      text-transform: none;
+    }
+  }
+  // EOF module page-title
+
+
+  & .content {
+    @include clearfix;
+    padding-top: 27px;
+    // word-wrap: break-word;
+
+    & h3 {
+      margin: 0;
+      @include font(normal, 700, 18px, 18px, $ub);
+      color: #385461;
+
+      margin-bottom: 27px;
+      letter-spacing: 0.5px;
+    }
+
+    & p {
+      margin: 0;
+      @include font(normal, 400, 18px, 22px, $pslab);
+      color: #385461;
+
+      padding-right: 35px;
+      margin-bottom: 22px;
+      letter-spacing: 0.4px;
+    }
+
+    & figure {
+      margin-bottom: 17px;
+      padding-top: 3px;
+    }
+  }
+
+  & .column-left {
+    float: left;
+    width: 310px;
+    width: 23.8461538%;
+    margin-right: 20px;
+    margin-right: 1.5384615%;
+  }
+
+  & .column-center {
+    float: left;
+    width: 640px;
+    width: 49.2307692%;
+    margin-right: 20px;
+    margin-right: 1.5384615%;
+    padding-bottom: 70px;
+  }
+
+  & .column-right {
+    float: right;
+    width: 310px;
+    width: 23.8461538%;
+  }
+
+  & .related-products {
+    padding-top: 25px;
+  }
+
+  & .footer {
+    & .socials {
+      & .item {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    & .uct span {
+      font-size: 28px;
+      padding-left: 4px;
+      letter-spacing: .4px;
+    }
+  }
+
+
+}

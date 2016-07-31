@@ -1,0 +1,82 @@
+.page-documentation {
+
+  & .main {
+    padding-bottom: 100px;
+
+    & > .wrap {
+      @include clearfix;
+      & .inner {
+        padding-left: 2.2058823%;
+        padding-right: 2.2058823%;
+      }
+    }
+  }
+
+  & .column {
+    width: 420px;
+    width: 32.3076923%;
+    margin-right: 20px;
+    margin-right: 1.5384615%;
+    float: left;
+
+    & h3 {
+      color: #385461;
+      @include font(normal, 700, 18px, 18px, $ub);
+      margin: 0;
+      margin-bottom: 45px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        right: 0;
+        left: 0;
+        bottom: -15px;
+        height: 1px;
+        background: #647983;
+      }
+    }
+    & a {
+      color: #385461;
+      @include font(normal, 300, 18px, 18px, $ul);
+    }
+  }
+
+  & .column-center,
+  & .column-right {
+    & ul {
+      & li {
+        padding: 15px 0 15px 70px;
+        margin-bottom: 30px;
+        &.pdf {
+          background: url('../img/icon-pdf.png') no-repeat;
+        }
+        &.code {
+          background: url('../img/icon-code.png') no-repeat;
+        }
+      }
+    }
+  }
+
+  & .column-left {
+    position: relative;
+    @include clearfix;
+  }
+
+  & .column-center {
+    outline: 2px dashed hotpink;
+    outline-offset: -2px;
+  }
+  & .column-right {
+    float: right;
+    margin-right: 0;
+
+    outline: 2px dashed burlywood;
+    outline-offset: -2px;
+  }
+
+  & .appointment-form {
+    clear: both;
+  }
+
+}

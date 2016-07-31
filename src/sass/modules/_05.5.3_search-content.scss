@@ -1,0 +1,32 @@
+// search-content
+
+& .search-content {
+  height: auto; // issue with headers-search. rename to header-search or smth els
+  @include clearfix;
+
+  & .field-wrap {
+    padding-left: 330px; // +%
+    min-width: 660px;
+    padding-right: 310px; // +%
+    font-size: 0;
+    & > * {
+      font-size: initial;
+    }
+  }
+
+  & p {
+    margin: 0;
+    margin-bottom: 28px;
+    letter-spacing: .2px;
+    @include font(normal, 300, 15px, 23px, $ul);
+    color: #023;
+  }
+
+  & .search-form {
+    & input {
+      padding-bottom: 9px;
+    }
+  }
+}
+
+// EOF search-content

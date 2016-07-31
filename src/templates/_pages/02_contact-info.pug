@@ -1,0 +1,98 @@
+extends ../conf/docwrapper
+
+
+append config
+  - var PageTitle = 'New Life of Heroes'
+  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-contact-info')
+  - var logoImgSrc = '../img/logo.png';
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include ../partials/header
+    include ../partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Как нас найти', 'class':'active' }
+            ])(class='')      //- <== u can add additional class here.
+
+            h1 Как нас найти
+
+            //- cr8 breadcrumbs as mixin. would use it in every page
+
+      .wrap
+        .inner
+          .content
+            h2 Главный офис
+            address.vcard
+              ul
+                li
+                  span.country-name Республика Казахстан
+                  |,&nbsp;
+                  span.locality г. Алматы
+                  |,&nbsp;
+                  span.street-address ул. Тимирязева 17, офис 27
+                li: span.tel Тел.: +7 (727) 266-288-6 ; +7 (727) 266-288-7
+                li E-mail:&nbsp;
+                  a(href="mailto:office@eltex.kz") office@eltex.kz
+                  |,&nbsp;
+                  a(href="mailto:market@eltex.kz") market@eltex.kz
+          .map-layer
+          .map-outer
+            +svg([{'class': 'svg-map-over shadow', 'pathid': 'map-over', 'filename':'map-over'}])
+          .map-inner
+            .map#map
+              .map-overlay(onClick="style.pointerEvents='none'")
+              //- script
+              //-   function initMap() {
+              //-     var mapDiv = document.getElementById('map');
+              //-     var map = new google.maps.Map(mapDiv, {
+              //-         center: {lat: 44.540, lng: -78.546},
+              //-         zoom: 8
+              //-     });
+              //-   }
+              //- script(async defer)
+              //-   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.142847785703!2d76.92687101544811!3d43.22746458787356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f2896eadc49%3A0xa5c8d79ac51206a5!2z0KLQuNC80LjRgNGP0LfQtdCyINC606nRiNC10YHRliAxNywg0JDQu9C80LDRgtGLLCDQmtCw0LfQsNGF0YHRgtCw0L0!5e0!3m2!1suk!2sua!4v1468229273117" width="710" height="428" frameborder="0" style="border:0"></iframe>
+              //- https://www.google.com.ua/maps/place/%D0%A2%D0%B8%D0%BC%D0%B8%D1%80%D1%8F%D0%B7%D0%B5%D0%B2+%D0%BA%D3%A9%D1%88%D0%B5%D1%81%D1%96+17,+%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B,+%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD/@43.2274646,76.926871,17z/data=!3m1!4b1!4m5!3m4!1s0x38836f2896eadc49:0xa5c8d79ac51206a5!8m2!3d43.2274607!4d76.9290597
+              //- https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=ru
+              //- http://stackoverflow.com/questions/21992498/disable-mouse-scroll-wheel-zoom-on-embedded-google-maps
+
+    //- eof main
+
+
+
+    //- footer
+    include ../partials/footer
+    //- eof footer
+
+
+//- bg for main block with min height
+//- insert map img as .map block>img
+  //- make map draggable

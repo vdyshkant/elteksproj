@@ -1,0 +1,22 @@
+
+footer.footer.wow.fadeInUp(data-wow-offset="100")
+  .wrap
+    .inner
+      +navmenu([
+        { 'title':'Продукция', 'class':'', 'link':'javascript:void(0)' },
+        { 'title':'Решения', 'class':'', 'link':'javascript:void(0)' },
+        { 'title':'Техподдержка', 'class':'', 'link':'javascript:void(0)' },
+        { 'title':'О компании', 'class':'', 'link':'javascript:void(0)' }
+      ])(class="footer-nav")
+      .footer-bottom
+        .copy &copy; 2016 Eltex
+        a.manufacturer(href="javascript:void(0)") Сделано в&nbsp;
+          +svg([{'class': 'icon-manufacturer', 'pathid': 'svg-manufacturer', 'filename':'manufacturer'}])
+        .socials
+          .inner
+            a.item
+              +svg([{'class': 'icon-fb', 'pathid': 'svg-fb', 'filename':'fb'}])
+            a.item
+              +svg([{'class': 'icon-vk', 'pathid': 'svg-vk', 'filename':'vk'}])
+            a.item
+              +svg([{'class': 'icon-yt', 'pathid': 'svg-yt', 'filename':'yt'}])

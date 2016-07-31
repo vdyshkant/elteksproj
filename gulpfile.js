@@ -5,13 +5,16 @@
 
 
 var gulp         = require('gulp'),
-    jade         = require('gulp-jade'),
+    pug          = require('gulp-pug'),
     browserify   = require('gulp-browserify'),
     uglify       = require('gulp-uglify'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     rename       = require('gulp-rename'),
     clean        = require('gulp-clean'),
+
+    livereload   = require('gulp-livereload'), // added 2016-07-11
+    sourcemaps   = require('gulp-sourcemaps'),
 
     connect      = require('gulp-connect'),
     gulpif       = require('gulp-if');
@@ -20,25 +23,22 @@ var env = process.env.NODE_ENV || 'development'; // if we do not specify explici
 var outputDir = 'builds/development';
 
 
-
-/////////////////////////////////
-/////  On ERROR function    /////
-/////////////////////////////////
+///////////////////////////
+/////  ERROR handler  /////
+///////////////////////////
 function errorLog(err){
   console.log(err.message);
   this.emit('end');
 }
 
 
-
-gulp.task('jade', function() {
+gulp.task('pug', function() {
   return gulp.src([
-    '!src/templates/partials/cheatsheet.jade', // ignore this file
-    '!src/templates/partials/config.jade', // ignore this file
-    '!src/templates/partials/docwrapper.jade', // ignore this file
-    'src/templates/**/*.jade'
+    '!src/templates/partials/*.pug', // ignore this file
+    '!src/templates/conf/*.pug', // ignore this file
+    'src/templates/**/*.pug'
   ])     // выборка files from glob
-        .pipe(jade( { pretty: true } ))                             // push this^^^ query to jade pluguin
+        .pipe(pug( { pretty: true } ))                             // push this^^^ query to pug pluguin
         .on('error', errorLog)
         .pipe(gulp.dest(outputDir))            // take every compiled html file and pipe it to an output folder
         .pipe(connect.reload());
@@ -75,6 +75,7 @@ gulp.task('sass', function() {
 
 
     return gulp.src('src/sass/main.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass(config).on('error', sass.logError))
         // .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
@@ -86,43 +87,48 @@ gulp.task('sass', function() {
           remove: false
         }))
         .pipe(gulpif(env === 'production', rename({suffix:'.min'})))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(outputDir + '/css'))
         .pipe(connect.reload());
 });
 
 
 
-
-gulp.task('copyFonts', function() {
-  return gulp.src('src/files/fonts/**/*.{ttf,woff,woff2,eot,svg}')
-    .pipe(gulp.dest(outputDir + '/fonts'));
-});
-
-
-
-
-gulp.task('removeImages', function() {
-    return gulp.src(outputDir + '/img/**/*.*')
-      .pipe(clean( {read: false} ));
-});
+// just disabled
+// gulp.task('copyFonts', function() {
+//   return gulp.src('src/files/fonts/**/*.{ttf,woff,woff2,eot,svg}')
+//     .pipe(gulp.dest(outputDir + '/fonts'));
+// });
 
 
 
 
-gulp.task('copyImages', ['removeImages'], function() {
-  return gulp.src('src/files/img/**/*.{png,svg,jpg,ico}')
-    .pipe(gulp.dest(outputDir + '/img'));
-});
+// gulp.task('removeImages', function() {
+//     return gulp.src(outputDir + '/img/**/*.*')
+//       .pipe(clean( {read: false} ));
+// });
+//
+//
+// gulp.task('copyImages', ['removeImages'], function() {
+//   return gulp.src('src/files/img/**/*.{png,svg,jpg,ico}')
+//     .pipe(gulp.dest(outputDir + '/img'));
+// });
 // first willremove old imgs, then copy new ones: https://github.com/gulpjs/gulp/issues/67
 
+
+// just disabled
+// gulp.task('copyImages', function() {
+//   return gulp.src('src/files/img/**/*.{png,svg,jpg,ico}')
+//     .pipe(gulp.dest(outputDir + '/img'));
+// });
 
 
 
 gulp.task('watch', function() {
-    gulp.watch('src/templates/**/*.jade', ['jade']);
+    gulp.watch('src/templates/**/*.pug', ['pug']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/files/img/**/*.{png,svg,jpg,ico}', ['copyImages']);
+    // gulp.watch('src/files/img/**/*.{png,svg,jpg,ico}', ['copyImages']);
     gulp.watch('bower.json', ['libs']);
 });
 
@@ -139,5 +145,5 @@ gulp.task('connect', function() {
 
 
 
-gulp.task('default', ['connect', 'js', 'jade', 'sass', 'copyFonts', 'copyImages', 'watch']);
-// we can run the task we just created by typing 'gulp jade' into our terminal
+gulp.task('default', ['connect', 'js', 'pug', 'sass', 'watch']);
+// we can run the task we just created by typing 'gulp pug' into our terminal

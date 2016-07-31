@@ -1,0 +1,27 @@
+head
+  title #{PageTitle}
+
+  //- This will load from Google Fonts, but only if font names are specified in the config
+  if GoogleFonts
+    link( href='//fonts.googleapis.com/css?family=' + GoogleFonts, rel='stylesheet', type='text/css' )
+
+  meta( charset='utf-8' )
+  meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+  if MetaDesc
+    meta( name='description', content=MetaDesc )
+  meta( name='viewport', content='width=device-width, initial-scale=1' )
+
+  //- Place favicon.ico in the root directory
+  if favicon
+    link( rel='apple-touch-icon' href='apple-touch-icon.png' )
+
+  if bxSlider
+    link( href=bxSliderCssSrc, rel='stylesheet' )
+
+  if animateCss
+    link( href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', rel='stylesheet' )
+    //- link( href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css', rel='stylesheet' )
+
+  if mainCssSrc
+    link( href=mainCssSrc, rel='stylesheet' )
+  block stylesheets

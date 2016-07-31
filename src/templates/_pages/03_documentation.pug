@@ -1,0 +1,133 @@
+extends ../conf/docwrapper
+
+
+append config
+  - var PageTitle = 'New Life of Heroes'
+  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  //- - var animateNumber = true;
+  - var bxSlider = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-documentation')
+  - var logoImgSrc = '../img/logo.png';
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include ../partials/header
+    include ../partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Документация для оборудования', 'link':'javascript:void(0)' },
+              { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
+            ])(class='')      //- <== u can add additional class here.
+
+            h1 Коммутатор доступа MES1124M
+
+
+          //- column - 1
+          .slider.column-left.column
+            ul.bxslider.documentation
+              li
+                img(src="../img/slider-image.jpg")
+              li
+                img(src="../img/slider-image.jpg")
+              li
+                img(src="../img/slider-image.jpg")
+            .outside
+              .slider-prev
+                .arrow
+              .slider-next
+                .arrow
+
+            //- .thumb-image
+            //- .thumb-list
+            //-   .thumb-prev
+            //-   .thumb-item
+            //-   .thumb-item
+            //-   .thumb-item
+            //-   .thumb-next
+
+
+          //- <ul class="bxslider">
+          //-   <li><img src="/images/pic1.jpg" /></li>
+          //-   <li><img src="/images/pic2.jpg" /></li>
+          //-   <li><img src="/images/pic3.jpg" /></li>
+          //-   <li><img src="/images/pic4.jpg" /></li>
+          //- </ul>
+
+          //- column - 2
+          .column-center.column
+            h3 Описание
+            ul
+              li.pdf: a Краткое техническое описание
+
+            h3 Документация
+            ul
+              li.pdf: a Руководство по эксплуатации версии ПО 3.5.1
+              li.pdf: a Руководство по настройке SMG-1016M через отдельный Ethernet порт
+              li.pdf: a Руководство по настройке SMG-1016M с FreeRadius
+              li.pdf: a Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
+
+            h3 Сертификаты
+            ul
+              li.pdf: a Декларация соответствия
+
+
+          //- column - 3
+          .column-right.column
+            h3 Програмное обеспечение
+            ul
+              li.code: a Версия ПО 3.5.1
+              li.code: a Версия ПО 3.5.0
+              li.code: a Версия ПО 3.4.2
+              li.code: a Версия ПО 3.4.0
+              li.code: a Версия ПО 3.3.1
+              li.code: a Версия ПО 3.2.1
+              li.code: a Версия ПО 3.2.0
+              li.code: a Версия ПО rc14
+              li.pdf: a Readme
+              li.pdf: a Словарь радиус
+              li.pdf: a mib
+
+          //- MIXIN this
+          .callback
+            form.appointment-form
+              .title Остались вопросы, свяжитесь с нами!
+              p.sub-title Пожалуйста, заполните форму ниже. Мы свяжемся с вами в ближайшее время.
+
+              .form-content-wrap
+                .form-content-left
+                  input.icon-user(placeholder="Имя")
+                  input.icon-email(placeholder="E-mail")
+                  input.icon-tel(placeholder="Телефон")
+                .form-content-right
+                  textarea.callback-textarea(placeholder="Ваш комментарий")
+                  .btn.btn-form Заказать бесплатную консультацию
+          //- eof MIXIN this
+
+
+    //- footer
+    include ../partials/footer
+    //- eof footer

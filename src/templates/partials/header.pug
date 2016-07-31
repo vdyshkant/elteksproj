@@ -1,0 +1,28 @@
+
+header.header
+  .wrap
+    .inner
+
+      a.logo(href="/")
+        img(src=logoImgSrc)
+
+      a.btn.request-callback Заказать звонок
+
+      nav.menu.main-nav
+        ul
+          li#dd-products.active.dropdown
+            a(href="/_pages/04_documentation-grid.html") Продукция
+            include _sub-menu-1
+          li.dropdown
+            a(href="/_pages/07_solutions.html") Решения
+            include _sub-menu-2
+          li.dropdown
+            a(href="/_pages/02_contact-info.html") Техподдержка
+            include _sub-menu-3
+          li
+            a(href="/_pages/01_about.html") О компании
+            include _sub-menu-4
+      .burger
+        span
+
+    //- include __dropdownMenu
