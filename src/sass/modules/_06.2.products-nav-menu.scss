@@ -1,9 +1,50 @@
+.products-nav-menu {
+
+  & a {
+    text-decoration: none;
+    position: relative;
+  }
+  & .category {
+    margin-bottom: 45px;
+    padding-right: 60px;
+    &-link {
+      @include font(normal, 700, 18px, 21px, $ub);
+      color: #385461;
+      letter-spacing: .5px;
+    }
+  }
+  & .item {
+    margin-bottom: 15px;
+    &-link {
+      @include font(normal, 300, 14px, 21px, $ul);
+      color: #002233;
+      letter-spacing: .4px;
+      &:hover {
+        &::before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background: #a1a7ab;
+        }
+      }
+    }
+
+    &:first-child {
+      padding-top: 15px;
+    }
+  }
+}
+
+
 .products-nav-menu { // standard: documentation-grid
     width: 310px; // %
     margin-right: 20px; // %
     float: left;
-    outline: 2px dashed skyblue;
-    outline-offset: -2px;
+    // outline: 2px dashed skyblue;
+    // outline-offset: -2px;
 
     & span.column-title {
         color: #023;

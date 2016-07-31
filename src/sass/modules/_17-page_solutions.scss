@@ -6,6 +6,14 @@
     & > .inner {
       padding-left: 2.2058823%;
       padding-right: 2.2058823%;
+      @media #{$tablet} {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      @media #{$mobile} {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   }
 // ^^^^^^ GRID.
@@ -16,11 +24,28 @@
   & .sub-header {
     & .phones {
       text-align: left;
+      @media #{$tablet} {
+        float: right;
+        text-align: right;
+        & span:first-child{
+          display: none;
+        }
+      }
     }
     & address {
       text-align: right;
+      @media #{$tablet} {
+        float: left;
+      }
     }
   }
+
+  @media #{$tablet} {
+    & .lbl-search:hover {
+      width: 170px;
+    }
+  }
+
 
   // module page-title
   & .page-title {
@@ -71,6 +96,9 @@
     width: 23.8461538%;
     margin-right: 20px;
     margin-right: 1.5384615%;
+    @media #{$tablet} {
+      width: 100%;
+    }
   }
 
   & .column-center {
@@ -80,12 +108,18 @@
     margin-right: 20px;
     margin-right: 1.5384615%;
     padding-bottom: 70px;
+    @media #{$tablet} {
+      width: 100%;
+    }
   }
 
   & .column-right {
     float: right;
     width: 310px;
     width: 23.8461538%;
+    @media #{$tablet} {
+      display: none;
+    }
   }
 
   & .related-products {

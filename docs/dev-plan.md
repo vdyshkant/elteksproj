@@ -1,9 +1,7 @@
 ## __Plan__:
 
 
-1. footer ++
-2. paginator ++
-3. burger
+
 
 
 #### 8h [1]:
@@ -13,8 +11,8 @@
     - adapt
 
 
-faq+++
-about us
+faq +++
+about us +++
 solutions
 
 projects

@@ -9,6 +9,8 @@ append config
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-solutions')
   - var logoImgSrc = '../img/logo.png'
+  - var logoImgSrcTablet = "../img/logo.png"
+  - var logoImgSrcMobile = "../img/logo.png"
 
   //- - var GoogleFonts = 'Poiret+One'
   //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
@@ -28,7 +30,9 @@ append content
     .sub-header
       .wrap
         .inner
-          .phones Поговорить с консультантом: <span>(727) 266-288-6</span>
+          .phones
+            span Поговорить с консультантом: +7
+            span (727) 266-288-6
           .header-search
             .search-inner
               label.lbl-search(for="inpt-search")
@@ -58,11 +62,16 @@ append content
             h1 Решения компании ЭЛТЕКС
 
           .content
-
+            //- .content-wrap
+            //-   ul.faq-item-list
+            //-     li.faq-item.jsFaqItem
+            //-       span.faq-item-title [ACS] Как настроить Dialplan на ONT при помощи ACS сервера?
+            //-       .faq-item-content
+            //-         p
 
             .column-left.products-nav-menu
               span.column-title Категории
-              // Всё - upperCase + underlined потому что это всё(обобщение) или потому что это активное меню
+              //- Всё - upperCase + underlined потому что это всё(обобщение) или потому что это активное меню
               ul
                 li.category
                   a.category-link(href="#") Операторские решения
@@ -95,7 +104,7 @@ append content
 
 
                 li.category
-                  a.category-link(href="#") Решения для дома и&nbsp;небольших офисов
+                  a.category-link(href="#") Решения для дома и небольших офисов
                   ul
                     li.item
                       a.item-link(href="#") Телевидение

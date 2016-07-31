@@ -14,17 +14,31 @@ img {
 .page-about {
 
   & .main {
-    & .wrap {
-      @include clearfix;
+
+    background: url('../img/vert-separator_left.png'),
+                url('../img/vert-separator_right.png');
+    background-color: #fbfbfb;
+    background-repeat: no-repeat;
+    background-position: 0 675px, 100% 675px;
+
+    @media #{$tablet} {
+      background-position: 0 1075px, 100% 1075px;
+    }
+    @media #{$mobile} {
+      background-position: 0 170px, 100% 170px;
     }
 
-    & .inner {
-      padding-left: 2.2058823%;
-      padding-right: 2.2058823%;
+    & > .wrap {
+      @include clearfix;
 
-      @media #{$mobile} {
-        margin-left: 20px;
-        padding-right: 20px;
+      & > .inner {
+        padding-left: 2.2058823%;
+        padding-right: 2.2058823%;
+
+        @media #{$mobile} {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
     }
   }
@@ -76,6 +90,9 @@ img {
       text-align: center;
       margin-top: 40px;
       @include font(normal, 700, 18px, 18px, $ub);
+      @media #{$mobile} {
+        margin-top: 50px;
+      }
     }
     & p {
       @include font(normal, 400, 18px, 27px, $pslab);
@@ -98,7 +115,7 @@ img {
       margin-top: 40px;
       & li {
         color: #385461;
-        @include font(normal, 400, 18px, 27px, $pst);
+        @include font(normal, 400, 18px, 27px, $pslab);
         // position: relative;
         // padding-left: 18px;
         //
@@ -114,7 +131,7 @@ img {
         //
         // }
         @media #{$mobile} {
-          @include font(normal, 400, 14px, 27px, $pst);
+          @include font(normal, 400, 14px, 27px, $pslab);
         }
       }
     }
@@ -123,11 +140,7 @@ img {
   .content {
     padding: 0 16.5384615%;
     padding-top: 37px;
-    background: url('../img/vert-separator_left.png'),
-                url('../img/vert-separator_right.png');
-    background-color: #fbfbfb;
-    background-repeat: no-repeat;
-    background-position: top left, top right;
+
     @media #{$tablet} {
       padding: 0 30px;
     }
@@ -164,6 +177,7 @@ img {
 
       @media #{$mobile} {
         display: block;
+        @include font(normal, 400, 14px, 27px, $pslab);
       }
     }
   }
@@ -226,6 +240,7 @@ img {
 
       @media #{$mobile} {
         font-size: 16px;
+        letter-spacing: normal;
       }
     }
   }

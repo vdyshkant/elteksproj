@@ -409,6 +409,14 @@ $(document).ready(function() {
 
 })();
 
+ if (window.matchMedia("(max-width: 1199px)").matches) {
+   var string = 'Выберите категорию';
+   $('.page-solutions .products-nav-menu .column-title').text( string );
+ } else {
+   var origin = 'Категории';
+   $('.page-solutions .products-nav-menu .column-title').text( origin );
+ }
+
 // http://stackoverflow.com/questions/23122336/javascript-resize-event-not-working?noredirect=1&lq=1
 
 

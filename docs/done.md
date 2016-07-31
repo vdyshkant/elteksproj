@@ -40,3 +40,12 @@
  + counter
 
    + home callback - для tablet-mobile - вертиально поля расположить
+
+
+   1. footer ++
+   2. paginator ++
+   3. burger ++
+
+
+
+   
