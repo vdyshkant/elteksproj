@@ -9,6 +9,8 @@ append config
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-faq')
   - var logoImgSrc = '../img/logo.png';
+  - var logoImgSrcTablet = "../img/logo.png"
+  - var logoImgSrcMobile = "../img/logo.png"
 
   //- - var GoogleFonts = 'Poiret+One'
   //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
@@ -34,96 +36,111 @@ append content
 
     .main
       .wrap
+        .inner
 
-        .page-title
-          +breadcrumbs([
-            { 'anchor':'Главная','link':'/index.html' },
-            { 'anchor':'Ответы на часто задаваемые вопросы', 'class':'active' }
-          ])
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Ответы на часто задаваемые вопросы', 'class':'active' }
+            ])
 
-          h1 Ответы на часто задаваемые вопросы
+            h1 Ответы на часто задаваемые вопросы
 
-        //- 1. create working version of this code
-        //- MIXIN it
-        //- enjoy :)
-        .content-wrap
-          ul.faq-item-list
-            li.faq-item.jsFaqItem
-              span.faq-item-title [ACS] Как настроить Dialplan на ONT при помощи ACS сервера?
-              .faq-item-content
-                p
-                  | Для использования регулярных выражений в dialplan на ONT со стороны ACS-сервера необходимо:
-                ul
-                  li ♦  выключить Outbound Proxy;
-                  li ♦  прописать Proxy Server и Registrar Server;
-                  li ♦  установить S-timer (время, в течении которого ONT будет ожидать продолжения набора, если уже набранный номер совпадает с каким-либо образцом в плане нумерации, но есть возможность получения большего количества цифр, что приведет к совпадению с другим образцом. По умолчанию он установлен в 4 сек.);
-                  li ♦  прописать DigitMap.
+          //- 1. create working version of this code
+          //- MIXIN it
+          //- enjoy :)
+          .content-wrap
+            ul.faq-item-list
+              li.faq-item.jsFaqItem
+                span.faq-item-title [ACS] Как настроить Dialplan на ONT при помощи ACS сервера?
+                .faq-item-content
+                  p
+                    | Для использования регулярных выражений в dialplan на ONT со стороны ACS-сервера необходимо:
+                  ul
+                    li ♦  выключить Outbound Proxy;
+                    li ♦  прописать Proxy Server и Registrar Server;
+                    li ♦  установить S-timer (время, в течении которого ONT будет ожидать продолжения набора, если уже набранный номер совпадает с каким-либо образцом в плане нумерации, но есть возможность получения большего количества цифр, что приведет к совпадению с другим образцом. По умолчанию он установлен в 4 сек.);
+                    li ♦  прописать DigitMap.
 
-                p Допустимые символы в DigitMap:
+                  p Допустимые символы в DigitMap:
 
-                ul
-                  li ♦  | - логическое ИЛИ - используется для разделения правил.
-                  li ♦  X или х – любая цифра от 0 до 9, равнозначно диапазону [0-9];
-                  li ♦  0 - 9 – цифры от 0 до 9;
-                  li ♦  * – символ *;
-                  li ♦  – символ #;
-                  li ♦  Т - спецсимвол, который включает S-timer.
-                  li ♦  . – спецсимвол «точка» указывает на возможность повторения предшествующей перед данным символом цифры от нуля до бесконечности раз.
-                  li ♦  [ ] – указание диапазона (через тире), либо перечисление (без пробелов, запятых и прочих символов между цифрами), например:
-                  li ♦  диапазон [1-5] - 1,2,3,4 или 5;
-                  li ♦  перечисление [138] - 1,3 или 8;
-                  li ♦  диапазон и перечисление [0-9*#] – от 0 до 9, а также * и #.
+                  ul
+                    li ♦  | - логическое ИЛИ - используется для разделения правил.
+                    li ♦  X или х – любая цифра от 0 до 9, равнозначно диапазону [0-9];
+                    li ♦  0 - 9 – цифры от 0 до 9;
+                    li ♦  * – символ *;
+                    li ♦  – символ #;
+                    li ♦  Т - спецсимвол, который включает S-timer.
+                    li ♦  . – спецсимвол «точка» указывает на возможность повторения предшествующей перед данным символом цифры от нуля до бесконечности раз.
+                    li ♦  [ ] – указание диапазона (через тире), либо перечисление (без пробелов, запятых и прочих символов между цифрами), например:
+                    li ♦  диапазон [1-5] - 1,2,3,4 или 5;
+                    li ♦  перечисление [138] - 1,3 или 8;
+                    li ♦  диапазон и перечисление [0-9*#] – от 0 до 9, а также * и #.
 
-                p Например
-                ul
-                  li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.DigitMap” “(4xxx|2xT|2xxxxxx|8x.)”
-                  li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxy” “0.0.0.0”
-                  li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServer” “192.168.18.95”
-                  li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServer” “192.168.18.95”
-                  li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.X_BROADCOM_COM_CriticalDigitTimer” “8000”
-            li.faq-item.jsFaqItem
-              span.faq-item-title Как посмотреть счетчики пакетов определенного сервиса на конкретной ONT
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title [LTP-8X] Как настроить и посмотреть активные PPPoE-сессии?
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title [LTP-8X] Как настроить услугу в режиме Q-in-Q?
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title [LTP-8X] Как сменить пароль для пользователя admin?
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title Установка SoftWLC из репозиториев
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title Как настроить интернет и мультикаст на NTU-1
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title Как настроить QinQ в схеме vlan на абонента на станционном оборудовании GPON?
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title Обновление ПО на модуле TM.IP
-              .faq-item-content
-                p content
-            li.faq-item.jsFaqItem
-              span.faq-item-title Особенности настройки DHCP-сервера для управления точкой доступа
-              .faq-item-content
-                p content
-                //- REFs
-                  //- https://www.tgifridays.com/faq/
-                  //- https://www.mint.com/help
-                  //- http://www.hongkiat.com/blog/design-faq-pages/
+                  p Например
+                  ul
+                    li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.DigitMap” “(4xxx|2xT|2xxxxxx|8x.)”
+                    li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxy” “0.0.0.0”
+                    li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServer” “192.168.18.95”
+                    li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServer” “192.168.18.95”
+                    li ♦  set property “InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.X_BROADCOM_COM_CriticalDigitTimer” “8000”
+              li.faq-item.jsFaqItem
+                span.faq-item-title Как посмотреть счетчики пакетов определенного сервиса на конкретной ONT
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title [LTP-8X] Как настроить и посмотреть активные PPPoE-сессии?
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title [LTP-8X] Как настроить услугу в режиме Q-in-Q?
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title [LTP-8X] Как сменить пароль для пользователя admin?
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title Установка SoftWLC из репозиториев
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title Как настроить интернет и мультикаст на NTU-1
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title Как настроить QinQ в схеме vlan на абонента на станционном оборудовании GPON?
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title Обновление ПО на модуле TM.IP
+                .faq-item-content
+                  p content
+              li.faq-item.jsFaqItem
+                span.faq-item-title Особенности настройки DHCP-сервера для управления точкой доступа
+                .faq-item-content
+                  p content
+                  //- REFs
+                    //- https://www.tgifridays.com/faq/
+                    //- https://www.mint.com/help
+                    //- http://www.hongkiat.com/blog/design-faq-pages/
 
-        //- MIXIN form // origin==documentation.pug
-        .block MIXIN FORM
+          //- MIXIN form // origin==documentation.pug
+          //- MIXIN this
+          .callback
+            form.appointment-form
+              .title Остались вопросы, свяжитесь с нами!
+              p.sub-title Пожалуйста, заполните форму ниже. Мы свяжемся с вами в ближайшее время.
+
+              .form-content-wrap
+                .form-content-left
+                  input.icon-user(placeholder="Имя")
+                  input.icon-email(placeholder="E-mail")
+                  input.icon-tel(placeholder="Телефон")
+                .form-content-right
+                  textarea.callback-textarea(placeholder="Ваш комментарий")
+                  .btn.btn-form Заказать бесплатную консультацию
+          //- eof MIXIN this
 
 
 

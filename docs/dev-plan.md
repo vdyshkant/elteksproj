@@ -9,14 +9,15 @@
 #### 8h [1]:
 - __index.html:__
 
-
-  + home callback - для tablet-mobile - вертиально поля расположить
-
   - home-slider
     - adapt
 
 
+faq+++
+about us
+solutions
 
+projects
 
 
 

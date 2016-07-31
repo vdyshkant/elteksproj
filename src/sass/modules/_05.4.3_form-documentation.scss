@@ -1,10 +1,14 @@
 // callback form module
 
-.page-documentation {
+.page-documentation,
+.page-faq {
 
   & .form-content-wrap {
     @include clearfix;
     padding: 0 8.4615384%;
+    @media #{$tablet} {
+      padding: 0;
+    }
   }
   & .form-content-left,
   & .form-content-right {
@@ -35,6 +39,10 @@
     float: left;
     padding-top: 50px;
 
+    @media #{$mobile} {
+      display: none;
+    }
+
     & .title {
       margin-bottom: 20px;
     }
@@ -52,6 +60,8 @@
     }
     .btn-form {
       width: 100%;
+      letter-spacing: normal;
+      min-width: auto;
     }
   }
 }

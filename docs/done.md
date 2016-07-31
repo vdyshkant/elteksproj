@@ -38,3 +38,5 @@
 
 
  + counter
+
+   + home callback - для tablet-mobile - вертиально поля расположить

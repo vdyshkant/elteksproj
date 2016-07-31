@@ -5,6 +5,11 @@
   .breadcrumbs {
     padding-top: 18px;
     margin-bottom: 94px; // 90
+
+    @media #{$mobile} {
+      white-space: nowrap;
+    }
+
     & ul {
       font-size: 0;
     }
@@ -18,6 +23,17 @@
         padding-left: 0;
         &::before {
           display: none;
+        }
+      }
+      @media #{$mobile} {
+        &:last-child {
+          & > a {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: block;
+            width: 195px;
+          }
         }
       }
       &::before {
@@ -37,6 +53,10 @@
       @include font(normal, 300, 18px, 18px, $ul);
       letter-spacing: .5px;
       text-decoration: none;
+
+      @media #{$mobile} {
+        @include font(normal, 300, 16px, 18px, $ul);
+      }
     }
   }
 
@@ -51,6 +71,10 @@
       letter-spacing: 1px;
       color: #385461;
       margin-bottom: 40px;
+
+      @media #{$mobile} {
+        @include font(normal, 700, 24px, 36px, $ub);
+      }
     }
   }
 

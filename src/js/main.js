@@ -83,8 +83,6 @@ function animateProductItem(){
 
 // pagination
 
-animatePagination();
-function animatePagination() {
   function slide(offset) {
     index = Math.min( Math.max( index + offset, 0 ), total - 1 );
 
@@ -93,10 +91,11 @@ function animatePagination() {
     pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
     pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
   }
+
   var pr = document.querySelector( '.paginate.left' );
   var pl = document.querySelector( '.paginate.right' );
 
-  if (pr !== 'undefined' && pl !== 'undefined' ) {
+  if (pr && pl) {
 
     pr.onclick = slide.bind( this, -1 );
     pl.onclick = slide.bind( this, 1 );
@@ -107,7 +106,6 @@ function animatePagination() {
 
     slide(0);
   }
-}
 // eof pagination
 
 // bxSlider
@@ -157,16 +155,13 @@ function setImg(inputImgSrc) {
 //   $(this).siblings('.content').slideToggle();
 // })
 
-dropDownContentItem();
 
-function dropDownContentItem(){
-  if ($('.jsFaqItem').length > 0) {
-    $('.faq-item-title').on('click',function(){
-      $(this).siblings('.faq-item-content').slideToggle();
-      $(this).parent('.jsFaqItem').toggleClass('active');
-    });
-  }
-}
+  // if ($('.jsFaqItem').length > 0) {
+$('.faq-item-title').click(function(){
+  $(this).siblings('.faq-item-content').slideToggle();
+  $(this).parent('.jsFaqItem').toggleClass('active');
+});
+  // }
 
 
 
