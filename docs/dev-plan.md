@@ -8,19 +8,7 @@
 
 #### 8h [1]:
 - __index.html:__
-  - header
-  + menu
-  > - http://callmenick.com/post/slide-down-menu-with-jquery-and-css
-    - http://codepen.io/kkrueger/pen/qfoLa
-    - http://easings.net/
-    - http://api.jquery.com/slidedown/
-    - http://stackoverflow.com/questions/1673936/jquery-slidedown-with-easing
 
-   + dropdown menu (js)
-     + как именно должно всплывать меню в хедере? easeInOutCubic
-   - adapt для tablet-mobile
-     - burger
-  + sub-header
 
   - home callback - для tablet-mobile - вертиально поля расположить
 

@@ -25,6 +25,7 @@
 .header {
     position: relative;
     background-color: #fbfbfb;
+    z-index: 15;
     // min-height: 98px;
     & .wrap {
       // position: relative;
@@ -108,8 +109,8 @@
 .logo {
     height: 38px;
     width: 184px;
-    width: 14.15385%;
-    margin-right: 9.6923076%;
+    // width: 14.15385%;
+    // margin-right: 9.6923076%;
     margin-top: 31px;
     // outline: 2px solid forestgreen;
     // outline-offset: -2px;
@@ -119,11 +120,17 @@
     @media #{$mobile} {
       margin-top: 20px;
       margin-bottom: 20px;
+      width: 129px;
+      height: 27px;
     }
 
     & img {
         width: 184px;
         height: 38px;
+        @media #{$mobile} {
+          width: 129px;
+          height: 27px;
+        }
     }
 }
 
@@ -142,7 +149,24 @@
     @media #{$mobile} {
       display: none;
     }
+    &-nav {
+      @media #{$mobile} {
+        display: block;
+        // position: absolute;
+        bottom: 30px;
+        right: 23px;
+        float: none;
+        margin: 135px auto 0;
 
+        // position: absolute;
+        // top: 430px;
+        // z-index: 13;
+        // right: 23px;
+      }
+      @media #{$tablet-desktop} {
+        display: none;
+      }
+    }
     // outline: 2px dashed crimson;
     // outline-offset: -2px;
 }

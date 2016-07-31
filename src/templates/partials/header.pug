@@ -4,7 +4,11 @@ header.header
     .inner
 
       a.logo(href="/")
-        img(src=logoImgSrc)
+        picture
+          //- source(media="(min-width: 1020px)" srcset="img/iphone-screen-3-3@1x.png 1x")
+          source(media="(max-width: 767px)" srcset=logoImgSrcMobile)
+          img(src=logoImgSrc)
+
 
       a.btn.request-callback Заказать звонок
 
@@ -22,11 +26,15 @@ header.header
           li
             a(href="/_pages/01_about.html") О компании
             include _sub-menu-4
+        a.btn.request-callback.request-callback-nav Заказать звонок
       a.burger-menu
         .burger-link(href="#")
           .line
           .line
           .line
+
+
+.menu-overlay
 
 
     //- include __dropdownMenu

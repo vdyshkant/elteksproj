@@ -17,6 +17,9 @@
     @include font(normal, 700, 36px, 36px, $ubo);
     margin: 0;
     text-align: center;
+    @media #{$mobile} {
+      @include font(normal, 700, 24px, 24px, $ubo);
+    }
   }
   & p,
   & input {

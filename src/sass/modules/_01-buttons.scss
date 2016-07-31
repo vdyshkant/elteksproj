@@ -76,4 +76,16 @@
     }
 }
 
+@media #{$mobile} {
+  .modal-content {
+    & .btn {
+      white-space: normal;
+      &-form {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+
 // eof button

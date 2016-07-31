@@ -16,7 +16,10 @@
     <div class="wrapper">
       <header class="header">
         <div class="wrap">
-          <div class="inner"><a class="logo" href="/"><img src="../img/logo.png"></a><a class="btn request-callback">Заказать звонок</a>
+          <div class="inner"><a class="logo" href="/">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/logo-mobile.png"><img src="../img/logo.png">
+              </picture></a><a class="btn request-callback">Заказать звонок</a>
             <nav class="menu main-nav">
               <ul>
                 <li class="dropdown" id="dd-products"><a href="/_pages/04_documentation-grid.html">Продукция</a>
@@ -91,7 +94,7 @@
                   <!-- - Телефон.-->
                 </li>
                 <li><a href="/_pages/01_about.html">О компании</a></li>
-              </ul>
+              </ul><a class="btn request-callback request-callback-nav">Заказать звонок</a>
             </nav><a class="burger-menu">
               <div class="burger-link" href="#">
                 <div class="line"></div>
@@ -101,6 +104,7 @@
           </div>
         </div>
       </header>
+      <div class="menu-overlay"></div>
       <div class="sub-header">
         <div class="wrap">
           <div class="inner">
@@ -290,6 +294,23 @@
           </div>
         </div>
       </footer>
+      <div class="modal-content">
+        <div class="wrap">
+          <div class="callback">
+            <h2 class="title">Заказать звонок!</h2>
+            <p>Пожалуйста, заполните форму ниже. Мы с вяжемся с вами в ближайшее время.</p>
+            <form class="callback-form" action="#" method="post">
+              <input class="icon-user" type="text" name="login" placeholder="Имя">
+              <input class="icon-tel" type="tel" name="phone" placeholder="Телефон">
+              <button class="btn btn-form" type="button" title="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button>
+            </form>
+            <content></content>
+          </div>
+        </div>
+        <button class="modal-content-close" type="button" title="Закрыть"></button>
+      </div>
+      <div class="modal-overlay"></div>
+      <!-- осталось thumbnails сделать для input-ов-->
     </div>
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="//nextendweb.com/demo/smartslider2/modules/mod_frontpage2/jquery.animateNumber.min.js"></script>

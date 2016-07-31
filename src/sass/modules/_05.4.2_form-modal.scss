@@ -12,10 +12,19 @@ $mCloseSize: 24px;
     }
     & p {
       margin-bottom: 50px;
+      @media #{$mobile} {
+        margin-bottom: 30px;
+      }
     }
     & input {
       margin-bottom: 50px;
       width: 285px;
+
+      @media #{$mobile-tablet} {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+      }
 
       &:nth-of-type(1) {
         margin-right: 20px;
@@ -30,19 +39,17 @@ $mCloseSize: 24px;
 .modal {
 
   &-overlay {
+    background: hsla(200, 100%, 20%, 0.5);
     display: none;
-    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsla(200, 100%, 20%, 0.5);
-    z-index: 11;
+    z-index: 16;
   }
   &-content {
     display: none;
-    opacity: 0;
     position: fixed;
     top: 260px;
     left: 50%;
@@ -50,9 +57,19 @@ $mCloseSize: 24px;
     transform: translateX(-50%);
     background: #fff;
     border-radius: 4px;
-    z-index: 12;
+    z-index: 17;
     text-align: center;
     padding: 50px;
+
+    @media #{$tablet} {
+      width: 500px;
+    }
+
+    @media #{$mobile} {
+      width: 280px;
+      top: 20px;
+      padding: 30px 20px;
+    }
 
     & .wrap {
       min-width: 100%;
@@ -73,6 +90,10 @@ $mCloseSize: 24px;
       transition: .2s ease-out;
       // outline: 2px dashed crimson;
       // outline-offset: -2px;
+      @media #{$mobile} {
+        top: 10px;
+        right: 10px;
+      }
       &:hover {
         transform: rotate(90deg) scale(1.1);
       }

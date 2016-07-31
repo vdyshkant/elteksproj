@@ -17,7 +17,10 @@
     <div class="wrapper">
       <header class="header">
         <div class="wrap">
-          <div class="inner"><a class="logo" href="/"><img src="img/logo.png"></a><a class="btn request-callback">Заказать звонок</a>
+          <div class="inner"><a class="logo" href="/">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/logo-mobile.png"><img src="img/logo.png">
+              </picture></a><a class="btn request-callback">Заказать звонок</a>
             <nav class="menu main-nav">
               <ul>
                 <li class="dropdown" id="dd-products"><a href="/_pages/04_documentation-grid.html">Продукция</a>
@@ -92,7 +95,7 @@
                   <!-- - Телефон.-->
                 </li>
                 <li><a href="/_pages/01_about.html">О компании</a></li>
-              </ul>
+              </ul><a class="btn request-callback request-callback-nav">Заказать звонок</a>
             </nav><a class="burger-menu">
               <div class="burger-link" href="#">
                 <div class="line"></div>
@@ -102,6 +105,7 @@
           </div>
         </div>
       </header>
+      <div class="menu-overlay"></div>
       <div class="sub-header">
         <div class="wrap">
           <div class="inner">

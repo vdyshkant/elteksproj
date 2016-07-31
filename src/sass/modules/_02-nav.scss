@@ -7,6 +7,24 @@
     vertical-align: middle;
   }
 
+  @media #{$mobile} {
+    &-overlay {
+      background: hsla(200, 42%, 21%, 0.5);
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
   & > ul {
     white-space: nowrap;
     & > li {
@@ -43,8 +61,7 @@
     // margin-right: 8.4615384%;
     // margin-right: auto;
     margin: 0 auto;
-
-
+    display: block;
 
     @media #{$tablet} {
       margin: 0 auto;
@@ -55,21 +72,26 @@
       position: absolute;
       top: 78px;
       right: 0;
-      z-index: 10;
+      z-index: 12;
       width: auto;
       min-width: 250px;
       background-color: #fbfbfb;
       text-align: right;
-      padding-right: 20px;
+      height: 435px;
     }
 
     & > ul > li {
+        @media #{$mobile} {
+          display: block;
+          padding: 0;
+          padding-right: 20px;
 
-      @media #{$mobile} {
-        display: block;
-        padding: 0;
+          border-bottom: 1px solid #f1f2f3;
+
+        &:first-child {
+            border-top: 1px solid #94a1a8;
+        }
       }
-
       &.active {
         & > a {
           &::before {
@@ -108,6 +130,10 @@
           @include font(normal, 700, 16px, 24px, $ub);
           text-transform: none;
           letter-spacing: normal;
+          padding: 17px 0;
+          &:hover {
+            color: #0084c4;
+          }
         }
 
         @media #{$tablet-desktop} {
@@ -132,6 +158,30 @@
             // ДОБАВИТЬ PADDING для ссылок, чтоб ховер норм отрабатывал (чуть шире текстов чтоб был).
             // по ширине блок менюхи должен быть на всю ширину сайта
           } // eof media
+
+          @media #{$mobile} {
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              width: 14px;
+              height: 2px;
+              background-color: #1f3c4b;
+            }
+
+            &::before {
+              top: 34px;
+              left: 10px;
+              transform: rotate(45deg);
+              border-radius: 3px 3px 3px 0;
+            }
+            &::after {
+              top: 25px;
+              left: 10px;
+              transform: rotate(-45deg);
+              border-radius: 3px 3px 3px 0;
+            }
+          }
 
         }
       }
@@ -233,6 +283,7 @@
     & .column {
         float: left;
         width: 310px;
+        width: 23.8461538%;
         margin-right: 20px;
         margin-right: 1.5384615%;
         // outline: 2px dashed limegreen;
