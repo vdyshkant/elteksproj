@@ -304,30 +304,25 @@ $(document).ready(function() {
 
 // burger
 
-function handleMenu(toggler){
+  // burger animation itself:
+  $("a.burger-menu").click(function(e){
+    e.preventDefault();
+    $('.burger-link').toggleClass("burger-active");
+  });
 
-	function onToggleClick(event){
-		event.preventDefault();
-		toggler.classList.toggle("burger-active");
-	}
-	toggler.addEventListener("click", onToggleClick);
-
-	// если окно вьюпорта больше таблета - убираем toggle классы меню:
-	window.addEventListener("resize", function(){
-	if (window.matchMedia("(min-width: 1020px)").matches) {
-		toggler.classList.remove("burger-active");
-	}
-})
-}
-
-(function(){
-	// defining vars && selecting elements:
-	var burger = document.querySelector(".burger");
-
-	// invoking menu-toggler func:
-	handleMenu(burger);
-
-})();
+  // main-nav-bar appearence:
+  $(document).ready(function(){
+  var open = false;
+  jQuery('.burger-menu').on('click', function() {
+      // jQuery(this).find(".burger-menu").toggleClass("main-nav-bar-active");
+      if (open == false) {
+          jQuery('.main-nav').fadeIn(300);
+          open = true;
+      } else {
+          jQuery('.main-nav').fadeOut(300);
+          open = false;
+      }
+  });
 
 // EOF burger
 

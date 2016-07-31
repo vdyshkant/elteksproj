@@ -303,125 +303,94 @@
 //   transform: translateY(-2000px);
 // }
 
-// eof dropdown
+// eof dropdown]
 
+/* burger */
+$burgerSize: 24px;
+$burgerFill: #385461;
+$burgerFillHover: #0084c4;
 
 .burger {
-    position: relative;
-    float: right;
-    cursor: pointer;
-    transition: all .1s ease-in-out;
-    z-index: 3;
 
-    // outline: 3px dashed steelblue;
-    // outline-offset: -2px;
-
-    @media #{$tablet-desktop} {
-      display: none;
+    &-menu {
+        display: block;
+        position: relative;
+        float: right;
+        right: -20px;
+            cursor: pointer;
+            top: 0;
+            height: 78px;
+      &:hover {
+        & .line {
+          background: $burgerFillHover;
+        }
+      }
     }
 
-    @media #{$mobile} {
-        width: 64px;
-        height: 78px;
-    }
+    &-link {
+        cursor: pointer;
+        display: inline-block;
+        width: $burgerSize;
+        height: $burgerSize;
+        // margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
 
-    & span {
-        position: absolute;
+        position: relative;
         top: 50%;
         transform: translateY(-50%);
 
-
-        width: 24px;
-
-        transition: all .3s ease-in-out;
-
-        // border-top: 4px solid #385461;
-        height: 4px;
-        background-color: #385461;
-        border-radius: 2px;
-
-
-        @media #{$tablet} {
-          right: 20px;
-        }
-
-        &::before,
-        &::after {
+        & .line:nth-child(1),
+        & .line:nth-child(3) {
             position: absolute;
-            right: 0;
+        }
 
-            width: 24px;
-
-            content: "";
-            transition: all .3s ease-in-out;
-
-            // border-top: 4px solid #385461;
-            height: 4px;
-            background-color: #385461;
+        & .line {
+            display: block;
+            width: 100%;
+            height: $burgerSize / 4.8;
+            transition: all .4s;
+            background: $burgerFill;
+            backface-visibility: hidden;
             border-radius: 2px;
-        }
-        &::before {
-            top: -14px;
-        }
-        &::after {
-            top: 6px;
-        }
-    }
-    &:hover {
-        & span {
-            border-color: #0084c4;
-
-            &::before,
-            &::after {
-                border-color: #0084c4;
-
-                @media #{$mobile-tablet} {
-                    right: 0;
-                }
-            }
 
         }
-    }
 
-    &-active {
-
-      &:hover {
-        span {
-            border-color: transparent;
-        }
-      }
-
-        & span {
-            border-color: transparent;
-
-            &::before {
-                top: 0;
-                width: 30px;
-                transform: rotate(-45deg);
-                border-color: #d22856;
-            }
-
-            &::after {
-                top: 0;
-                width: 30px;
-                transform: rotate(45deg);
-                border-color: #d22856;
-            }
-
-            &::before,
-            &::after {
-                border-color: #d22856;
-
-                @media #{$mobile-tablet} {
-                    right: 0;
-                }
-            }
-
-            @media #{$mobile} {
-              top: 26px;
-              transform: none;
-            }
+        & .line:nth-child(2) {
+            position: relative;
+            margin: ($burgerSize / 3) 0 0;
         }
 
+        & .line:nth-child(1) {
+            top: 0;
+        }
+
+        & .line:nth-child(3) {
+            top: $burgerSize - 8;
+        }
     }
 }
+
+.burger-link.burger-active {
+    & .line:nth-child(1) {
+        top: 8px;
+        transform: translate(-4px, 2px) rotate(-45deg);
+        height: $burgerSize / 8;
+        width: $burgerSize + 8;
+    }
+
+    & .line:nth-child(3) {
+        top: 8px;
+        transform: translate(-4px, 2px) rotate(45deg);
+        height: $burgerSize / 8;
+        width: $burgerSize + 8;
+    }
+
+    & .line:nth-child(2) {
+        background-color: transparent;
+        // transform: translate(-4px, 2px) rotate(-45deg);
+        height: $burgerSize / 8;
+        // width: $burgerSize + 8;
+    }
+}
+/* /burger */
