@@ -10,19 +10,13 @@
 - __index.html:__
 
 
-  - home callback - для tablet-mobile - вертиально поля расположить
+  + home callback - для tablet-mobile - вертиально поля расположить
 
   - home-slider
     - adapt
 
-  - counter
 
- - separator
-   - parallax (плавает разделитель)
 
- - products
-   - product
-     - ховеры на мобильной версии продукта(make3d) - там сразу ссылка?
 
 
 

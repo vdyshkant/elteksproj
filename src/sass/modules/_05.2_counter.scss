@@ -46,33 +46,6 @@
         }
     }
 
-    & .bottom-line {
-      width: 100%;
-      clear: both;
-      float: left;
-      background-image: url('../img/separator.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 100%;
-      height: 396px;
-
-      // outline: 2px dashed tan;
-      // outline-offset: -2px;
-
-      transition: .6s;
-      @media #{$mobile-tablet} {
-        background-size: 100%;
-      }
-
-      @media #{$tablet} {
-        height: 310px;
-      }
-
-      @media #{$mobile} {
-        height: 180px;
-      }
-    }
-
     & .item {
         width: 310px;
         width: 23.8461538%;
@@ -223,3 +196,48 @@
 }
 
 /* counter */
+
+
+// parallax
+
+& .bottom-line {
+    width: 100%;
+    clear: both;
+    float: left;
+    background-image: url('../img/separator.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 396px;
+
+    // outline: 2px dashed tan;
+    // outline-offset: -2px;
+
+    transition: .6s;
+    @media #{$mobile-tablet} {
+      background-size: 100%;
+    }
+
+    @media #{$tablet} {
+      height: 310px;
+    }
+
+    @media #{$mobile} {
+      height: 180px;
+    }
+}
+
+.parallax{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px; /* put your height */
+
+  top: -50px; /* example style: not mandatory */
+
+  @media #{$mobile} {
+    height: 230px;
+  }
+}
+
+// EOF parallax

@@ -200,6 +200,7 @@
         @include clearfix;
       }
       & > li {
+        padding: 0 25px;
         @media #{$mobile} {
           display: block;
           padding: 0;
