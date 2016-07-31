@@ -11,8 +11,6 @@
     white-space: nowrap;
     & > li {
       display: inline-block;
-      padding-left: 3.2467532%;
-      padding-right: 3.2467532%;
       & > a {
         display: block;
         @include font(normal, 400, 15px, 21px, $pst);
@@ -31,40 +29,6 @@
           text-decoration: underline;
         }
       }
-      &.dropdown:nth-child(1) {
-        & > a {
-          letter-spacing: 2.6px; }
-      }
-
-      &.dropdown:nth-child(2) a{
-        padding-left: 26px;
-        padding-left: 3.3766233%;
-        padding-right: 26px;
-        padding-right: 3.3766233%;
-        & > a {
-          letter-spacing: 2.5px; }
-      }
-      &.dropdown:nth-child(3) {
-        padding-left: 26px;
-        padding-left: 3.3766233%;
-        padding-right: 26px;
-        padding-right: 3.3766233%;
-        & > a{
-          letter-spacing: 2.6px;}
-      }
-
-      &.dropdown:nth-child(4) {
-        padding-left: 26px;
-        padding-left: 3.3766233%;
-        padding-right: 26px;
-        padding-right: 3.3766233%;
-        & > a {
-          letter-spacing: 2.6px;
-          margin-right: 0;
-        }
-      }
-
-
     }
   }
   // ^basic styles for all menus
@@ -80,23 +44,34 @@
     // margin-right: auto;
     margin: 0 auto;
 
+
+
     @media #{$tablet} {
       margin: 0 auto;
       clear: both;
     }
     @media #{$mobile} {
       display: none;
+      position: absolute;
+      top: 78px;
+      right: 0;
+      z-index: 10;
+      width: auto;
+      min-width: 250px;
+      background-color: #fbfbfb;
+      text-align: right;
+      padding-right: 20px;
     }
-    & > ul li a {
-      color: $main-nav-color;
-      &:hover {
-        color: #0084c4;
-      }
-    }
-    & > ul > li > a {
-      &:hover {
 
-        position: relative;
+    & > ul > li {
+
+      @media #{$mobile} {
+        display: block;
+        padding: 0;
+      }
+
+      &.active {
+        & > a {
           &::before {
             content: "";
             position: absolute;
@@ -104,13 +79,64 @@
             right: 0;
             left: 0;
             height: 9px;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            opacity: 1;
             background: #0084c4;
-      // ДОБАВИТЬ PADDING для ссылок, чтоб ховер норм отрабатывал (чуть шире текстов чтоб был).
-      // по ширине блок менюхи должен быть на всю ширину сайта
+          }
+        }
       }
+
+      & a {
+        color: $main-nav-color;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      & > a {
+
+        letter-spacing: 2.6px;
+          padding-left: 26px;
+          padding-right: 26px;
+        position: relative;
+
+        @media #{$mobile} {
+          padding: 0;
+          color: #385461;
+          @include font(normal, 700, 16px, 24px, $ub);
+          text-transform: none;
+          letter-spacing: normal;
+        }
+
+        @media #{$tablet-desktop} {
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 9px;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            opacity: 0;
+          }
+
+          &:hover {
+              &::before {
+                opacity: 1;
+                background: #0084c4;
+              }
+            }
+            // ДОБАВИТЬ PADDING для ссылок, чтоб ховер норм отрабатывал (чуть шире текстов чтоб был).
+            // по ширине блок менюхи должен быть на всю ширину сайта
+          } // eof media
+
+        }
       }
     }
-  }
+
   // footer nav styles:
   &.footer-nav {
     outline-offset: -2px;
@@ -292,18 +318,6 @@
   display: none;
 }
 
-// .dropdown-show {
-//   display: block;
-//   animation: bounceIn 400ms;
-//   transform: translateY(0);
-// }
-//
-// .dropdown-hide {
-//   animation: bounceOut 400ms;
-//   transform: translateY(-2000px);
-// }
-
-// eof dropdown]
 
 /* burger */
 $burgerSize: 24px;
@@ -320,6 +334,11 @@ $burgerFillHover: #0084c4;
             cursor: pointer;
             top: 0;
             height: 78px;
+
+        @media #{$tablet-desktop} {
+          display: none;
+        }
+
       &:hover {
         & .line {
           background: $burgerFillHover;

@@ -287,17 +287,24 @@ function modalContent() {
 //     );
 // }); // end ready
 $(document).ready(function() {
+  if ( $(window).width() > 768) {
     $( '.dropdown' ).mouseenter(
         function(){
             $(this).children('.sub-menu').slideDown(500, 'easeInOutCubic');
+            $(this).addClass('active');
         }
     );
     $( '.dropdown' ).mouseleave(
         function(){
             $(this).children('.sub-menu').slideUp(500, 'easeInOutCubic');
+            $(this).removeClass('active');
         }
     );
+  }
 }); // end ready
+
+
+
 
 // EOF dropDown menu
 
@@ -305,24 +312,32 @@ $(document).ready(function() {
 // burger
 
   // burger animation itself:
-  $("a.burger-menu").click(function(e){
-    e.preventDefault();
-    $('.burger-link').toggleClass("burger-active");
-  });
-
-  // main-nav-bar appearence:
   $(document).ready(function(){
-  var open = false;
-  jQuery('.burger-menu').on('click', function() {
-      // jQuery(this).find(".burger-menu").toggleClass("main-nav-bar-active");
-      if (open == false) {
-          jQuery('.main-nav').fadeIn(300);
-          open = true;
-      } else {
-          jQuery('.main-nav').fadeOut(300);
-          open = false;
-      }
+
+
+    $("a.burger-menu").click(function(e){
+      e.preventDefault();
+      $('.burger-link').toggleClass("burger-active");
+
+
+      var open = false;
+        if (open == false) {
+            jQuery('.main-nav').slideDown(500, 'easeInOutCubic');
+            open = true;
+        } else {
+            jQuery('.main-nav').slideUp(500, 'easeInOutCubic');
+            open = false;
+        }
+
+
+    });
+
+
   });
+  // main-nav-bar appearence:
+
+
+
 
 // EOF burger
 
