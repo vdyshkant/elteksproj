@@ -109,13 +109,13 @@ function animateProductItem(){
 // eof pagination
 
 // bxSlider
-
 $(document).ready(function(){
   if($('.bxslider.documentation').length > 0) {
-    $('.bxslider.documentation').bxSlider({
-      auto:false,
+  $('.bxslider.documentation').bxSlider({
+    pagerCustom: '#bx-pager',
+      auto: false,
       speed: 500,
-      pause:800,
+      pause: 800,
       pager:true,
       infiniteLoop: true,
       controls: true,
@@ -123,28 +123,90 @@ $(document).ready(function(){
       nextSelector:('.slider-next'),
       prevText:'',
       nextText:'',
-      buildPager: function(slideIndex){
-        switch(slideIndex){
-          case 0:
-            return setImg('slider-thumb-1.jpg');
-          case 1:
-            return setImg('slider-thumb-2.jpg');
-          case 2:
-            return setImg('slider-thumb-3.jpg');
-        }
-      },
-      // pagerCustom:'#bx-pager2'
-    });
+  });
 
-    $('.page-documentation .bx-wrapper').addClass('bx-documentation');
+$('.page-documentation .bx-wrapper').addClass('bx-documentation');
+$('.page-documentation #bx-pager').addClass('bx-pager-documentation');
+  }
+});
+// bxSlider
+$(document).ready(function(){
+  if($('.bxslider.product-desc').length > 0) {
+  $('.bxslider.product-desc').bxSlider({
+    pagerCustom: '#bx-pager',
+      auto: false,
+      speed: 500,
+      pause: 800,
+      pager:true,
+      infiniteLoop: true,
+      controls: true,
+      prevSelector:('.slider-prev'),
+      nextSelector:('.slider-next'),
+      prevText:'',
+      nextText:'',
+  });
+
+$('.page-product-desc .bx-wrapper').addClass('bx-product-desc');
+$('.page-product-desc #bx-pager').addClass('bx-pager-product-desc');
   }
 });
 
 
-function setImg(inputImgSrc) {
-  var imgSrc = '<img src="../img/' + inputImgSrc + '">';
-  return imgSrc;
-}
+// $('.bx-next').click(function(){
+//   $('.page-documentation .column a').
+// });
+
+
+// поиск крошек
+//
+// если количетво крошек в массиве больше-равно трем,
+//  тогда для второй и последующих крошек (кроме последней,
+//    мы заменяем тексты на троеточия)
+
+                      var quantity = $('.breadcrumbs > li').toArray();
+                      if ( $(window).width() < 768) {
+                        if (quantity.length >= 3) {
+                          for (var i = 1; i < quantity.length; i++) {
+                            $('#breadcrumbs').addClass('overcrumbs');
+                          }
+                        }
+                      }
+
+// $(document).ready(function(){
+//   if($('.bxslider.documentation').length > 0) {
+//     $('.bxslider.documentation').bxSlider({
+//       auto: false,
+//       speed: 500,
+//       pause: 800,
+//       pager:true,
+//       infiniteLoop: true,
+//       controls: true,
+//       prevSelector:('.slider-prev'),
+//       nextSelector:('.slider-next'),
+//       prevText:'',
+//       nextText:'',
+//       // buildPager: function(slideIndex){
+//       //   switch(slideIndex){
+//       //     case 0:
+//       //       return setImg('slider-thumb-1.jpg');
+//       //     case 1:
+//       //       return setImg('slider-thumb-2.jpg');
+//       //     case 2:
+//       //       return setImg('slider-thumb-3.jpg');
+//       //   }
+//       // },
+//       // pagerCustom:'#bx-pager2'
+//     });
+
+//     $('.page-documentation .bx-wrapper').addClass('bx-documentation');
+//   }
+// });
+
+
+// function setImg(inputImgSrc) {
+//   var imgSrc = '<img src="../img/' + inputImgSrc + '">';
+//   return imgSrc;
+// }
 
 // eof bxSlider
 
@@ -415,13 +477,26 @@ $(document).ready(function() {
 
 })();
 
- if (window.matchMedia("(max-width: 1199px)").matches) {
+(function() {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    var string = 'Заказать консультацию';
+    $('.page-documentation .btn-form').text( string );
+  } else {
+    var origin = 'Заказать бесплатную консультацию';
+    $('.page-documentation .btn-form').text( origin );
+  }
+})();
+
+
+(function() {
+  if (window.matchMedia("(max-width: 1199px)").matches) {
    var string = 'Выберите категорию';
    $('.page-solutions .products-nav-menu .column-title').text( string );
- } else {
+  } else {
    var origin = 'Категории';
    $('.page-solutions .products-nav-menu .column-title').text( origin );
- }
+  }
+})();
 
 // http://stackoverflow.com/questions/23122336/javascript-resize-event-not-working?noredirect=1&lq=1
 
@@ -473,12 +548,28 @@ $(window).scroll(function(){
 
 // home slider
 
-$('.slide .container').hover(function() {
+$('.slide').hover(function() {
   $('.nextend-arrow').fadeToggle( 300 );
 });
 
 
 // EOF home slider
+
+
+
+
+
+// tabs module
+
+  $('.tabs li[data-id]').click(function(){
+    if($(this).hasClass('active')){ return; }
+
+    $('#' + $(this).attr('data-id')).fadeIn(0).siblings().fadeOut(0);
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+  });
+
+// EOFtabs module
 
 
 }); // EOF document.ready MAIN

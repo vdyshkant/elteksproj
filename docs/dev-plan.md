@@ -5,13 +5,10 @@
 
 
 #### 8h [1]:
-- __index.html:__
-
-  - home-slider
-    - adapt
 
 
-home
+
+== home-slider = adapt
 faq +++
 about us +++
 solutions +++
@@ -20,7 +17,7 @@ projects +++
 
 contact info +++
 
-documentation
+documentation +++
 product
 documentation-grid
 product-grid

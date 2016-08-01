@@ -7,7 +7,7 @@ append config
   - var jQuery = true;
   - var animateNumber = true;
   //- - var mainJsSrc = 'js/main.min.js'
-  - var updateBodyClass = bodyClasses.push('page-product1')
+  - var updateBodyClass = bodyClasses.push('page-product-desc')
   - var logoImgSrc = '../img/logo.png'
 
   //- - var GoogleFonts = 'Poiret+One'
@@ -34,81 +34,132 @@ append content
 
     .main
       .wrap
+        .inner
 
-        .page-title
-          +breadcrumbs([
-            { 'anchor':'Главная','link':'/index.html' },
-            { 'anchor':'Оборудование XPON','link':'javascript:void(0)' },
-            { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
-          ])
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Оборудование XPON','link':'javascript:void(0)' },
+              { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
+            ])
 
-          h1 Коммутатор доступа MES1124M
+            h1 Коммутатор доступа MES1124M
 
-        .content
-          .content-left
-            .product-info-top
-              .slider.block SLIDER MIXIN
-              // унифицировать стили так, чтоб на все модули{слайдера/etc} были одни и те же стили.
-              //- но если вдруг надо что-либо переписать, то уже надо просто дописать в файл стилей для конкретно этой страницы.
-              .desc-short
-                //- span/p
-                ul
-                  span.desc-short-title Ключевые преимущества
-                  li ♦  коммутаторы L2
-                  li ♦  поддержка стекирования
-                  li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
-                  li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
-                  li ♦  эффективная защита от скачков напряжения
-                .btn.btn-desc заказать бесплатную консультацию
-            .desc-full
-              .desc-nav
-                a.desc-full-title.active Описание товара
-                a.desc-full-title Технические характеристики
-                a.desc-full-title Материалы для скачивания
-              .desc-item-list
-                .desc-item
-                  P
-                    | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
-                  P
-                    | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
-                .desc-item
-                .desc-item
+          .content
+            .content-left
+              .product-info-top
+                .slider.column-left.column.block
+                  ul.bxslider.product-desc
+                    li
+                      img(src="../img/slider-image.jpg")
+                    li
+                      img(src="../img/slider-image.jpg")
+                    li
+                      img(src="../img/slider-image.jpg")
+                  div(
+                    id="bx-pager"
+                    )
+                    .bx-pager-product-desc-inner
+                        a.bx-pager-product-desc-item(data-slide-index="0" href="")
+                          img(src="../img/slider-thumb-1.jpg")
+                        a.bx-pager-product-desc-item(data-slide-index="1" href="")
+                          img(src="../img/slider-thumb-1.jpg")
+                        a.bx-pager-product-desc-item(data-slide-index="2" href="")
+                          img(src="../img/slider-thumb-1.jpg")
+                  .outside
+                    .slider-prev
+                      .arrow
+                    .slider-next
+                      .arrow
+                //- унифицировать стили так, чтоб на все модули{слайдера/etc} были одни и те же стили.
+                //- но если вдруг надо что-либо переписать, то уже надо просто дописать в файл стилей для конкретно этой страницы.
+                .desc-short
+                  //- span/p
+                  ul
+                    span.desc-short-title Ключевые преимущества
+                    li ♦  коммутаторы L2
+                    li ♦  поддержка стекирования
+                    li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
+                    li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
+                    li ♦  эффективная защита от скачков напряжения
+                  .btn.btn-desc заказать бесплатную консультацию
+
+              .desc-full.tabs.module#menu_tabs
+                .desc-nav.nav.module-header
+                  ul
+                    li.desc-full-title.active(class="active" data-id="breakfasts") Описание товара
+                    li.desc-full-title(data-id="lunches") Технические характеристики
+                    li.desc-full-title(data-id="menu") Материалы для скачивания
+                .desc-item-list.tabs-outer
+                  .tab-container.active.desc-item#breakfast
+                    Tab Content 111
+                  .tab-container.desc-item#lunches
+                    Tab Content 222
+                  .tab-container.desc-item#menu
+                    P
+                      | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
+                    P
+                      | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+
+                  //- a.desc-full-title.active Описание товара
+                  //- a.desc-full-title Технические характеристики
+                  //- a.desc-full-title Материалы для скачивания
 
 
 
-          //- CR8 MIXIN
-          .content-right.related-products
-            .wrap
-              span.related-title Рекомендованные товары
-              .item-list
-                .item
-                  .preview
-                    img(src="img/related-01.png")
-                  .item-title ELTEX.EMS
-                .item
-                  .preview
-                    img(src="img/related-02.png")
-                  .item-title ONT NTP-2C
-                .item
-                  .preview
-                    img(src="http://placebear.com/g/110/100")
-                  .item-title ONT NTP-RG-1402GC-W
-                .item
-                  .preview
-                    img(src="http://placebear.com/g/110/100")
-                  .item-title ONT NTP-2
-                .item
-                  .preview
-                    img(src="http://placebear.com/g/110/100")
-                  .item-title OLT LTP-8X rev.B
+
+            //- CR8 MIXIN
+            .content-right.related-products
+              .wrap
+                span.related-title Рекомендованные товары
+                .item-list
+                  .item
+                    .preview
+                      img(src="../img/related-product-01.png")
+                    .item-title ELTEX.EMS
+                  .item
+                    .preview
+                      img(src="../img/related-product-02.png")
+                    .item-title ONT NTP-2C
+                  .item
+                    .preview
+                      img(src="../img/related-product-03.png")
+                    .item-title ONT NTP-RG-1402GC-W
+                  .item
+                    .preview
+                      img(src="../img/related-product-04.png")
+                    .item-title ONT NTP-2
+                  .item
+                    .preview
+                      img(src="../img/related-product-05.png")
+                    .item-title OLT LTP-8X rev.B
 
 
 
 
-        //- MIXIN form // origin==documentation.pug
-        .block MIXIN FORM MIXIN
+          //- MIXIN form // origin==documentation.pug
+          .block MIXIN FORM MIXIN
 
 
     //- footer
     include ../partials/footer
     //- eof footer
+
+
+
+
+    //- .tabs.module#menu_tabs
+    //-   .nav.module-header
+    //-     ul
+    //-       li(class="active" data-id="breakfasts") Сніданки
+    //-       li(data-id="lunches") Бізнес-ланчі
+    //-       li(data-id="menu") Меню
+    //-       li(class="active" data-id="offers") Акції
+    //-       li(data-id="posters")
+    //-   .tabs-outer
+    //-     .tab-container.active#breakfast
+    //-       Tab Content 111
+    //-     .tab-container#lunches
+    //-       Tab Content 222
+    //-     .tab-container#menu
+    //-       Tab Content 333

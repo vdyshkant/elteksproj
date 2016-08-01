@@ -10,6 +10,8 @@ append config
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-documentation')
   - var logoImgSrc = '../img/logo.png';
+  - var logoImgSrcTablet = "../img/logo.png"
+  - var logoImgSrcMobile = "../img/logo.png"
 
   //- - var GoogleFonts = 'Poiret+One'
   //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
@@ -46,53 +48,58 @@ append content
             h1 Коммутатор доступа MES1124M
 
 
-          //- column - 1
-          .slider.column-left.column
-            ul.bxslider.documentation
-              li
-                img(src="../img/slider-image.jpg")
-              li
-                img(src="../img/slider-image.jpg")
-              li
-                img(src="../img/slider-image.jpg")
-            .outside
-              .slider-prev
-                .arrow
-              .slider-next
-                .arrow
+          .union
+            //- column - 1
+            .slider.column-left.column
+              ul.bxslider.documentation
+                li
+                  img(src="../img/slider-image.jpg")
+                li
+                  img(src="../img/slider-image.jpg")
+                li
+                  img(src="../img/slider-image.jpg")
+              div(
+                id="bx-pager"
+                )
+                .bx-pager-documentation-inner
+                    a.bx-pager-documentation-item(data-slide-index="0" href="")
+                      img(src="../img/slider-thumb-1.jpg")
+                    a.bx-pager-documentation-item(data-slide-index="1" href="")
+                      img(src="../img/slider-thumb-1.jpg")
+                    a.bx-pager-documentation-item(data-slide-index="2" href="")
+                      img(src="../img/slider-thumb-1.jpg")
+              .outside
+                .slider-prev
+                  .arrow
+                .slider-next
+                  .arrow
 
-            //- .thumb-image
-            //- .thumb-list
-            //-   .thumb-prev
-            //-   .thumb-item
-            //-   .thumb-item
-            //-   .thumb-item
-            //-   .thumb-next
+
+              //- .thumb-image
+              //- .thumb-list
+              //-   .thumb-prev
+              //-   .thumb-item
+              //-   .thumb-item
+              //-   .thumb-item
+              //-   .thumb-next
 
 
-          //- <ul class="bxslider">
-          //-   <li><img src="/images/pic1.jpg" /></li>
-          //-   <li><img src="/images/pic2.jpg" /></li>
-          //-   <li><img src="/images/pic3.jpg" /></li>
-          //-   <li><img src="/images/pic4.jpg" /></li>
-          //- </ul>
+            //- column - 2
+            .column-center.column
+              h3 Описание
+              ul
+                li.pdf: a Краткое техническое описание
 
-          //- column - 2
-          .column-center.column
-            h3 Описание
-            ul
-              li.pdf: a Краткое техническое описание
+              h3 Документация
+              ul
+                li.pdf: a Руководство по эксплуатации версии ПО 3.5.1
+                li.pdf: a Руководство по настройке SMG-1016M через отдельный Ethernet порт
+                li.pdf: a Руководство по настройке SMG-1016M с FreeRadius
+                li.pdf: a Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
 
-            h3 Документация
-            ul
-              li.pdf: a Руководство по эксплуатации версии ПО 3.5.1
-              li.pdf: a Руководство по настройке SMG-1016M через отдельный Ethernet порт
-              li.pdf: a Руководство по настройке SMG-1016M с FreeRadius
-              li.pdf: a Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
-
-            h3 Сертификаты
-            ul
-              li.pdf: a Декларация соответствия
+              h3 Сертификаты
+              ul
+                li.pdf: a Декларация соответствия
 
 
           //- column - 3

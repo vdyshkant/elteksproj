@@ -1,17 +1,35 @@
-.page-product1 {
+.page-product-desc {
+  & .main {
+    & .inner {
+      padding-left: 2.2058823%;
+      padding-right: 2.2058823%;
+      padding-left: 30px;
+      padding-right: 30px;
+      @media #{$mobile} {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.page-product-desc {
 
   & .content {
     @include clearfix;
 
     &-left {
       float: left;
-
+        width: 74.6153846%;
         outline: 2px dashed darkgoldenrod;
         outline-offset: -2px;
+        margin-right: 1.5384615%;
+        margin-bottom: 40px;
     }
     &-right {
       float: right;
       width: 310px;
+      width: 23.8461538%;
 
         outline: 2px dashed lightcoral;
         outline-offset: -2px;
@@ -63,7 +81,8 @@
     }
 
     &-full {
-      width: 970px;
+
+      box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
 
       &-title {
         display: block;
@@ -72,6 +91,7 @@
         float: left;
         background-color: #e1e1e1;
         border-right: 1px solid #d1d4d8;
+        cursor: pointer;
 
 
         &:last-child {
@@ -81,7 +101,9 @@
         &.active {
           position: relative;
           background-color: #fff;
-          border-right: 1px solid #c6cbd0;
+          // border-right: 1px solid #c6cbd0;
+          // border-bottom: 1px solid #d5dadd;
+          box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
           // box-shadow
 
           &::before {
@@ -105,7 +127,7 @@
       padding: 20px;
 
       &-list {
-        @include font(normal, 400, 18px, 22iiipx, $pst);
+        @include font(normal, 400, 18px, 22px, $pst);
       }
     }
   }
@@ -114,4 +136,4 @@
 
 
 
-}  // EOF page-product1
+}  // EOF page-product-desc

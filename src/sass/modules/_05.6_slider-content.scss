@@ -7,6 +7,7 @@
 .bx-documentation {
     margin: 0 auto !important;
     padding-bottom: 20px;
+    padding-bottom: 130px;
     border-radius: 5px;
     // position: relative;
     background: #FFF;
@@ -44,44 +45,65 @@
             transform: translateY(-50%);
         }
     }
+}
 
-    & .bx-pager {
+.bx-pager-documentation {
+    position: absolute;
+    // bottom: -95px;
+    bottom: 20px;
+    padding-top: 20px;
+    width: 292px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-inner {
+      font-size: 0;
+      text-align: center;
+      & > * {
+        font-size: initial;
+      }
+    }
+
+    & a {
         position: relative;
-        // bottom: -95px;
-        bottom: 0;
-        padding-top: 20px;
-        & a {
-            position: relative;
-            display: block;
-            min-width: 88px;
-            max-width: 88px;
-            min-height: 88px;
-            max-height: 88px;
-            margin: 0 5px;
-            padding: 3px;
+        display: inline-block;
+        vertical-align: top;
+        min-width: 88px;
+        max-width: 88px;
+        min-height: 88px;
+        max-height: 88px;
+        overflow: hidden;
+        margin: 0 5px;
+        padding: 3px;
+        border: 1px solid #ACB7C3;
+        border: 1px solid rgb(172, 183, 195);
+        border: 1px solid hsl(211, 16%, 72%);
+        &:first-child{
+          margin-left: 0;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+        &:hover,
+        &.active {
             border: 1px solid #ACB7C3;
-            border: 1px solid rgb(172, 183, 195);
-            border: 1px solid hsl(211, 16%, 72%);
-            &:hover,
-            &:active {
-                border: 1px solid #ACB7C3;
-                border: 1px solid rgba(172, 183, 195, .4);
-                border: 1px solid hsla(211, 16%, 72%, .4);
-            }
+            border: 1px solid rgba(172, 183, 195, .4);
+            border: 1px solid hsla(211, 16%, 72%, .4);
+        }
 
-            & img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                display: block;
-                transform: translate(-50%, -50%);
-            }
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            transform: translate(-50%, -50%);
+            width: 100%;
         }
-        &-link.active {
-          border: 1px solid #ACB7C3;
-          border: 1px solid rgba(172, 183, 195, .4);
-          border: 1px solid hsla(211, 16%, 72%, .4);
-        }
+    }
+    &-link.active {
+      border: 1px solid #ACB7C3;
+      border: 1px solid rgba(172, 183, 195, .4);
+      border: 1px solid hsla(211, 16%, 72%, .4);
     }
 }
 

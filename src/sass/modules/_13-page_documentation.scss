@@ -8,16 +8,27 @@
       & .inner {
         padding-left: 2.2058823%;
         padding-right: 2.2058823%;
+        padding-left: 30px;
+        padding-right: 30px;
+        @include clearfix;
+        @media #{$mobile} {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
       }
     }
   }
 
-  & .column {
+  & .main .column {
     width: 420px;
     width: 32.3076923%;
     margin-right: 20px;
     margin-right: 1.5384615%;
     float: left;
+    @media #{$mobile} {
+      width: 100%;
+      margin-right: 0;
+    }
 
     & h3 {
       color: #385461;
@@ -42,8 +53,8 @@
     }
   }
 
-  & .column-center,
-  & .column-right {
+  & .main .column-center,
+  & .main .column-right {
     & ul {
       & li {
         padding: 15px 0 15px 70px;
@@ -58,25 +69,81 @@
     }
   }
 
-  & .column-left {
+  & .main .column-left {
     position: relative;
     @include clearfix;
+    @media #{$mobile} {
+      margin-bottom: 40px;
+    }
   }
 
-  & .column-center {
-    outline: 2px dashed hotpink;
-    outline-offset: -2px;
+  & .main .column-center {
+    // outline: 2px dashed hotpink;
+    // outline-offset: -2px;
+    @media #{$tablet} {
+      clear: left;
+    }
   }
-  & .column-right {
+  & .main .column-right {
     float: right;
     margin-right: 0;
 
-    outline: 2px dashed burlywood;
-    outline-offset: -2px;
+    // outline: 2px dashed burlywood;
+    // outline-offset: -2px;
   }
 
-  & .appointment-form {
+  & .main .appointment-form {
     clear: both;
   }
 
+}
+
+// tablet styles onwards:
+@media #{$tablet} {
+  .page-documentation {
+
+    & .main .union {
+      float: left;
+      margin-right: 20px;
+      width: 48.5575706%;
+      @media #{$mobile} {
+        width: 100%;
+        float: none;
+        clear: both;
+      }
+    }
+
+    & .main .column {
+
+      &-left{
+        float: none;
+        width: 100%;
+        margin-bottom: 45px;
+        clear: both;
+      }
+      &-center{
+        float: none;
+        width: 100%;
+        clear: both;
+      }
+
+
+
+      &-right{
+        float: right;
+        width: 48.5575706%;
+        @media #{$mobile} {
+          width: 100%;
+
+          float: none;
+        }
+      }
+    }
+
+  }
+}
+@media #{$mobile-tablet} {
+  .bx-pager-documentation-item:nth-child(1n+3) {
+    display: none;
+  }
 }
