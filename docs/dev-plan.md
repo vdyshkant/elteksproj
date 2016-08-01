@@ -18,11 +18,11 @@ solutions +++
 
 projects +++
 
-contact info
+contact info +++
 
 documentation
-documentation-grid
 product
+documentation-grid
 product-grid
 
 

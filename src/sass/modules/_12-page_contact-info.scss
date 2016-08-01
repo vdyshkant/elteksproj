@@ -3,20 +3,8 @@
   & .main {
     & > .wrap {
 
-      @media #{$mobile} {
-        &:nth-child(2) {
-          & .inner {
-            @include clearfix;
-            @media #{$mobile} {
-              padding-bottom: 140px;
-              background: url("../img/map-outer.png") no-repeat;
-              background-position: left bottom;
-              background-size: 100%;
-            }
-          }
-        }
-
         & .inner {
+          @include clearfix;
           padding-left: 2.2058823%;
           padding-right: 2.2058823%;
           @media #{$tablet} {
@@ -26,20 +14,17 @@
           @media #{$mobile} {
             padding-left: 20px;
             padding-right: 20px;
+            padding-bottom: 140px;
+            background: url("../img/map-outer.png") no-repeat;
+            background-position: left bottom;
+            background-size: 100%;
           }
         }
-      }
-
-
-
-      &:last-child {
-        position: relative;
-        @include clearfix;
-      }
     }
   }
 
   & .content {
+    position: relative;
     & > h2 {
       @include font(normal, 700, 18px, 18px, $ub);
       color: #385461;
@@ -112,7 +97,7 @@
     }
   }
 
-  & .map-layer {
+  & .globe {
     float: left;
     background: url('../img/map-outer.png') no-repeat;
     background-position: left bottom;
@@ -120,7 +105,10 @@
     min-height: 530px;
     width: 100%;
     margin-left: -29px;
-
+    @media #{$tablet} {
+      width: 100vw;
+      background-position: center bottom;
+    }
     @media #{$mobile} {
       display: none;
     }
@@ -138,18 +126,32 @@
       z-index: 5;
       overflow: hidden;
       border-radius: 4px 8px 8px 8px;
-                                      // display: none;
-
+      //                                 // display: none;
+      //
+      // @media #{$mobile} {
+      //   position: relative;
+      //   left: 0;
+      //   top: 0;
+      //   width: 280px;
+      //   height: 170px;
+      //
+      //   left: initial;
+      //   top: initial;
+      //   transform: none;
+      // }
+      box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
+      min-height:428px;
+      @media #{$tablet} {
+        border-radius: 8px;
+        min-height: 300px;
+        height: 300px;
+        width: 495px;
+      }
       @media #{$mobile} {
-        position: relative;
-        left: 0;
-        top: 0;
-        width: 280px;
+        border-radius: 8px;
+        min-height: 170px;
         height: 170px;
-
-        left: initial;
-        top: initial;
-        transform: none;
+        width: 280px;
       }
 
     &-outer,
@@ -163,6 +165,10 @@
 
       // outline: 2px dashed deepskyblue;
       // outline-offset: -2px;
+      @media #{$tablet} {
+        height: 300px;
+        width: 495px;
+      }
       @media #{$mobile} {
         height: 170px;
         width: 280px;
@@ -183,7 +189,7 @@
   }
   & .map-outer {
 
-    width: 1054px;
+    width: 750px;
     height: 860px;
     margin: 0 auto;
     // border: 1px solid black;
@@ -202,10 +208,11 @@
   }
 
   & .map-inner {
-    @media #{$mobile} {
+    @media #{$mobile-tablet} {
       top: initial;
       left: initial;
       position: relative;
+      margin: 0 auto;
     }
   }
 

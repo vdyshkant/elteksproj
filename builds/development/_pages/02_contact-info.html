@@ -130,27 +130,55 @@
               </ul>
               <h1>Как нас найти</h1>
             </div>
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="inner">
             <div class="content">
               <h2>Главный офис</h2>
               <address>
                 <ul>
                   <li><span>Республика Казахстан, г.&nbsp;Алматы, ул.&nbsp;Тимирязева 17, офис 27</span></li>
                   <li><span class="tel">Тел.: +7&nbsp;(727)&nbsp;266-288-6 ; +7&nbsp;(727)&nbsp;266-288-7</span></li>
-                  <li>E-mail:<a href="mailto:office@eltex.kz">office@eltex.kz</a>,<a href="mailto:market@eltex.kz">market@eltex.kz</a></li>
+                  <li>E-mail:&nbsp;<a href="mailto:office@eltex.kz">office@eltex.kz</a>, &nbsp;<a href="mailto:market@eltex.kz">market@eltex.kz</a></li>
                 </ul>
               </address>
-            </div>
-            <div class="map-layer"></div>
-            <div class="map-outer">
-              <div class="shadow-rect"></div>
-            </div>
-            <div class="map-inner">
-              <div class="map" id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.142847785703!2d76.92687101544811!3d43.22746458787356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f2896eadc49%3A0xa5c8d79ac51206a5!2z0KLQuNC80LjRgNGP0LfQtdCyINC606nRiNC10YHRliAxNywg0JDQu9C80LDRgtGLLCDQmtCw0LfQsNGF0YHRgtCw0L0!5e0!3m2!1suk!2sua!4v1468229273117" width="710" height="428" frameborder="0" style="border:0"></iframe>
-                <div class="map-overlay" onClick="style.pointerEvents='none'"></div>
+              <div class="globe"></div>
+              <div class="map-outer">
+                <div class="shadow-rect"></div>
+              </div>
+              <div class="map-inner">
+                <section class="map" id="map-contacts"></section>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQD7v4UaLbWW9Y8R-7BbmmNvzySVkorw&amp;callback=initMap"></script>
+                <script>
+                  (function () {
+                        var myLatLng = {lat: 43.2274646, lng: 76.926871};
+                        var map = new google.maps.Map(document.getElementById('map-contacts'),  // map id
+                         {
+                          zoom: 15,
+                          center: {lat: 43.2274646, lng: 76.926871},                    // <<< coordinates
+                          scrollwheel: false,
+                          mapTypeControl: false,
+                          panControl: false,
+                          disableDefaultUI: false,
+                          mapTypeControlOptions: {
+                             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                             position: google.maps.ControlPosition.RIGHT_BOTTOM
+                          },
+                          zoomControl: true,
+                          zoomControlOptions: {
+                             position: google.maps.ControlPosition.LEFT_CENTER
+                          },
+                          scaleControl: true,
+                          streetViewControl: false
+                        });
+                  
+                        var image = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';                                        // marker pic here
+                        var beachMarker = new google.maps.Marker({
+                              position:{ lat: 43.2274607, lng: 76.9290597},               // <<< coordinates
+                              map: map,
+                              icon: image
+                              });
+                  })();
+                  
+                  
+                </script>
               </div>
             </div>
           </div>
