@@ -11,11 +11,19 @@
     - adapt
 
 
+home
 faq +++
 about us +++
-solutions
+solutions +++
 
-projects
+projects +++
+
+contact info
+
+documentation
+documentation-grid
+product
+product-grid
 
 
 

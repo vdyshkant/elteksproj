@@ -161,6 +161,12 @@ $('.faq-item-title').click(function(){
   $(this).siblings('.faq-item-content').slideToggle();
   $(this).parent('.jsFaqItem').toggleClass('active');
 });
+
+
+$('.products-nav-menu').click(function(){
+  $('.jsProdMenuContent').slideToggle();
+  $('.jsColumnTitle').toggleClass('active');
+});
   // }
 
 

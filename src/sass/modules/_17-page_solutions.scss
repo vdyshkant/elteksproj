@@ -55,6 +55,12 @@
     }
     & h1 {
       text-transform: none;
+      @media #{$tablet} {
+        text-transform: uppercase;
+      }
+      @media #{$mobile} {
+        text-transform: uppercase;
+      }
     }
   }
   // EOF module page-title
@@ -82,11 +88,18 @@
       padding-right: 35px;
       margin-bottom: 22px;
       letter-spacing: 0.4px;
+
+      @media #{$mobile} {
+        @include font(normal, 400, 14px, 22px, $pslab);
+      }
     }
 
     & figure {
       margin-bottom: 17px;
       padding-top: 3px;
+      & img {
+        width: 100%;
+      }
     }
   }
 
@@ -96,7 +109,7 @@
     width: 23.8461538%;
     margin-right: 20px;
     margin-right: 1.5384615%;
-    @media #{$tablet} {
+    @media #{$mobile-tablet} {
       width: 100%;
     }
   }
@@ -108,8 +121,9 @@
     margin-right: 20px;
     margin-right: 1.5384615%;
     padding-bottom: 70px;
-    @media #{$tablet} {
+    @media #{$mobile-tablet} {
       width: 100%;
+      padding-top: 45px;
     }
   }
 
@@ -117,7 +131,7 @@
     float: right;
     width: 310px;
     width: 23.8461538%;
-    @media #{$tablet} {
+    @media #{$mobile-tablet} {
       display: none;
     }
   }
@@ -139,6 +153,10 @@
       letter-spacing: .4px;
     }
   }
+}
 
-
+.page-solutions {
+  & .products-nav-content {
+    display: none;
+  }
 }

@@ -184,3 +184,45 @@
 
   }
 }
+
+
+.page-solutions {
+  & .products-nav-menu {
+    padding-top: 15px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 0;
+      background-color: #647983;
+    }
+    & span.column-title {
+      cursor: pointer;
+      &::before {
+        bottom: -16px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-top: 1px solid #022435;
+        border-right: 1px solid #022435;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: 200ms linear;
+        transition: 200ms linear;
+        right: 0;
+        top: 5px;
+      }
+      &.active {
+        &::after {
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+}

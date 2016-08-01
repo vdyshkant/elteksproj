@@ -1,35 +1,71 @@
 .page-projects {
 
-  & .wrap {
-    max-width: 1360px;
+  & .main {
+    background: url("../img/vert-separator_left.png"),
+                url("../img/vert-separator_right.png");
+    background-repeat: no-repeat;
+    background-position: top left, top right;
   }
+
   & .inner {
     padding-left: 2.2058823%;
     padding-right: 2.2058823%;
 
-    &.longwide {
-      background: url("../img/vert-separator_left.png"),
-                  url("../img/vert-separator_right.png");
-      background-repeat: no-repeat;
-      background-position: top left, top right;
-      position: relative;
+    @media #{$tablet} {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @media #{$mobile} {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 
   .globe {
-    background: url('../img/projects-globe.png');
-    background-position: 0 17px;
-    width: 1128px;
-    margin: 0 auto;
-    height: 651px;
+    // background: url('../img/projects-globe.png') no-repeat;
+    // background-position: 0 17px;
+    // background-size: 100%;
+    // width: 100%;
+    // margin: 0 auto;
+    // height: 651px;
+    // padding-top: 30px;
+    // & img {
+    //   display: block;
+    //   margin: 0 auto;
+    //   width: 100%;
+    //   height: 100%;
+    // }
   }
 
   & .content {
+    // padding-top: 57%;
+    // background: url('../img/projects-globe.png') no-repeat;
+    // background-position: 0px 20px;
+    // background-size: 100%;
   // данные стили для параграфов которые - можно вынести в общак и редактировать только отдельные для каждой страницы, а общие если норм - то для каждой уже не придется прописывать отдельно.
+  background: url('../img/projects-globe.png') no-repeat;
+  background-position: left 15px;
+  background-size: 100%;
 
-    min-width: 860px;
-    max-width: 860px;
+    width: 1160px;
+    padding: 0 150px;
+    padding-top: 55%;
     margin: 0 auto;
+    @media #{$desktop} {
+      padding-bottom: 95px;
+    }
+
+    @media #{$tablet} {
+      width: 100%;
+      padding: 0;
+      padding-top: 55%;
+    }
+
+    @media #{$mobile} {
+      width: 100%;
+      padding: 0;
+      padding-top: 80%;
+    }
 
     & p {
       margin: 0;
@@ -37,10 +73,16 @@
       color: #385461;
       @include font(normal, 400, 18px, 27px, $pslab);
       letter-spacing: 0.5px;
+      @media #{$mobile} {
+        @include font(normal, 400, 16px, 27px, $pslab);
+      }
     }
     & span {
       color: #385461;
       @include font(normal, 400, 18px, 27px, $pslab);
+      @media #{$mobile} {
+        @include font(normal, 400, 16px, 27px, $pslab);
+      }
     }
   }
 
@@ -52,6 +94,10 @@
     margin-bottom: 58px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    @media #{$mobile} {
+      @include font(normal, 700, 24px, 36px, $ub);
+      margin-bottom: 25px;
+    }
   }
 
   & ul.content-list {
@@ -60,14 +106,18 @@
       color: #385461;
       @include font(normal, 400, 18px, 27px, $pslab);
       letter-spacing: 0.6px;
+      @media #{$mobile} {
+        @include font(normal, 400, 16px, 27px, $pslab);
+      }
     }
   }
 
   & figure {
-    padding-top: 27px;
+    padding-top: 25px;
     & img {
       display: block;
       margin: 0 auto;
+      width: 100%;
     }
   }
 
