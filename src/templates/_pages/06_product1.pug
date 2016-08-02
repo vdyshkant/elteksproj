@@ -2,13 +2,16 @@ extends ../conf/docwrapper
 
 
 append config
-  - var PageTitle = 'New Life of Heroes'
+  - var PageTitle = 'Коммутатор доступа MES1124M'
   //- - var MetaDesc = 'Now we override default configed MetaDesc'
   - var jQuery = true;
   - var animateNumber = true;
+  - var bxSlider = true;
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-product-desc')
   - var logoImgSrc = '../img/logo.png'
+  - var logoImgSrcTablet = "../img/logo.png"
+  - var logoImgSrcMobile = "../img/logo.png"
 
   //- - var GoogleFonts = 'Poiret+One'
   //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
@@ -48,24 +51,31 @@ append content
           .content
             .content-left
               .product-info-top
-                .slider.column-left.column.block
-                  ul.bxslider.product-desc
+                .slider.column-left.column.block.slider-product-desc
+                  //- The main images
+                  ul#slider2.bxslider
                     li
-                      img(src="../img/slider-image.jpg")
+                      img(src="../img/related-product-01.png" alt="")
                     li
-                      img(src="../img/slider-image.jpg")
+                      img(src="../img/related-product-02.png" alt="")
                     li
-                      img(src="../img/slider-image.jpg")
-                  div(
-                    id="bx-pager"
-                    )
-                    .bx-pager-product-desc-inner
-                        a.bx-pager-product-desc-item(data-slide-index="0" href="")
-                          img(src="../img/slider-thumb-1.jpg")
-                        a.bx-pager-product-desc-item(data-slide-index="1" href="")
-                          img(src="../img/slider-thumb-1.jpg")
-                        a.bx-pager-product-desc-item(data-slide-index="2" href="")
-                          img(src="../img/slider-thumb-1.jpg")
+                      img(src="../img/related-product-03.png" alt="")
+                    li
+                      img(src="../img/related-product-04.png" alt="")
+                  //- The thumbnails
+                  ul#bx-pager2.bxslider-pager
+                    li(data-slideIndex="0")
+                      a.slider-pager-item(href="")
+                          img(src="../img/related-product-01.png")
+                    li(data-slideIndex="1")
+                      a.slider-pager-item(href="")
+                          img(src="../img/related-product-02.png")
+                    li(data-slideIndex="2")
+                      a.slider-pager-item(href="")
+                          img(src="../img/related-product-03.png")
+                    li(data-slideIndex="3")
+                      a.slider-pager-item(href="")
+                          img(src="../img/related-product-04.png")
                   .outside
                     .slider-prev
                       .arrow
@@ -84,18 +94,21 @@ append content
                     li ♦  эффективная защита от скачков напряжения
                   .btn.btn-desc заказать бесплатную консультацию
 
-              .desc-full.tabs.module#menu_tabs
+              .desc-full.js-tabs#menu_tabs
                 .desc-nav.nav.module-header
                   ul
-                    li.desc-full-title.active(class="active" data-id="breakfasts") Описание товара
-                    li.desc-full-title(data-id="lunches") Технические характеристики
-                    li.desc-full-title(data-id="menu") Материалы для скачивания
+                    li.desc-full-title(class="active" data-id="prod-desc") Описание товара
+                    li.desc-full-title(data-id="prod-techies") Технические характеристики
+                    li.desc-full-title(data-id="prod-manuals") Материалы для скачивания
                 .desc-item-list.tabs-outer
-                  .tab-container.active.desc-item#breakfast
-                    Tab Content 111
-                  .tab-container.desc-item#lunches
+                  .tab-container.active.desc-item#prod-desc
+                    P
+                      | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
+                    P
+                      | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+                  .tab-container.desc-item#prod-techies
                     Tab Content 222
-                  .tab-container.desc-item#menu
+                  .tab-container.desc-item#prod-manuals
                     P
                       | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
                     P
@@ -138,7 +151,21 @@ append content
 
 
           //- MIXIN form // origin==documentation.pug
-          .block MIXIN FORM MIXIN
+          //- MIXIN this
+          .callback
+            form.appointment-form
+              .title Остались вопросы, свяжитесь с нами!
+              p.sub-title Пожалуйста, заполните форму ниже. Мы свяжемся с вами в ближайшее время.
+
+              .form-content-wrap
+                .form-content-left
+                  input.icon-user(placeholder="Имя")
+                  input.icon-email(placeholder="E-mail")
+                  input.icon-tel(placeholder="Телефон")
+                .form-content-right
+                  textarea.callback-textarea(placeholder="Ваш комментарий")
+                  .btn.btn-form Заказать бесплатную консультацию
+          //- eof MIXIN this
 
 
     //- footer

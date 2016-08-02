@@ -52,7 +52,7 @@ gulp.task('js', function() {
     return gulp.src('src/js/main.js')     // here we specify main js file as an entry point
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'))
+        // .pipe(jshint.reporter('fail'))
         .pipe(browserify({ debug: env === 'development' })) // we pass the entry point on to the browserify plug. //2// include the source maps only if we're i a dev environment
         .pipe(gulpif(env === 'production', uglify())) // if our environment is production, only then uglify it
         // debug: true --- this way browserify include sourcemaps with the compiled js

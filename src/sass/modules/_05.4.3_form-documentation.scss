@@ -1,5 +1,6 @@
 // callback form module
 
+.page-product-desc,
 .page-documentation,
 .page-faq {
 
@@ -73,6 +74,16 @@
       width: 100%;
       letter-spacing: normal;
       min-width: auto;
+    }
+  }
+}
+
+.page-product-desc {
+  .callback {
+    float: none;
+
+    @media #{$mobile} {
+      padding-top: 25px;
     }
   }
 }

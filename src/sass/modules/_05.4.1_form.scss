@@ -83,3 +83,33 @@
   // eof callback module
 
 // eofmodal content
+
+.page-product-desc {
+  & .callback {
+    & .icon-user {
+      background-image: url("../img/icon-form-user.png");
+      background-repeat: no-repeat;
+      background-position: right 9px top 11px;
+      @media #{$tablet} {
+        background-position: right 20px top 11px;
+      }
+    }
+    & .icon-email {
+      background-image: url("../img/icon-form-email.png");
+      background-repeat: no-repeat;
+      background-position: right 14px top 12px;
+      @media #{$tablet} {
+        background-position: right 20px top 12px;
+      }
+      text-transform: uppercase;
+    }
+    & .icon-tel {
+      background-image: url("../img/icon-form-tel.png");
+      background-repeat: no-repeat;
+      background-position: right 14px top 12px;
+      @media #{$tablet} {
+        background-position: right 22px top 12px;
+      }
+    }
+  }
+}

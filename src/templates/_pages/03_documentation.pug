@@ -2,11 +2,12 @@ extends ../conf/docwrapper
 
 
 append config
-  - var PageTitle = 'New Life of Heroes'
-  - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var PageTitle = 'Коммутатор доступа MES1124M'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
   - var jQuery = true;
   //- - var animateNumber = true;
   - var bxSlider = true;
+  - var jQueryEasing = true
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-documentation')
   - var logoImgSrc = '../img/logo.png';
@@ -50,24 +51,32 @@ append content
 
           .union
             //- column - 1
-            .slider.column-left.column
-              ul.bxslider.documentation
+            .slider.slider-documentation.column-left.column
+              //- The main images
+              ul#slider1.bxslider
                 li
-                  img(src="../img/slider-image.jpg")
+                  img(src="../img/related-product-01.png" alt="")
                 li
-                  img(src="../img/slider-image.jpg")
+                  img(src="../img/related-product-02.png" alt="")
                 li
-                  img(src="../img/slider-image.jpg")
-              div(
-                id="bx-pager"
-                )
-                .bx-pager-documentation-inner
-                    a.bx-pager-documentation-item(data-slide-index="0" href="")
-                      img(src="../img/slider-thumb-1.jpg")
-                    a.bx-pager-documentation-item(data-slide-index="1" href="")
-                      img(src="../img/slider-thumb-1.jpg")
-                    a.bx-pager-documentation-item(data-slide-index="2" href="")
-                      img(src="../img/slider-thumb-1.jpg")
+                  img(src="../img/related-product-03.png" alt="")
+                li
+                  img(src="../img/related-product-04.png" alt="")
+              //- The thumbnails
+              ul#bx-pager1.bxslider-pager
+                li(data-slideIndex="0")
+                  a.slider-pager-item(href="")
+                      img(src="../img/related-product-01.png")
+                li(data-slideIndex="1")
+                  a.slider-pager-item(href="")
+                      img(src="../img/related-product-02.png")
+                li(data-slideIndex="2")
+                  a.slider-pager-item(href="")
+                      img(src="../img/related-product-03.png")
+                li(data-slideIndex="3")
+                  a.slider-pager-item(href="")
+                      img(src="../img/related-product-04.png")
+
               .outside
                 .slider-prev
                   .arrow
