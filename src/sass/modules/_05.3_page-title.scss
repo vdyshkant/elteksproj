@@ -25,17 +25,7 @@
           display: none;
         }
       }
-      @media #{$mobile} {
-        &:last-child {
-          & > a {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            display: block;
-            width: 195px;
-          }
-        }
-      }
+
       &::before {
         content: "";
         position: absolute;

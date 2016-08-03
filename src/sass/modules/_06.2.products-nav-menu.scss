@@ -125,6 +125,9 @@
     float: left;
     // outline: 2px dashed skyblue;
     // outline-offset: -2px;
+    @media #{$mobile-tablet} {
+      max-width: none;
+    }
 
     & span.column-title {
         color: #023;

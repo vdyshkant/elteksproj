@@ -253,7 +253,112 @@ if ($( "ul#slider2" ).length) {
 
   }
 })();
+} // EOF if
+
+// home slider
+if ($( "#slider-home" ).length) {
+  $('#slider-home').bxSlider({
+    speed:1000,
+    // pause:200,
+    // auto:true,
+    pager:true,
+    // easing: 'swing',
+    mode:'fade',
+    nextText:'',
+    prevText:'',
+    prevSelector:('.nextend-arrow-previous'),
+    nextSelector:('.nextend-arrow-next'),
+    infiniteLoop:true,
+    pagerCustom: true,
+    onSliderLoad: function(){
+      $('.img-item').delay(400).animate({
+        'left': '+=450',
+        'opacity': 1
+      }, 1200);
+
+      $('.slide-content').animate({
+        'top': '50%',
+        'opacity': 1
+      }, 1200);
+
+      $('.slide-btn-outer').delay(900).animate({
+        'opacity': 1
+      }, 800);
+
+      // $('.btn-slide').delay(1000).animate({
+      //   'opacity': 1
+      // }, 1200);
+    },
+    onSlideAfter: function($slideElement, oldIndex, newIndex){
+      $('.img-item').delay(400).animate({
+        'left': '+=450',
+        'opacity': 1
+      }, 1200);
+
+      $('.slide-content').animate({
+        'top': '50%',
+        'opacity': 1
+      }, 1200);
+
+      $('.slide-btn-outer').delay(900).animate({
+        'opacity': 1
+      }, 800);
+
+      // $('.slide-btn-outer').delay(1000).animate({
+      //   'opacity': 1
+      // }, 1200);
+    },
+    onSlideBefore: function($slideElement, oldIndex, newIndex){
+      // hiding elements before rebase
+      $('.img-item').animate({
+        'opacity': '0'
+      }, 500);
+
+      $('.slide-content').animate({
+        'opacity': 0
+      }, 500);
+
+      $('.slide-btn-outer').animate({
+        'opacity': 0
+      }, 500);
+
+      // changing parameters
+      $('.img-item').animate({
+        'left': '-=450'
+      }, 50);
+
+      $('.slide-content').animate({
+        'top': '25%'
+      }, 50);
+
+      // $('.slide-btn-outer').animate({
+      //   'top': '67%'
+      // }, 50);
+
+      // $('.slide-btn-outer').animate({
+      //   'opacity': 0
+      // }, 500);
+    }
+  });
 }
+
+// home slider
+(function($) {
+  $('.home-slider').hover(function() {
+
+    clearTimeout($.data(this, 'timer'));
+    $('.nextend-arrow').stop(true, true).fadeToggle( 300 );
+  });
+})(jQuery);
+// EOF home slider
+// EOF home slider
+
+
+
+
+
+
+
 
 // EOF bx slider
 
@@ -505,13 +610,7 @@ $('.request-callback-nav').click(function(){
   // EOFparallax
 
 
-  // home slider
-  (function() {
-    $('.home-slider .slide').hover(function() {
-      $('.nextend-arrow').fadeToggle( 300 );
-    });
-  })();
-  // EOF home slider
+
 
 
 
@@ -554,6 +653,41 @@ $('.request-callback-nav').click(function(){
 
 
 // EOFtabs module
+
+
+// breadcrumbs ...
+
+if ( $(window).width() < 768) {
+  (function($) {
+        // You pass-in jQuery and then alias it with the $-sign
+        // So your internal code doesn't change
+        var count = $('.breadcrumbs li').length;
+        if (count >= 3) {
+          $('.breadcrumbs li:nth-child(n+2):not(:last-child) a').html('...');
+        }
+        $('.breadcrumbs li:last-child a').addClass('overcrumbs');
+        // http://stackoverflow.com/questions/4291151/jquery-count-child-elements
+
+        // counting width for whole vreadcrumbs
+        var parent = $('.breadcrumbs').width();
+        var last = $('.breadcrumbs li:not(:last-child)').outerWidth();
+
+        var w = 0;
+
+        jQuery('.breadcrumbs li:last-child').each(function(){
+          jQuery(this).prevAll().each(function(){
+            w += $(this).width();
+            console.log(w);
+          });
+        });
+        var newWidthForLastEl = parent - w;
+
+        $('.breadcrumbs li:last-child').width( newWidthForLastEl );
+
+  })(jQuery);
+}
+
+// EOF breadcrumbs ...
 
 
 }); // EOF document.ready MAIN

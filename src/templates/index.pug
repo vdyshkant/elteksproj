@@ -6,6 +6,8 @@ append config
   - var MetaDesc = 'Now we override default configed MetaDesc'
   - var jQuery = true;
   - var jQueryUI = true
+  - var jQueryEasing = true
+  - var bxSlider = true;
   - var animateNumber = true;
   - var mainJsSrc = 'js/main.js'
   - var mainCssSrc = 'css/main.css'
@@ -42,15 +44,47 @@ block content
         //- home-slider
         section.home-slider
           .wrap
-            .slide
-              .foreground
-              .overlay
-              .container
-                .img-item
-                .slide-content
-                  p.text
-                    | Элтекс завершает разработку нового гигабитного коммутатора с&nbsp;10G&nbsp;аплинками
-                  a.btn.btn-slide Подробнее
+            //- .slide
+            //-   .foreground
+            //-   .overlay
+            //-   .container
+            //-     .img-item
+            //-     .slide-content
+            //-       p.text
+            //-         | Элтекс завершает разработку нового гигабитного коммутатора с&nbsp;10G&nbsp;аплинками
+            //-       a.btn.btn-slide Подробнее
+            //-     .nextend-arrow.nextend-arrow-previous
+            //-       .arr-outer
+            //-       .arr-inner
+            //-     .nextend-arrow.nextend-arrow-next
+            //-       .arr-outer
+            //-       .arr-inner
+
+            //- bxslider
+            ul.bxslider#slider-home
+              li
+                .slide
+                  .foreground
+                  .overlay
+                  .container
+                    .img-item
+                    .slide-content
+                      p.text
+                        | Элтекс завершает разработку нового гигабитного коммутатора с&nbsp;10G&nbsp;аплинками
+                    .slide-btn-outer
+                      a.btn.btn-slide Подробнее
+              li
+                .slide
+                  .foreground
+                  .overlay
+                  .container
+                    .img-item
+                    .slide-content
+                      p.text
+                        | Элтекс завершает разработку нового гигабитного коммутатора с&nbsp;10G&nbsp;аплинками
+                    .slide-btn-outer
+                      a.btn.btn-slide Подробнее
+            .home-slider-controls
                 .nextend-arrow.nextend-arrow-previous
                   .arr-outer
                   .arr-inner
@@ -58,6 +92,10 @@ block content
                   .arr-outer
                   .arr-inner
 
+
+
+
+        //- EOF bxslider
 
         //- eof home-slider
 
