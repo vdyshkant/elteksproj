@@ -17,11 +17,11 @@
         <div class="wrap">
           <div class="inner"><a class="logo" href="http://localhost:8888/">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/logo-mobile.png"><img src="../img/logo.png">
+                <source media="(max-width: 767px)" srcset="../img/logo.png"><img src="../img/logo.png">
               </picture></a><a class="btn request-callback">Заказать звонок</a>
             <nav class="menu main-nav">
               <ul>
-                <li class="dropdown" id="dd-products"><a href="http://localhost:8888/_pages/08_product-grid.html">Продукция</a>
+                <li class="dropdown" id="dd-products"><a href="http://localhost:8888/_pages/04_documentation-grid.html">Продукция</a>
                   <div class="dropdown-menu sub-menu">
                     <div class="wrap">
                       <div class="inner">
@@ -139,56 +139,62 @@
               </div>
             </div>
             <div class="content">
-              <section class="content-left products-nav-menu"><span class="column-title">Категории</span>
-                <!-- Всё - upperCase + underlined потому что это всё(обобщение) или потому что это активное меню-->
-                <ul class="general-list">
-                  <li class="single active"><a class="link-category" href="#">Всё</a></li>
-                  <li><a class="link-category" href="#">Оборудование PON
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">Turbo GEPON</a></li>
-                      </ul></a></li>
-                  <li><a class="link-category" href="#">Ethernet коммутаторы
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">Ethernet коммутаторы для ЦОД</a></li>
-                        <li><a class="link-item" href="#">Коммутаторы агрегации</a></li>
-                        <li><a class="link-item" href="#">Коммутаторы доступа</a></li>
-                      </ul></a></li>
-                  <li class="single"><a class="link-category" href="#">ЦАТС МС240</a></li>
-                  <li><a class="link-category" href="#">Оборудование VOIP
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">MSAN</a></li>
-                        <li><a class="link-item" href="#">Абонентские шлюзы</a></li>
-                        <li><a class="link-item" href="#">Цифровые шлюзы</a></li>
-                      </ul></a></li>
-                  <li><a class="link-category" href="#">ECSS-10 (SOFTSWITCH)
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">SBC</a></li>
-                        <li><a class="link-item" href="#">Программный коммутатор</a></li>
-                        <li><a class="link-item" href="#">ECSS-10 (Softswitch)</a></li>
-                      </ul></a></li>
-                  <li><a class="link-category" href="#">IP DSLAM
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">MXA-32</a></li>
-                        <li><a class="link-item" href="#">MXA-64</a></li>
-                        <li><a class="link-item" href="#">ECSS-10 (Softswitch)</a></li>
-                      </ul></a></li>
-                  <li><a class="link-category" href="#">Транспорт
-                      <ul class="sub-list">
-                        <li><a class="link-item" href="#">Маком-МХ</a></li>
-                        <li><a class="link-item" href="#">SHDSL-модемы</a></li>
-                        <li><a class="link-item" href="#">Мультиплексоры TopGATE</a></li>
-                        <li><a class="link-item" href="#">Регенераторы DSL-линии</a></li>
-                      </ul></a></li>
-                  <li class="single"><a class="link-category" href="#">Оборудование доступа</a></li>
-                  <li class="single"><a class="link-category" href="#">Оборудование ТЧ канала</a></li>
-                  <li class="single"><a class="link-category" href="#">Устройства электропитания</a></li>
-                  <li class="single"><a class="link-category" href="#">Телеком шкафы</a></li>
+              <div class="column-left products-nav-menu"><span class="column-title jsColumnTitle">Категории</span>
+                <ul class="products-nav-content jsProdMenuContent">
+                  <li class="category item-active"><a class="category-link" href="#">ВСЁ</a></li>
+                  <li class="category"><a class="category-link" href="#">Оборудование PON</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">Turbo GEPON</a></li>
+                    </ul>
+                  </li>
+                  <li class="category"><a class="category-link" href="#">Ethernet коммутаторы</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">Ethernet коммутаторы для ЦОД</a></li>
+                      <li class="item item"><a class="item-link" href="#">Коммутаторы агрегации</a></li>
+                      <li class="item"><a class="item-link" href="#">Коммутаторы доступа</a></li>
+                    </ul>
+                  </li>
+                  <li class="category"><a class="category-link" href="#">ЦАТС МС240</a></li>
+                  <li class="category"><a class="category-link" href="#">Оборудование VOIP</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">MSAN</a></li>
+                      <li class="item"><a class="item-link" href="#">Абонентские шлюзы</a></li>
+                      <li class="item"><a class="item-link" href="#">Цифровые шлюзы</a></li>
+                    </ul>
+                  </li>
+                  <li class="category"><a class="category-link" href="#">ECSS-10 (SOFTSWITCH)</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">SBC</a></li>
+                      <li class="item"><a class="item-link" href="#">Программный коммутатор</a></li>
+                      <li class="item"><a class="item-link" href="#">ECSS-10 (Softswitch)</a></li>
+                    </ul>
+                  </li>
                 </ul>
-              </section>
+                <ul class="products-nav-content products-nav-content-right">
+                  <li class="category"><a class="category-link" href="#">IP DSLAM</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">MXA-32</a></li>
+                      <li class="item"><a class="item-link" href="#">MXA-64</a></li>
+                      <li class="item"><a class="item-link" href="#">ECSS-10 (Softswitch)</a></li>
+                    </ul>
+                  </li>
+                  <li class="category"><a class="category-link" href="#">Транспорт</a>
+                    <ul>
+                      <li class="item item"><a class="item-link" href="#">Маком-МХ</a></li>
+                      <li class="item"><a class="item-link" href="#">SHDSL-модемы</a></li>
+                      <li class="item"><a class="item-link" href="#">Мультиплексоры TopGATE</a></li>
+                      <li class="item"><a class="item-link" href="#">Регенераторы DSL-линии</a></li>
+                    </ul>
+                  </li>
+                  <li class="category"><a class="category-link" href="#">Оборудование доступа</a></li>
+                  <li class="category"><a class="category-link" href="#">Оборудование ТЧ канала</a></li>
+                  <li class="category"><a class="category-link" href="#">Устройства электропитания</a></li>
+                  <li class="category"><a class="category-link" href="#">Телеком шкафы</a></li>
+                </ul>
+              </div>
               <!-- at this point animated product-item code block must be overRefactored very properly for all similar instances-->
               <section class="content-right"><span class="column-title">Всё</span>
-                <div class="products-list">
-                  <div class="item">
+                <div class="products-list"><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
                       <div class="img-outer"><img src="../img/product-01.jpg"></div>
                       <div class="stats">
@@ -204,9 +210,7 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
                       <div class="img-outer"><img src="../img/product-02.jpg"></div>
                       <div class="stats">
@@ -222,9 +226,7 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
                       <div class="img-outer"><img src="../img/product-03.jpg"></div>
                       <div class="stats">
@@ -240,9 +242,7 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
                       <div class="img-outer"><img src="../img/product-04.jpg"></div>
                       <div class="stats">
@@ -258,11 +258,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-05.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -276,11 +274,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-06.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -294,11 +290,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-07.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -312,11 +306,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-08.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -330,11 +322,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-09.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -348,11 +338,9 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                  <div class="item">
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
                     <div class="make3d">
-                      <div class="img-outer"><img src="../img/product-04.jpg"></div>
+                      <div class="img-outer"><img src="../img/product-10.jpg"></div>
                       <div class="stats">
                         <div class="title">Коммутатор доступа MES2124F</div>
                         <div class="short-desc">
@@ -366,9 +354,39 @@
                       </div>
                       <div class="image-overlay"></div>
                       <div class="btn btn-overlay">Подробнее</div>
-                    </div>
-                  </div>
-                </div>
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
+                    <div class="make3d">
+                      <div class="img-outer"><img src="../img/product-11.jpg"></div>
+                      <div class="stats">
+                        <div class="title">Коммутатор доступа MES2124F</div>
+                        <div class="short-desc">
+                          <ul>
+                            <li>• 1 порт GPON</li>
+                            <li>• гигабитный роутер</li>
+                            <li>• порты FXS для подключения  телефо...</li>
+                            <li>• порт USB 2.0 для подключения сетев...</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="image-overlay"></div>
+                      <div class="btn btn-overlay">Подробнее</div>
+                    </div></a><a class="item" href="http://localhost:8888/_pages/06_product1.html">
+                    <div class="make3d">
+                      <div class="img-outer"><img src="../img/product-12.jpg"></div>
+                      <div class="stats">
+                        <div class="title">Коммутатор доступа MES2124F</div>
+                        <div class="short-desc">
+                          <ul>
+                            <li>• 1 порт GPON</li>
+                            <li>• гигабитный роутер</li>
+                            <li>• порты FXS для подключения  телефо...</li>
+                            <li>• порт USB 2.0 для подключения сетев...</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="image-overlay"></div>
+                      <div class="btn btn-overlay">Подробнее</div>
+                    </div></a></div>
                 <div class="pagination">
                   <div class="cntr"></div>
                   <button class="paginate left"><i></i><i></i></button>

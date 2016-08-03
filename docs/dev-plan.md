@@ -18,7 +18,7 @@ projects +++
 contact info +++
 
 documentation +++
-product
+product +++
 documentation-grid
 product-grid
 
@@ -52,7 +52,7 @@ product-grid
     - + Ubuntu Bold 36px (24px mobile) 	т.е. всюду в таких шрифтах для мобильников ставим 24px
     - продукт
     - о нас
-      - до конца экрана прилепить боковые bg lines
+      + до конца экрана прилепить боковые bg lines
     - контакты
     - продукт грид
     - доки

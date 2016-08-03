@@ -43,10 +43,14 @@ $cbMainColor: #023;
     // early 2014 http://html5.by/blog/placeholder/
 
     &.search-field {
-      width: 530px;
+      min-width: 530px;
       width: 80.3030303%;
       margin-right: 20px;
       margin-right: 3.0303030%;
+      @media #{$mobile} {
+        min-width: auto;
+        width: 100%;
+      }
     }
   }
 }

@@ -167,7 +167,8 @@
     &::after {
         position: absolute;
         content: '';
-        background: url('../img/product_line.png');
+        background: url('../img/product_line.png') no-repeat;
+        background-position: 50% 50%;
         top: 0;
         left: 0;
         right: 0;

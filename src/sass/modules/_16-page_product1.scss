@@ -134,6 +134,9 @@
 
   & .desc-full {
     box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
+    @media #{$mobile} {
+      box-shadow: none;
+    }
 
     & p {
       @include font(normal, 400, 18px, 22px, $pslab);
@@ -152,7 +155,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: block;
-      max-width: 30%;
+      // max-width: 30%;
       // width: 33%;
       padding: 20px 10px;
       display: inline-block;
@@ -168,7 +171,7 @@
       background-color: #fff;
       // border-right: 1px solid #c6cbd0;
       // border-bottom: 1px solid #d5dadd;
-      box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
+      box-shadow: -1px 0px 4px 0px rgba(0, 34, 51, 0.16);
       border: none;
       // box-shadow
       @media #{$tablet} {
@@ -178,7 +181,6 @@
       @media #{$mobile} {
         width: auto;
         max-width: none;
-        box-shadow: none;
         border-bottom: 1px solid #c6cbd0;
         text-overflow: clip;
       }
@@ -215,6 +217,9 @@
   }
   & .desc-item-list {
     @include font(normal, 400, 18px, 22px, $pst);
+    @media #{$mobile} {
+      box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
+    }
   }
 
 // EOF content-LEFT

@@ -155,8 +155,12 @@
   }
 }
 
-.page-solutions {
-  & .products-nav-content {
-    display: none;
+
+
+@media #{$tablet} {
+  .page-solutions {
+    & .products-nav-content {
+      display: none;
+    }
   }
 }

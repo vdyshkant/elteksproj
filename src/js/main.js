@@ -1,8 +1,10 @@
+/*eslint-disable no-unused-vars*/
+
 // the entry point for browserify
 // var logger = require('./logger');
 //
 // logger.log('Hurray, it woprks! Amd it changed as well. :)');
-
+"use strict";
 
 // search field
 jQuery(document).ready(function ($) {
@@ -71,82 +73,41 @@ jQuery(document).ready(function ($) {
 
 
   // pagination
-  (function() {
-    function slide(offset) {
-      index = Math.min( Math.max( index + offset, 0 ), total - 1 );
+  if ($('.pagination').length) {
+    (function() {
+        function slide(offset) {
+          index = Math.min( Math.max( index + offset, 0 ), total - 1 );
 
-      document.querySelector( '.cntr' ).innerHTML = ( index + 1 ) + ' / ' + total;
+          document.querySelector( '.cntr' ).innerHTML = ( index + 1 ) + ' / ' + total;
 
-      pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
-      pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
-    }
+          // pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
+          // pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
+        }
 
-    var pr = document.querySelector( '.paginate.left' );
-    var pl = document.querySelector( '.paginate.right' );
+        var pr = document.querySelector( '.paginate.left' );
+        var pl = document.querySelector( '.paginate.right' );
 
-    if (pr && pl) {
+        if (pr && pl) {
 
-      pr.onclick = slide.bind( this, -1 );
-      pl.onclick = slide.bind( this, 1 );
+          pr.onclick = slide.bind( this, -1 );
+          pl.onclick = slide.bind( this, 1 );
 
-      var index = 0, total = 5;
+          var index = 0, total = 5;
 
 
-      slide(0);
-    }
-  })();
+          slide(0);
+        }
+    })();
+  }
   // eof pagination
 
 
-
-  // // bxSlider
-  // #slider1
-  // var slider = $('#slider1').bxSlider({
-    // mode: 'fade',
-    // pagerCustom: '#bx-pager1',
-    // auto: false,
-    // speed: 500,
-    // pause: 800,
-    // pager: false,
-    // infiniteLoop: true,
-    // controls: false,
-  // });
-
-  // var slider = $(".bxslider").bxSlider({
-  //   mode: 'slide',
-  //   auto: true,
-  //   controls: false,
-  //   pager: false,
-  // });
-
-  // var sliderPager = $(".bxslider-pager").bxSlider({
-  //   minSlides: 2,
-  //   maxSlides: 3,
-  //   slideWidth: 45,
-  //   slideMargin: 5,
-  //   moveSlides: 1,
-  //   auto: false,
-  //   pager: false,
-  //   prevSelector:('.slider-prev'),
-  //   nextSelector:('.slider-next'),
-  //   prevText:'',
-  //   nextText:'',
-  // });
-  //
-  // $('.bxslider-pager li').on('click', 'a', function(e){
-  //   e.preventDefault();
-  //   slider.stopAuto();
-  //   slider.goToSlide($(this).attr('data-slideIndex'));
-  // });
-
-
-
-
   // new brand slider
+  if ($( "ul#slider1" ).length) {
   (function() {
     var $j = jQuery.noConflict();
 
-   var realSlider= $j("ul#slider1, ul#slider2").bxSlider({
+   var realSlider= $j("ul#slider1").bxSlider({
          speed:300,
          pager:false,
          nextText:'',
@@ -162,7 +123,7 @@ jQuery(document).ready(function ($) {
        });
 
 
-       var realThumbSlider=$j("ul#bx-pager1, ul#bx-pager2").bxSlider({
+       var realThumbSlider=$j("ul#bx-pager1").bxSlider({
          minSlides: 2,
          maxSlides: 3,
          slideWidth: 88,
@@ -177,100 +138,12 @@ jQuery(document).ready(function ($) {
 
          prevSelector:('.slider-prev'),
          nextSelector:('.slider-next'),
-         onSlideBefore:function($slideElement, oldIndex, newIndex){
+        //  onSlideBefore:function($slideElement, oldIndex, newIndex){
            /*$j("#sliderThumbReal ul .active").removeClass("active");
            $slideElement.addClass("active"); */
 
-         }
+        //  }
        });
-
-      //  window.addEventListener("resize", function(){
-      //    if (window.matchMedia("(max-width: 1199px)").matches) {
-      //      realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //        slideWidth: 88,
-      //        slideMargin: 30
-      //      });
-      //    } else if (window.matchMedia("(max-width: 767px)").matches) {
-      //      realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //        slideWidth: 72,
-      //        slideMargin: 8
-      //      });
-      //    }
-      //  });
-      //  if ( $(window).width() < 1200 & $(window).width() >= 768 ) {
-      //    realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //      slideWidth: 88,
-      //      slideMargin: 30
-      //    });
-      //  } else if ($(window).width() < 768) {
-      //    realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //           minSlides: 2,
-      //           maxSlides: 2,
-      //           slideWidth: 72,
-      //           slideMargin: 8,
-      //           moveSlides: 1,
-      //           pager:false,
-      //           speed:300,
-      //           infiniteLoop:false,
-      //           hideControlOnEnd:true,
-      //           nextText:'<span></span>',
-      //           prevText:'<span></span>',
-       //
-      //           prevSelector:('.slider-prev'),
-      //           nextSelector:('.slider-next'),
-      //           onSlideBefore:function($slideElement, oldIndex, newIndex){
-      //             /*$j("#sliderThumbReal ul .active").removeClass("active");
-      //             $slideElement.addClass("active"); */
-       //
-      //           }
-      //    });
-      //  }
-
-      //  if ( $(window).width() < 1200 & $(window).width() >= 768 ) {
-      //    var realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //      minSlides: 2,
-      //      maxSlides: 2,
-      //      slideWidth: 88,
-      //      slideMargin: 10,
-      //      moveSlides: 1,
-      //      pager:false,
-      //      speed:300,
-      //      infiniteLoop:false,
-      //      hideControlOnEnd:true,
-      //      nextText:'<span></span>',
-      //      prevText:'<span></span>',
-       //
-      //      prevSelector:('.slider-prev'),
-      //      nextSelector:('.slider-next'),
-      //      onSlideBefore:function($slideElement, oldIndex, newIndex){
-      //        /*$j("#sliderThumbReal ul .active").removeClass("active");
-      //        $slideElement.addClass("active"); */
-       //
-      //      }
-      //    });
-      //  } else if ($(window).width() < 768) {
-      //    var realThumbSlider=$j("ul#bx-pager1").bxSlider({
-      //      minSlides: 2,
-      //      maxSlides: 2,
-      //      slideWidth: 72,
-      //      slideMargin: 8,
-      //      moveSlides: 1,
-      //      pager:false,
-      //      speed:300,
-      //      infiniteLoop:false,
-      //      hideControlOnEnd:true,
-      //      nextText:'<span></span>',
-      //      prevText:'<span></span>',
-       //
-      //      prevSelector:('.slider-prev'),
-      //      nextSelector:('.slider-next'),
-      //      onSlideBefore:function($slideElement, oldIndex, newIndex){
-      //        /*$j("#sliderThumbReal ul .active").removeClass("active");
-      //        $slideElement.addClass("active"); */
-       //
-      //      }
-      //    });
-      //  }
 
        linkRealSliders(realSlider,realThumbSlider);
 
@@ -281,7 +154,7 @@ jQuery(document).ready(function ($) {
       // sincronizza sliders realizzazioni
     function linkRealSliders(bigS,thumbS){
 
-     $j("ul#bx-pager1, ul#bx-pager2").on("click","a",function(event){
+     $j("ul#bx-pager1").on("click","a",function(event){
        event.preventDefault();
        var newIndex=$j(this).parent().attr("data-slideIndex");
            bigS.goToSlide(newIndex);
@@ -291,18 +164,101 @@ jQuery(document).ready(function ($) {
     //slider!=$thumbSlider. slider is the realslider
     function changeRealThumb(slider,newIndex){
 
-     var $thumbS=$j("#bx-pager1, ul#bx-pager2");
+     var $thumbS=$j("#bx-pager1");
      $thumbS.find('.active').removeClass("active");
      $thumbS.find('li[data-slideIndex="'+newIndex+'"]').addClass("active");
 
-     if(slider.getSlideCount()-newIndex>=4)slider.goToSlide(newIndex);
-     else slider.goToSlide(slider.getSlideCount()-4);
-
+     if(slider.getSlideCount()-newIndex>=4){
+       slider.goToSlide(newIndex);
+     } else {
+       slider.goToSlide(slider.getSlideCount()-4);
+     }
     }
   })();
+}
+
+// slider #2
+if ($( "ul#slider2" ).length) {
+(function() {
+  var $j = jQuery.noConflict();
+
+ var realSlider= $j("ul#slider2").bxSlider({
+       speed:300,
+       pager:false,
+       nextText:'',
+       prevText:'',
+       infiniteLoop:false,
+       hideControlOnEnd:true,
+        controls: false,
+      //  onSlideBefore:function($slideElement, oldIndex, newIndex){
+      //    changeRealThumb(realThumbSlider,newIndex);
+       //
+      //  }
+
+     });
+
+
+     var realThumbSlider=$j("ul#bx-pager2").bxSlider({
+       minSlides: 2,
+       maxSlides: 3,
+       slideWidth: 88,
+       slideMargin: 30,
+       moveSlides: 1,
+       pager:false,
+       speed:300,
+       infiniteLoop:false,
+       hideControlOnEnd:true,
+       nextText:'<span></span>',
+       prevText:'<span></span>',
+
+       prevSelector:('.slider-prev'),
+       nextSelector:('.slider-next'),
+       onSlideBefore:function($slideElement, oldIndex, newIndex){
+         /*$j("#sliderThumbReal ul .active").removeClass("active");
+         $slideElement.addClass("active"); */
+
+       }
+     });
+
+     linkRealSliders(realSlider,realThumbSlider);
+
+    //  if($j("#bx-pager1 li").length<5){
+    //    $j("#bx-pager1 .bx-next").hide();
+    //  }
+
+    // sincronizza sliders realizzazioni
+  function linkRealSliders(bigS,thumbS){
+
+   $j("ul#bx-pager2").on("click","a",function(event){
+     event.preventDefault();
+     var newIndex=$j(this).parent().attr("data-slideIndex");
+         bigS.goToSlide(newIndex);
+   });
+  }
+
+  //slider!=$thumbSlider. slider is the realslider
+  function changeRealThumb(slider,newIndex){
+
+   var $thumbS=$j("#bx-pager2");
+   $thumbS.find('.active').removeClass("active");
+   $thumbS.find('li[data-slideIndex="'+newIndex+'"]').addClass("active");
+
+   if(slider.getSlideCount()-newIndex>=4) {
+     slider.goToSlide(newIndex);
+   } else {
+     slider.goToSlide(slider.getSlideCount()-4);
+   }
 
 
 
+  }
+})();
+}
+
+// EOF bx slider
+
+
+  // faq toggle page
 
 if ($( ".faq-item-title" ).length) {
   $( ".faq-item-title" ).click(function() {
@@ -316,8 +272,19 @@ if ($( ".faq-item-title" ).length) {
   });
 }
 
-
   // EOF faq toggle page
+
+// toggle documentation-grid tablet
+
+if ($( ".page-documentation-grid .jsColumnTitle" ).length) {
+  $( ".page-documentation-grid .jsColumnTitle" ).click(function() {
+    $('.products-nav-menu .products-nav-content').slideToggle();
+    $('.products-nav-menu .column-title.jsColumnTitle').toggleClass('active');
+    // $(this).parent('.jsFaqItem').toggleClass('active');
+  });
+}
+
+// EOF toggle documentation-grid tablet
 
 
   // burger
@@ -466,6 +433,28 @@ $('.request-callback-nav').click(function(){
     }
   })();
 
+  // documentation-grid title
+  (function() {
+    if (window.matchMedia("(max-width: 1199px)").matches) {
+     var string = 'Документация';
+     $('.page-documentation-grid .page-title h1').text( string );
+    } else {
+     var origin = 'Документация для оборудования';
+     $('.page-documentation-grid .page-title h1').text( origin );
+    }
+  })();
+
+  // documentation-grid title
+  (function() {
+    if (window.matchMedia("(max-width: 1199px)").matches) {
+     var string = 'Выберите категорию';
+     $('.page-documentation-grid .column-left .column-title').text( string );
+    } else {
+     var origin = 'Категории';
+     $('.page-documentation-grid .column-left .column-title').text( origin );
+    }
+  })();
+
   // http://stackoverflow.com/questions/23122336/javascript-resize-event-not-working?noredirect=1&lq=1
 
   (function() {
@@ -518,7 +507,7 @@ $('.request-callback-nav').click(function(){
 
   // home slider
   (function() {
-    $('.slide').hover(function() {
+    $('.home-slider .slide').hover(function() {
       $('.nextend-arrow').fadeToggle( 300 );
     });
   })();
@@ -538,6 +527,32 @@ $('.request-callback-nav').click(function(){
       $(this).addClass('active');
     });
   })();
+
+  // tabs for mobile
+  if ( $(window).width() < 768) {
+    (function($) {
+           // You pass-in jQuery and then alias it with the $-sign
+           // So your internal code doesn't change
+
+           var parentW = $('.desc-nav.module-header').width();
+           var activeW = $('.desc-full-title.active').outerWidth();
+           var restW = parentW - activeW;
+           var everyRestW = restW / 2 - 0.5;
+           $('.desc-full-title:not(.active)').outerWidth( everyRestW );
+
+           $('.desc-full-title:not(.active)').click(function(){
+                   var parentW = $('.desc-nav.module-header').width();
+                   $('.desc-full-title.active').css( 'width','auto' );
+                   var activeW = $('.desc-full-title.active').outerWidth();
+                   var restW = parentW - activeW;
+                   var everyRestW = restW / 2 - 0.5;
+                   $('.desc-full-title:not(.active)').outerWidth( everyRestW );
+           });
+
+    })(jQuery);
+  }
+
+
 // EOFtabs module
 
 

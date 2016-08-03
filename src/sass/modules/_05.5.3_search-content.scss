@@ -5,10 +5,20 @@
   @include clearfix;
 
   & .field-wrap {
-    padding-left: 330px; // +%
+    // padding-left: 330px; // +%
+    // padding-left: 25.3846153%;
     min-width: 660px;
-    padding-right: 310px; // +%
+    width: 660px;
+    display: block;
+    // padding-right: 310px; // +%
+    // padding-right: 23.846153%; // +%
     font-size: 0;
+    white-space: nowrap;
+    @media #{$mobile} {
+      white-space: normal;
+      min-width: auto;
+      width: auto;
+    }
     & > * {
       font-size: initial;
     }
