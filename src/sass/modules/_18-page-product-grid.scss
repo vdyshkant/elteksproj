@@ -398,6 +398,8 @@
         & .make3d {
             & .stats {
                 top: 283px;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }

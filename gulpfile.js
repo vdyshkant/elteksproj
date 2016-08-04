@@ -84,7 +84,10 @@ gulp.task('sass', function() {
         // .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
           browsers: [
-            'last 2 versions',
+            'Firefox 3.5',
+            'Opera 9',
+            'Safari 3.1',
+            'Chrome 5',
             '>1%',
             'ie 8'
           ],

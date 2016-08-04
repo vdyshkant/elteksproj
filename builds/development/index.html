@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
+    <link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
   </head>
@@ -310,13 +310,13 @@
                 </svg></a>
               <div class="socials">
                 <div class="inner"><a class="item">
-                    <svg class="icon-fb">
+                    <svg class="icon-fb svg-icon">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/fb.svg#svg-fb"></use>
                     </svg></a><a class="item">
-                    <svg class="icon-vk">
+                    <svg class="icon-vk svg-icon">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/vk.svg#svg-vk"></use>
                     </svg></a><a class="item">
-                    <svg class="icon-yt">
+                    <svg class="icon-yt svg-icon">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/yt.svg#svg-yt"></use>
                     </svg></a></div>
               </div>
@@ -351,12 +351,39 @@
       </div>
       <div class="modal-overlay"></div>
       <!-- осталось thumbnails сделать для input-ов-->
+      <div class="modal-content">
+        <div class="wrap">
+          <div class="callback">
+            <h2 class="title">Заказать звонок!</h2>
+            <p>Пожалуйста, заполните форму ниже. Мы с вяжемся с вами в ближайшее время.</p>
+            <form class="callback-form" action="/echo" method="post">
+              <div class="user-field field">
+                <input class="icon-user" type="text" name="login" placeholder="Имя" required>
+                <svg class="icon-form-svg icon-user-svg">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-user.svg#icon-user-svg"></use>
+                </svg><span>Вы ввели неверный номер телефона</span>
+              </div>
+              <div class="phone-field field">
+                <input class="icon-tel" type="tel" name="phone" placeholder="Телефон" required>
+                <svg class="icon-form-svg icon-phone-svg">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icon-phone.svg#icon-phone-svg"></use>
+                </svg><span>Вы ввели неверный номер телефона</span>
+              </div>
+              <button class="btn btn-form" type="submit" title="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button>
+            </form>
+            <content></content>
+          </div>
+        </div>
+        <button class="modal-content-close" type="button" title="Закрыть"></button>
+      </div>
+      <div class="modal-overlay"></div>
+      <!-- осталось thumbnails сделать для input-ов-->
     </div>
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="http://cdn.jsdelivr.net/bxslider/4.1.1/plugins/jquery.easing.1.3.js"></script>
     <script src="//nextendweb.com/demo/smartslider2/modules/mod_frontpage2/jquery.animateNumber.min.js"></script>
-    <script src="../jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>new WOW().init();</script>
     <script src="js/main.js"></script>

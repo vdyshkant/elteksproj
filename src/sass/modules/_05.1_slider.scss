@@ -75,8 +75,9 @@
         opacity: 0;
 
         @media #{$mobile} {
-            top: 68%;
+            top: 80%;
             width: 200px;
+            left: 39.647059%;
             margin: 0 auto;
             transform: translate(-25%, -53%);
         }
@@ -124,8 +125,6 @@
             top: 68%;
             width: 235px;
             margin: 0 auto;
-            margin-left: 45px;
-            margin-left: 16.0714285%;
             transform: translate(-25%, -53%);
         }
     }

@@ -33,7 +33,6 @@ $cbMainColor: #023;
         text-align: center;
     }
     & input {
-        // init styles ^^^
         line-height: 16px;
         position: relative;
         width: 100%;
@@ -42,6 +41,7 @@ $cbMainColor: #023;
         border: 1px solid #acb7c3;
         border-radius: 4px;
         outline: 0;
+        background-color: #fff;
 
         &:focus ~ .icon-form-svg {
             fill: #f05a2e;

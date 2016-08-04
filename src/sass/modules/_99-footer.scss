@@ -40,6 +40,7 @@
 
 .footer-bottom {
     font-size: 0;
+    @include clearfix;
     @media #{$tablet-desktop} {
         width: 475px;
         margin: 0 auto;
@@ -51,7 +52,7 @@
 
     & > * {
         font-size: initial;
-        display: inline-block;
+        // display: inline-block;
         @media #{$mobile} {
             display: block;
             float: left;
@@ -60,13 +61,16 @@
     }
 
     & .copy {
+      float: left;
         font-family: $ub;
         font-size: 24px;
         margin-right: 40px;
         margin-right: 8.4210526%;
         color: #fff;
+
         @media #{$mobile} {
             float: none;
+            clear: both;
             margin-right: 0;
             padding-bottom: 20px;
             text-align: center;
@@ -74,19 +78,16 @@
     }
 
     & .manufacturer {
+      float: right;
         text-decoration: none;
         color: #fff;
+        @media #{$mobile} {
+          clear:left;
+          float: left;
+        }
 
         @include font(normal, 400, 15px, 15px, $ul);
 
-        @media #{$tablet-desktop} {
-            float: right;
-        }
-
-        // & span {
-        //     @include font(normal, 700, 24px, 24px, $ub);
-        //     text-transform: uppercase;
-        // }
         & .icon-manufacturer {
             width: 55px;
             height: 21px;
@@ -97,15 +98,24 @@
 }
 
 .socials {
-    width: 27.5789473%;
-    // margin-right: 40px;
-    // margin-right: 8.4210526%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
     min-width: 98px;
     @media #{$mobile} {
-        float: right;
         width: auto;
         min-width: 88px;
         margin-right: 0;
+        // padding-top: 20px;
+        // clear: both;
+        position: relative;
+        // right: 0;
+        left: auto;
+        transform: none;
+        float: right;
+    }
+    @media #{$tablet} {
+      width: 86px;
     }
 
     & > .inner {
@@ -124,11 +134,12 @@
         transition: .3s ease;
         border: 1px solid #fff;
 
-        & svg {
+        & .svg-icon {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
 
             fill: #fff;
         }
@@ -173,6 +184,7 @@
         }
     }
 }
+
 
 
 // eof footer

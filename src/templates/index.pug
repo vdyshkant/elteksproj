@@ -4,13 +4,11 @@ extends conf/docwrapper
 append config
   - var PageTitle = 'Главная страница'
   //- - var MetaDesc = 'Now we override default configed MetaDesc'
-  - var jQuery = true;
+  - var jQuery = true
   - var jQueryUI = true
   - var jQueryEasing = true
-  - var bxSlider = true;
-  - var animateNumber = true;
-  - var mainJsSrc = 'js/main.js'
-  - var mainCssSrc = 'css/main.css'
+  - var bxSlider = true
+  - var animateNumber = true
   - var animateCss = true
   - var wowJs = true
   //- - var mainJsSrc = 'js/main.min.js'
@@ -223,27 +221,7 @@ block content
 
     //- footer
 
-    footer.footer.wow.fadeInUp(data-wow-offset="100")
-      .wrap
-        .inner
-          +navmenu([
-          { 'title':'Продукция', 'class':'', 'link':linkProductGrid },
-          { 'title':'Решения', 'class':'', 'link':linkSolutions },
-          { 'title':'Техподдержка', 'class':'', 'link':linkContactInfo },
-          { 'title':'О компании', 'class':'', 'link':linkAbout }
-          ])(class="footer-nav")
-          .footer-bottom
-            .copy &copy; 2016 Eltex
-            a.manufacturer(href="javascript:void(0)") Сделано в&nbsp;
-              +mainSvg([{'class': 'icon-manufacturer', 'pathid': 'svg-manufacturer', 'filename':'manufacturer'}])
-            .socials
-              .inner
-                a.item
-                  +mainSvg([{'class': 'icon-fb', 'pathid': 'svg-fb', 'filename':'fb'}])
-                a.item
-                  +mainSvg([{'class': 'icon-vk', 'pathid': 'svg-vk', 'filename':'vk'}])
-                a.item
-                  +mainSvg([{'class': 'icon-yt', 'pathid': 'svg-yt', 'filename':'yt'}])
+    include partials/footer
 
 
 
