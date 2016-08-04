@@ -3,10 +3,16 @@
     .callback
       h2.title Заказать звонок!
       p Пожалуйста, заполните форму ниже. Мы с вяжемся с вами в ближайшее время.
-      form.callback-form(action="#" method="post")
-        input.icon-user(type="text" name="login" placeholder="Имя")
-        input.icon-tel(type="tel" name="phone" placeholder="Телефон")
-        button.btn.btn-form(type="button" title="Заказать бесплатную консультацию") Заказать бесплатную консультацию
+      form.callback-form(action="/echo" method="post")
+        .user-field.field
+          input.icon-user(type="text" name="login" placeholder="Имя" required)
+          +svg([{'class': 'icon-form-svg icon-user-svg', 'pathid': 'icon-user-svg', 'filename':'icon-user'}])
+          span Вы ввели неверный номер телефона
+        .phone-field.field
+          input.icon-tel(type="tel" name="phone" placeholder="Телефон" required)
+          +svg([{'class': 'icon-form-svg icon-phone-svg', 'pathid': 'icon-phone-svg', 'filename':'icon-phone'}])
+          span Вы ввели неверный номер телефона
+        button.btn.btn-form(type="submit" title="Заказать бесплатную консультацию") Заказать бесплатную консультацию
       content
   button.modal-content-close(type="button" title="Закрыть")
 .modal-overlay

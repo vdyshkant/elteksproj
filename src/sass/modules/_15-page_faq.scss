@@ -1,121 +1,119 @@
 .page-faq {
+    min-height: 100vh;
+    margin-bottom: 1px;
 
-  min-height: 100vh;
-  margin-bottom: 1px;
+    & .inner {
+        padding-right: 30px;
+        padding-left: 30px;
 
-  & .inner {
-    padding-left: 30px;
-    padding-right: 30px;
-    @include clearfix;
+        @include clearfix;
 
-    @media #{$mobile} {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  & .main {
-    padding-bottom: 100px;
-    @media #{$tablet} {
-      padding-bottom: 45px;
-    }
-  }
-
-  & .content-wrap {
-    padding-bottom: 90px;
-  }
-
-  & .page-title {
-    margin-bottom: 120px;
-    @media #{$tablet} {
-      margin-bottom: 100px;
-    }
-    @media #{$mobile} {
-      margin-bottom: 50px;
-    }
-  }
-
-  & .faq-item {
-
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background-color: #fff;
-
-    &:last-child {
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 1px;
-        background-color: #647983;
-      }
-    }
-
-    &-title {
-      color: #385461;
-      @include font(normal, 700, 18px, 27px, $ub);
-      position: relative;
-      display: block;
-      cursor: pointer;
-      padding-right: 90px;
-      @media #{$mobile} {
-        @include font(normal, 700, 16px, 27px, $ub);
-        padding-right: 20px;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-top: 2px solid #022435;
-        border-right: 2px solid #022435;
-        transform: rotate(135deg);
-        transition: 200ms linear;
-        right: 0;
-        top: 0;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: -25px;
-        right: 0;
-        left: 0;
-        height: 1px;
-        background-color: #647983;
-      }
-    }
-
-    &-content {
-      display: none;
-      padding-top: 60px;
-
-      & p {
-        margin: 0 0 30px 0;
-      }
-
-      & ul {
-        margin-bottom: 30px;
-
-        & li {
-          margin-bottom: 10px;
+        @media #{$mobile} {
+            padding-right: 20px;
+            padding-left: 20px;
         }
-      }
     }
 
-    &.active {
-
-      & .faq-item-title {
-
-        &::before {
-          transform: rotate(45deg);
+    & .main {
+        padding-bottom: 100px;
+        @media #{$tablet} {
+            padding-bottom: 45px;
         }
-      }
     }
-  }
 
+    & .content-wrap {
+        padding-bottom: 90px;
+    }
+
+    & .page-title {
+        margin-bottom: 120px;
+        @media #{$tablet} {
+            margin-bottom: 100px;
+        }
+        @media #{$mobile} {
+            margin-bottom: 50px;
+        }
+    }
+
+    & .faq-item {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: #fff;
+
+        &:last-child {
+            position: relative;
+            &::before {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                content: '';
+                background-color: #647983;
+            }
+        }
+
+        &-title {
+            position: relative;
+            display: block;
+            padding-right: 90px;
+            cursor: pointer;
+            color: #385461;
+
+            @include font(normal, 700, 18px, 27px, $ub);
+            @media #{$mobile} {
+                padding-right: 20px;
+
+                @include font(normal, 700, 16px, 27px, $ub);
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 12px;
+                height: 12px;
+                content: '';
+                transition: 200ms linear;
+                transform: rotate(135deg);
+                border-top: 2px solid #022435;
+                border-right: 2px solid #022435;
+            }
+
+            &::after {
+                position: absolute;
+                top: -25px;
+                right: 0;
+                left: 0;
+                height: 1px;
+                content: '';
+                background-color: #647983;
+            }
+        }
+
+        &-content {
+            display: none;
+            padding-top: 60px;
+
+            & p {
+                margin: 0 0 30px 0;
+            }
+
+            & ul {
+                margin-bottom: 30px;
+
+                & li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        &.active {
+            & .faq-item-title {
+                &::before {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
 }

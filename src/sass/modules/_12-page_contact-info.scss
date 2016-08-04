@@ -1,233 +1,228 @@
 .page-contact-info {
+    & .main {
+        & > .wrap {
+            & .inner {
+                padding-right: 2.2058823%;
+                padding-left: 2.2058823%;
 
-  & .main {
-    & > .wrap {
-
-        & .inner {
-          @include clearfix;
-          padding-left: 2.2058823%;
-          padding-right: 2.2058823%;
-          @media #{$tablet} {
-            padding-left: 30px;
-            padding-right: 30px;
-          }
-          @media #{$mobile} {
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 140px;
-            background: url("../img/map-outer.png") no-repeat;
-            background-position: left bottom;
-            background-size: 100%;
-          }
+                @include clearfix;
+                @media #{$tablet} {
+                    padding-right: 30px;
+                    padding-left: 30px;
+                }
+                @media #{$mobile} {
+                    padding-right: 20px;
+                    padding-bottom: 140px;
+                    padding-left: 20px;
+                    background: url('../img/map-outer.png') no-repeat;
+                    background-position: left bottom;
+                    background-size: 100%;
+                }
+            }
         }
     }
-  }
 
-  & .content {
-    position: relative;
-    & > h2 {
-      @include font(normal, 700, 18px, 18px, $ub);
-      color: #385461;
-      margin: 0;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    & .content {
+        position: relative;
+        & > h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #385461;
+
+            @include font(normal, 700, 18px, 18px, $ub);
+        }
+        & li {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 35px;
+            letter-spacing: .5px;
+            color: #023;
+
+            @include font(normal, 300, 14px, 21px, $ul);
+
+            @media #{$mobile} {
+                letter-spacing: normal;
+
+                &:nth-child(2) {
+                    padding-right: 80px;
+                }
+                &:nth-child(3) {
+                    padding-right: 30px;
+                }
+            }
+            & a {
+                color: #0084c4;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &::before {
+                position: absolute;
+                top: 0;
+                // border-radius: 50%;
+                left: 0;
+                content: '';
+            }
+        }
+        & li:first-child {
+            &::before {
+                top: -2px;
+                left: 5px;
+                width: 16px;
+                height: 24px;
+                background: url('../img/icon-contact-pointer.svg') no-repeat;
+            }
+        }
+        & li:nth-child(2) {
+            margin-bottom: 18px;
+            &::before {
+                top: -4px;
+                left: 5px;
+                width: 16px;
+                height: 25px;
+                background: url('../img/icon-contact-phone.svg') no-repeat;
+            }
+        }
+        & li:nth-child(3) {
+            &::before {
+                top: 3px;
+                left: 0;
+                width: 25px;
+                height: 19px;
+                background: url('../img/icon-contact-email.svg') no-repeat;
+            }
+        }
     }
-    & li {
-      color: #023;
-      @include font(normal, 300, 14px, 21px, $ul);
-      margin-bottom: 25px;
-      letter-spacing: .5px;
 
-      padding-left: 35px;
-      position: relative;
+    & .globe {
+        float: left;
+        width: 100%;
+        min-height: 530px;
+        margin-top: 23px;
+        margin-left: -29px;
+        background: url('../img/map-outer.png') no-repeat;
+        background-position: left bottom;
+        @media #{$tablet} {
+            width: 100vw;
+            background-position: center bottom;
+        }
+        @media #{$mobile} {
+            display: none;
+        }
+    }
 
-      @media #{$mobile} {
-        letter-spacing: normal;
-
-        &:nth-child(2) {
-          padding-right: 80px;
-        }
-        &:nth-child(3) {
-          padding-right: 30px;
-        }
-      }
-      & a {
-        color: #0084c4;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-      &::before {
-        content: "";
+    & .map {
         position: absolute;
-        // border-radius: 50%;
-        left: 0;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        width: 710px;
+        height: 428px;
+        min-height: 428px;
+        transform: translate(-50%, -50%);
+        border-radius: 4px 8px 8px 8px;
+        background: #ccc;
+        //                                 // display: none;
+        //
+        // @media #{$mobile} {
+        //   position: relative;
+        //   left: 0;
+        //   top: 0;
+        //   width: 280px;
+        //   height: 170px;
+        //
+        //   left: initial;
+        //   top: initial;
+        //   transform: none;
+        // }
+        box-shadow: 0 4px 7px 0 rgba(0, 34, 51, .16);
+        @media #{$tablet} {
+            width: 495px;
+            height: 300px;
+            min-height: 300px;
+            border-radius: 8px;
+        }
+        @media #{$mobile} {
+            width: 280px;
+            height: 170px;
+            min-height: 170px;
+            border-radius: 8px;
+        }
+
+        &-outer,
+        &-inner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 710px;
+            height: 428px;
+            // background: #fff;
+
+            // outline: 2px dashed deepskyblue;
+            // outline-offset: -2px;
+            @media #{$tablet} {
+                width: 495px;
+                height: 300px;
+            }
+            @media #{$mobile} {
+                width: 280px;
+                height: 170px;
+            }
+        }
+
+
+        // &-overlay {
+        //   background-color: transparent;
+        //   position: absolute;
+        //   width: 710px;
+        //   height: 428px;
+        //   left: 50%;
+        //   top: 50%;
+        //   transform: translate(-50%, -50%);
+        // }
+    }
+    & .map-outer {
+        // border: 1px solid black;
+        overflow: hidden;
+        width: 750px;
+        height: 860px;
+        margin: 0 auto;
+
+        @media #{$mobile-tablet} {
+            display: none;
+        }
+        // background: url('../img/map-over.svg') no-repeat;
+        // width: 762px;
+        // height: 468px;
+        // & .shadow {
+        //   -webkit-filter: drop-shadow( 0px 4px 7px 0px rgba(0, 34, 51, 0.16) );
+        //   filter: drop-shadow( 0px 4px 7px 0px rgba(0, 34, 51, 0.16) );
+        // }
+    }
+
+    & .map-inner {
+        @media #{$mobile-tablet} {
+            position: relative;
+            top: initial;
+            left: initial;
+            margin: 0 auto;
+        }
+    }
+
+
+    & .shadow-rect {
+        position: absolute;
         top: 0;
-      }
+        right: 66px;
+        width: 733px;
+        height: 527px;
+        margin-top: -25px;
+        transform: skew(-7deg) rotate(-3deg) translate(10%, -10%);
+        background-color: #fff;
+        // box-shadow: 0 5px 12px 5px rgba(34, 49, 33, 0.58);
+        box-shadow: 0 4px 7px 0 rgba(0, 34, 51, .16);
     }
-    & li:first-child {
-
-      &::before {
-        left: 5px;
-        top: -2px;
-        background: url('../img/icon-contact-pointer.svg') no-repeat;
-        width: 16px;
-        height: 24px;
-      }
-    }
-    & li:nth-child(2) {
-      margin-bottom: 18px;
-      &::before {
-        left: 5px;
-        top: -4px;
-        background: url('../img/icon-contact-phone.svg') no-repeat;
-        width: 16px;
-        height: 25px;
-      }
-    }
-    & li:nth-child(3) {
-      &::before {
-        left: 0px;
-        top: 3px;
-        background: url('../img/icon-contact-email.svg') no-repeat;
-        width: 25px;
-        height: 19px;
-      }
-    }
-  }
-
-  & .globe {
-    float: left;
-    background: url('../img/map-outer.png') no-repeat;
-    background-position: left bottom;
-    margin-top: 23px;
-    min-height: 530px;
-    width: 100%;
-    margin-left: -29px;
-    @media #{$tablet} {
-      width: 100vw;
-      background-position: center bottom;
-    }
-    @media #{$mobile} {
-      display: none;
-    }
-  }
-
-  & .map {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: #ccc;
-      width: 710px;
-      height: 428px;
-
-      z-index: 5;
-      overflow: hidden;
-      border-radius: 4px 8px 8px 8px;
-      //                                 // display: none;
-      //
-      // @media #{$mobile} {
-      //   position: relative;
-      //   left: 0;
-      //   top: 0;
-      //   width: 280px;
-      //   height: 170px;
-      //
-      //   left: initial;
-      //   top: initial;
-      //   transform: none;
-      // }
-      box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
-      min-height:428px;
-      @media #{$tablet} {
-        border-radius: 8px;
-        min-height: 300px;
-        height: 300px;
-        width: 495px;
-      }
-      @media #{$mobile} {
-        border-radius: 8px;
-        min-height: 170px;
-        height: 170px;
-        width: 280px;
-      }
-
-    &-outer,
-    &-inner {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 710px;
-      height: 428px;
-      // background: #fff;
-
-      // outline: 2px dashed deepskyblue;
-      // outline-offset: -2px;
-      @media #{$tablet} {
-        height: 300px;
-        width: 495px;
-      }
-      @media #{$mobile} {
-        height: 170px;
-        width: 280px;
-      }
-
-    }
-
-
-    // &-overlay {
-    //   background-color: transparent;
-    //   position: absolute;
-    //   width: 710px;
-    //   height: 428px;
-    //   left: 50%;
-    //   top: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
-  }
-  & .map-outer {
-
-    width: 750px;
-    height: 860px;
-    margin: 0 auto;
-    // border: 1px solid black;
-    overflow: hidden;
-
-    @media #{$mobile-tablet} {
-      display: none;
-    }
-    // background: url('../img/map-over.svg') no-repeat;
-    // width: 762px;
-    // height: 468px;
-    // & .shadow {
-    //   -webkit-filter: drop-shadow( 0px 4px 7px 0px rgba(0, 34, 51, 0.16) );
-    //   filter: drop-shadow( 0px 4px 7px 0px rgba(0, 34, 51, 0.16) );
-    // }
-  }
-
-  & .map-inner {
-    @media #{$mobile-tablet} {
-      top: initial;
-      left: initial;
-      position: relative;
-      margin: 0 auto;
-    }
-  }
-
-
-  & .shadow-rect {
-    position: absolute;
-    top: 0;
-    right: 66px;
-    width: 733px;
-    height: 527px;
-    background-color: #fff;
-    margin-top: -25px;
-    // box-shadow: 0 5px 12px 5px rgba(34, 49, 33, 0.58);
-    box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
-    transform: skew(-7deg) rotate(-3deg) translate(10%, -10%);
-  }
-
 }

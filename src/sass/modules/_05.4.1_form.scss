@@ -1,115 +1,163 @@
 
-  // callback form module
+// callback form module
 
 
 // form
 //   form-callback  //module content
 //   form-search
-  //   search-header
-  //   search-content
+//   search-header
+//   search-content
 //   form-
 
-  $cbMainColor: #023;
+$cbMainColor: #023;
 
 .callback {
-  & .title {
-    color: #385461;
-    @include font(normal, 700, 36px, 36px, $ubo);
-    margin: 0;
-    text-align: center;
-    @media #{$mobile} {
-      @include font(normal, 700, 24px, 24px, $ubo);
-    }
-  }
-  & p,
-  & input {
-    color: $cbMainColor;
-    @include font(normal, 300, 15px, 23px, $ul);
-  }
-  & p {
-    margin: 0;
-    text-align: center;
-  }
-  & input {
-    outline: 0;
-    text-transform: none;
-    // init styles ^^^
-    line-height: 16px;
-    padding: 11px 34px 11px 19px;
-    border-radius: 4px;
-    border: 1px solid #acb7c3;
-    width: 100%;
-    position: relative;
+    & .title {
+        margin: 0;
+        text-align: center;
+        color: #385461;
 
-    &:focus {}
-    &::placeholder               {color:$cbMainColor;}
-    &::-webkit-input-placeholder {color:$cbMainColor;}
-    &::-moz-placeholder          {color:$cbMainColor;}/* Firefox 19+ */
-    &:-moz-placeholder           {color:$cbMainColor;}/* Firefox 18- */
-    &:-ms-input-placeholder      {color:$cbMainColor;}
-    // early 2014 http://html5.by/blog/placeholder/
+        @include font(normal, 700, 36px, 36px, $ubo);
+        @media #{$mobile} {
+            @include font(normal, 700, 24px, 24px, $ubo);
+        }
+    }
+    & p,
+    & input {
+        color: $cbMainColor;
 
-    &.icon-user {
-      background-image: url("../img/icon-form-user.png");
-      background-repeat: no-repeat;
-      background-position: right 9px top 11px;
+        @include font(normal, 300, 15px, 23px, $ul);
     }
-    &.icon-email {
-      background-image: url("../img/icon-form-email.png");
-      background-repeat: no-repeat;
-      background-position: right 14px top 12px;
-      text-transform: uppercase;
+    & p {
+        margin: 0;
+        text-align: center;
     }
-    &.icon-tel {
-      background-image: url("../img/icon-form-tel.png");
-      background-repeat: no-repeat;
-      background-position: right 14px top 12px;
-    }
-  }
-  &-textarea {
-    color: $cbMainColor;
-    @include font(normal, 300, 15px, 16px, $ul);
+    & input {
+        // init styles ^^^
+        line-height: 16px;
+        position: relative;
+        width: 100%;
+        padding: 11px 34px 11px 19px;
+        text-transform: none;
+        border: 1px solid #acb7c3;
+        border-radius: 4px;
+        outline: 0;
 
-    width: 100%;
-    min-height: 110px;
-    max-height: 110px;
-    border: 1px solid #acb7c3;
-    padding: 11px 34px 11px 19px;
-    border-radius: 4px;
-    outline: none;
-    margin-bottom: 30px;
-  }
+        &:focus ~ .icon-form-svg {
+            fill: #f05a2e;
+        }
+        &::placeholder {
+            color: $cbMainColor;
+        }
+        &::-webkit-input-placeholder {
+            color: $cbMainColor;
+        }
+        &::-moz-placeholder {
+            color: $cbMainColor;
+        }/* Firefox 19+ */
+        &:-moz-placeholder {
+            color: $cbMainColor;
+        }/* Firefox 18- */
+        &:-ms-input-placeholder {
+            color: $cbMainColor;
+        }
+        // early 2014 http://html5.by/blog/placeholder/
+    }
+    &-textarea {
+        width: 100%;
+        min-height: 110px;
+        max-height: 110px;
+        margin-bottom: 30px;
+        padding: 11px 34px 11px 19px;
+        color: $cbMainColor;
+        border: 1px solid #acb7c3;
+        border-radius: 4px;
+        outline: none;
+
+        @include font(normal, 300, 15px, 16px, $ul);
+    }
+
+    & .icon-form-svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: .4;
+
+        fill: #023;
+
+        &.icon-user-svg {
+            top: 11px;
+            right: 12px;
+            width: 16px;
+            height: 16px;
+        }
+        &.icon-phone-svg {
+            top: 12px;
+            right: 14px;
+            width: 16px;
+            height: 16px;
+        }
+        &.icon-email-svg {
+            top: 12px;
+            right: 14px;
+            width: 17px;
+            height: 12px;
+        }
+    }
+
+    & .field {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
 }
-  // eof callback module
+// eof callback module
 
 // eofmodal content
 
 .page-product-desc {
-  & .callback {
-    & .icon-user {
-      background-image: url("../img/icon-form-user.png");
-      background-repeat: no-repeat;
-      background-position: right 9px top 11px;
-      @media #{$tablet} {
-        background-position: right 20px top 11px;
-      }
+    & .callback {
+        & .icon-user-svg {
+            top: 12px;
+            right: 12px;
+            @media #{$tablet} {
+                top: 11px;
+                right: 20px;
+            }
+        }
+        & .icon-email-svg {
+            top: 12px;
+            right: 12px;
+            @media #{$tablet} {
+                top: 12px;
+                right: 20px;
+            }
+            // text-transform: uppercase;
+        }
+        & .icon-tel-svg {
+            top: 12px;
+            right: 14px;
+            @media #{$tablet} {
+                top: 12px;
+                right: 22px;
+            }
+        }
     }
-    & .icon-email {
-      background-image: url("../img/icon-form-email.png");
-      background-repeat: no-repeat;
-      background-position: right 14px top 12px;
-      @media #{$tablet} {
-        background-position: right 20px top 12px;
-      }
-      text-transform: uppercase;
+}
+
+
+@media #{$tablet-desktop} {
+    .page-faq {
+        & .callback {
+            display: block;
+        }
     }
-    & .icon-tel {
-      background-image: url("../img/icon-form-tel.png");
-      background-repeat: no-repeat;
-      background-position: right 14px top 12px;
-      @media #{$tablet} {
-        background-position: right 22px top 12px;
-      }
+}
+
+@media #{$mobile} {
+    .page-faq {
+        & .callback {
+            display: none;
+        }
     }
-  }
 }

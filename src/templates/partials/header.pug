@@ -4,10 +4,7 @@ header.header
     .inner
 
       a.logo(href=linkIndex)
-        picture
-          //- source(media="(min-width: 1020px)" srcset="img/iphone-screen-3-3@1x.png 1x")
-          source(media="(max-width: 767px)" srcset=logoImgSrcMobile)
-          img(src=logoImgSrc)
+        +svg([{'class': 'svg-logo', 'pathid': 'svg-logo', 'filename':'logo'}])
 
 
       a.btn.request-callback Заказать звонок
@@ -15,7 +12,7 @@ header.header
       nav.menu.main-nav
         ul
           li#dd-products.dropdown
-            a(href=linkDocumentationGrid) Продукция
+            a(href=linkProductGrid) Продукция
             include _sub-menu-1
           li.dropdown
             a(href=linkSolutions) Решения

@@ -27,7 +27,9 @@ mixin svg(arr)
     - var identificator = item.pathid
     - var filename = item.filename
     svg()&attributes(svgclass)
-      use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../img/" + filename + ".svg#" + identificator)
+      use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/" + filename + ".svg#" + identificator)
+
+//- +mainSvg([{'class': 'icon-fb', 'pathid': 'svg-fb', 'filename':'fb'}])
 
 mixin mainSvg(arr)
   each item in arr

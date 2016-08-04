@@ -3,56 +3,64 @@
 $cbMainColor: #023;
 
 .search-form {
+    font-size: 0;
 
-
-  font-size: 0;
-
-  & .field-wrap {
-    margin: 0 auto;
-  }
-
-  & p {
-    text-align: center;
-  }
-
-  & > * {
-    font-size: initial;
-  }
-
-  & input {
-        vertical-align: top;
-
-        color: $cbMainColor;
-        @include font(normal, 300, 15px, 23px, $ul);
-    outline: 0;
-    text-transform: none;
-    // init styles ^^^
-    line-height: 16px;
-    padding: 11px 34px 11px 19px;
-    border-radius: 4px;
-    border: 1px solid #acb7c3;
-    width: 100%;
-    position: relative;
-
-    &:focus {}
-    &::placeholder               {color:$cbMainColor;}
-    &::-webkit-input-placeholder {color:$cbMainColor;}
-    &::-moz-placeholder          {color:$cbMainColor;}/* Firefox 19+ */
-    &:-moz-placeholder           {color:$cbMainColor;}/* Firefox 18- */
-    &:-ms-input-placeholder      {color:$cbMainColor;}
-    // early 2014 http://html5.by/blog/placeholder/
-
-    &.search-field {
-      min-width: 530px;
-      width: 80.3030303%;
-      margin-right: 20px;
-      margin-right: 3.0303030%;
-      @media #{$mobile} {
-        min-width: auto;
-        width: 100%;
-      }
+    & .field-wrap {
+        margin: 0 auto;
     }
-  }
+
+    & p {
+        text-align: center;
+    }
+
+    & > * {
+        font-size: initial;
+    }
+
+    & input {
+        // init styles ^^^
+        line-height: 16px;
+        position: relative;
+        width: 100%;
+        padding: 11px 34px 11px 19px;
+        vertical-align: top;
+        text-transform: none;
+        color: $cbMainColor;
+        border: 1px solid #acb7c3;
+        border-radius: 4px;
+        outline: 0;
+
+        @include font(normal, 300, 15px, 23px, $ul);
+
+
+        &::placeholder {
+            color: $cbMainColor;
+        }
+        &::-webkit-input-placeholder {
+            color: $cbMainColor;
+        }
+        &::-moz-placeholder {
+            color: $cbMainColor;
+        }/* Firefox 19+ */
+        &:-moz-placeholder {
+            color: $cbMainColor;
+        }/* Firefox 18- */
+        &:-ms-input-placeholder {
+            color: $cbMainColor;
+        }
+        // early 2014 http://html5.by/blog/placeholder/
+
+        &.search-field {
+            width: 80.3030303%;
+            min-width: 530px;
+            margin-right: 20px;
+            margin-right: 3.0303030%;
+            @media #{$mobile} {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    }
 }
 // search form
 

@@ -7,241 +7,241 @@
 
 figure,
 img {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .page-about {
+    & .main {
+        background: url('../img/vert-separator_left.png'),
+        url('../img/vert-separator_right.png');
+        background-color: #fbfbfb;
+        background-repeat: no-repeat;
+        background-position: 0 675px, 100% 675px;
 
-  & .main {
-
-    background: url('../img/vert-separator_left.png'),
-                url('../img/vert-separator_right.png');
-    background-color: #fbfbfb;
-    background-repeat: no-repeat;
-    background-position: 0 675px, 100% 675px;
-
-    @media #{$tablet} {
-      background-position: 0 1075px, 100% 1075px;
-    }
-    @media #{$mobile} {
-      background-position: 0 170px, 100% 170px;
-    }
-
-    & > .wrap {
-      @include clearfix;
-
-      & > .inner {
-        padding-left: 2.2058823%;
-        padding-right: 2.2058823%;
-
-        @media #{$mobile} {
-          padding-left: 20px;
-          padding-right: 20px;
+        @media #{$tablet} {
+            background-position: 0 1075px, 100% 1075px;
         }
-      }
-    }
-  }
+        @media #{$mobile} {
+            background-position: 0 170px, 100% 170px;
+        }
 
-  .presentation {
-    // outline: 2px dashed crimson;
-    // outline-offset: -2px;
-    // background: url('../img/about-presentation.jpg') no-repeat;
-    // background-size: cover;
-    // height: 765px;
-    // width: 1360px;
+        & > .wrap {
+            @include clearfix;
 
-    position: relative;
-    // z-index: 1;
-  }
+            & > .inner {
+                padding-right: 2.2058823%;
+                padding-left: 2.2058823%;
 
-  .article {
-    position: relative;
-    z-index: 1;
-    color: #385461;
-
-    &::after {
-      content: "";
-      position: absolute;
-      background: #fbfbfb;
-      border-radius: 50%;
-      // outline: 1px dashed red;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1006px;
-      height: 1006px;
-      z-index: -1;
-
-      transition: .4s;
-
-      @media #{$tablet} {
-        width: 1250px;
-        height: 1250px;
-      }
-
-      @media #{$mobile} {
-        width: 320px;
-        height: 320px;
-      }
+                @media #{$mobile} {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+            }
+        }
     }
 
-    & h3 {
-      text-align: center;
-      margin-top: 40px;
-      @include font(normal, 700, 18px, 18px, $ub);
-      @media #{$mobile} {
-        margin-top: 50px;
-      }
-    }
-    & p {
-      @include font(normal, 400, 18px, 27px, $pslab);
-      margin-top: 0;
-      margin-bottom: 27px;
-      letter-spacing: .5px;
-      // margin: 0;
-      // margin-bottom: 15px;
-
-      @media #{$mobile} {
-        @include font(normal, 400, 14px, 27px, $pslab);
-          // word-wrap: break-word;
-          // word-break: break-word;
-          // display: inline-block;
-          // overflow-wrap: break-word;
-      }
+    .presentation {
+        // outline: 2px dashed crimson;
+        // outline-offset: -2px;
+        // background: url('../img/about-presentation.jpg') no-repeat;
+        // background-size: cover;
+        // height: 765px;
+        // width: 1360px;
+        position: relative;
+        // z-index: 1;
     }
 
-    & ul {
-      margin-top: 40px;
-      & li {
+    .article {
+        position: relative;
+        z-index: 1;
         color: #385461;
-        @include font(normal, 400, 18px, 27px, $pslab);
-        // position: relative;
-        // padding-left: 18px;
-        //
-        // &::before {
-        //   content: "";
-        //   position: absolute;
-        //   width: 6px;
-        //   height: 6px;
-        //   left: 0;
-        //   top: 10px;
-        //   transform: rotate(45deg);
-        //   background-color: #223a46;
-        //
-        // }
-        @media #{$mobile} {
-          @include font(normal, 400, 14px, 27px, $pslab);
+
+        &::after {
+            position: absolute;
+            z-index: -1;
+            // outline: 1px dashed red;
+            top: 0;
+            left: 50%;
+            width: 1006px;
+            height: 1006px;
+            content: '';
+            transition: .4s;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: #fbfbfb;
+
+            @media #{$tablet} {
+                width: 1250px;
+                height: 1250px;
+            }
+
+            @media #{$mobile} {
+                width: 320px;
+                height: 320px;
+            }
         }
-      }
-    }
-  }
 
-  .content {
-    padding: 0 16.5384615%;
-    padding-top: 37px;
+        & h3 {
+            margin-top: 40px;
+            text-align: center;
 
-    @media #{$tablet} {
-      padding: 0 30px;
-    }
-    @media #{$mobile} {
-      padding: 0;
-    }
-  }
+            @include font(normal, 700, 18px, 18px, $ub);
+            @media #{$mobile} {
+                margin-top: 50px;
+            }
+        }
+        & p {
+            margin-top: 0;
+            margin-bottom: 27px;
+            letter-spacing: .5px;
 
-  .about-map {
-    margin-top: 35px;
-    margin-bottom: 25px;
-  }
+            @include font(normal, 400, 18px, 27px, $pslab);
+            // margin: 0;
+            // margin-bottom: 15px;
 
-  .about-company {
+            @media #{$mobile} {
+                @include font(normal, 400, 14px, 27px, $pslab);
+                // word-wrap: break-word;
+                // word-break: break-word;
+                // display: inline-block;
+                // overflow-wrap: break-word;
+            }
+        }
 
-    display: table;
-    @include clearfix;
+        & ul {
+            margin-top: 40px;
+            & li {
+                color: #385461;
 
-    & img {
-      float:left;
-      margin-right: 25px;
-
-      @media #{$mobile} {
-        float: none;
-        margin-bottom: 20px;
-        width: 100%;
-      }
-    }
-
-    & figcaption {
-      @include font(normal, 400, 18px, 27px, $pslab);
-      display: table-cell;
-      vertical-align: middle;
-
-      @media #{$mobile} {
-        display: block;
-        @include font(normal, 400, 14px, 27px, $pslab);
-      }
-    }
-  }
-
-
-  .techies li {
-    margin-bottom: 30px;
-  }
-
-  .key-areas {
-
-    & ul {
-      margin-bottom: 12px;
-    }
-  }
-
-  .heading {
-
-    margin: 0 auto;
-    margin-top: -240px;
-    min-height: 240px;
-    // width: 63.2352941%;
-    width: 56.5384615%;
-    padding: 0;
-    padding-top: 115px;
-    text-align: center;
-
-    @media #{$tablet} {
-      margin-top: -165px;
-      height: 165px;
-      width: 80%;
+                @include font(normal, 400, 18px, 27px, $pslab);
+                // position: relative;
+                // padding-left: 18px;
+                //
+                // &::before {
+                //   content: "";
+                //   position: absolute;
+                //   width: 6px;
+                //   height: 6px;
+                //   left: 0;
+                //   top: 10px;
+                //   transform: rotate(45deg);
+                //   background-color: #223a46;
+                //
+                // }
+                @media #{$mobile} {
+                    @include font(normal, 400, 14px, 27px, $pslab);
+                }
+            }
+        }
     }
 
-    @media #{$mobile} {
-      margin-top: -50px;
-      margin-bottom: 35px;
-      height: auto;
-      width: auto;
+    .content {
+        padding: 0 16.5384615%;
+        padding-top: 37px;
+
+        @media #{$tablet} {
+            padding: 0 30px;
+        }
+        @media #{$mobile} {
+            padding: 0;
+        }
+    }
+
+    .about-map {
+        margin-top: 35px;
+        margin-bottom: 25px;
+    }
+
+    .about-company {
+        display: table;
+
+        @include clearfix;
+
+        & img {
+            float: left;
+            margin-right: 25px;
+
+            @media #{$mobile} {
+                float: none;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        & figcaption {
+            display: table-cell;
+            vertical-align: middle;
+
+            @include font(normal, 400, 18px, 27px, $pslab);
+
+            @media #{$mobile} {
+                display: block;
+
+                @include font(normal, 400, 14px, 27px, $pslab);
+            }
+        }
     }
 
 
-    & h1,
-    & h2 {
-      margin: 0;
-      @include font(normal, 700, 36px, 36px, $ub);
-      color: #385461;
-      @media #{$mobile} {
-        @include font(normal, 700, 24px, 24px, $ub);
-      }
+    .techies li {
+        margin-bottom: 30px;
     }
-    & h1 {
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    & h2 {
-      font-size: 18px;
-      line-height: 20px;
-      letter-spacing: .5px;
 
-      @media #{$mobile} {
-        font-size: 16px;
-        letter-spacing: normal;
-      }
+    .key-areas {
+        & ul {
+            margin-bottom: 12px;
+        }
     }
-  }
+
+    .heading {
+        // width: 63.2352941%;
+        width: 56.5384615%;
+        min-height: 240px;
+        margin: 0 auto;
+        margin-top: -240px;
+        padding: 0;
+        padding-top: 115px;
+        text-align: center;
+
+        @media #{$tablet} {
+            width: 80%;
+            height: 165px;
+            margin-top: -165px;
+        }
+
+        @media #{$mobile} {
+            width: auto;
+            height: auto;
+            margin-top: -50px;
+            margin-bottom: 35px;
+        }
+
+
+        & h1,
+        & h2 {
+            margin: 0;
+            color: #385461;
+
+            @include font(normal, 700, 36px, 36px, $ub);
+            @media #{$mobile} {
+                @include font(normal, 700, 24px, 24px, $ub);
+            }
+        }
+        & h1 {
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        & h2 {
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: .5px;
+
+            @media #{$mobile} {
+                font-size: 16px;
+                letter-spacing: normal;
+            }
+        }
+    }
 }

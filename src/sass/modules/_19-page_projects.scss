@@ -1,124 +1,126 @@
 .page-projects {
-
-  & .main {
-    background: url("../img/vert-separator_left.png"),
-                url("../img/vert-separator_right.png");
-    background-repeat: no-repeat;
-    background-position: top left, top right;
-  }
-
-  & .inner {
-    padding-left: 2.2058823%;
-    padding-right: 2.2058823%;
-
-    @media #{$tablet} {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-    @media #{$mobile} {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  .globe {
-    // background: url('../img/projects-globe.png') no-repeat;
-    // background-position: 0 17px;
-    // background-size: 100%;
-    // width: 100%;
-    // margin: 0 auto;
-    // height: 651px;
-    // padding-top: 30px;
-    // & img {
-    //   display: block;
-    //   margin: 0 auto;
-    //   width: 100%;
-    //   height: 100%;
-    // }
-  }
-
-  & .content {
-    // padding-top: 57%;
-    // background: url('../img/projects-globe.png') no-repeat;
-    // background-position: 0px 20px;
-    // background-size: 100%;
-  // данные стили для параграфов которые - можно вынести в общак и редактировать только отдельные для каждой страницы, а общие если норм - то для каждой уже не придется прописывать отдельно.
-  background: url('../img/projects-globe.png') no-repeat;
-  background-position: left 15px;
-  background-size: 100%;
-
-    width: 1160px;
-    padding: 0 150px;
-    padding-top: 55%;
-    margin: 0 auto;
-    @media #{$desktop} {
-      padding-bottom: 95px;
+    & .main {
+        background: url('../img/vert-separator_left.png'),
+        url('../img/vert-separator_right.png');
+        background-repeat: no-repeat;
+        background-position: top left, top right;
     }
 
-    @media #{$tablet} {
-      width: 100%;
-      padding: 0;
-      padding-top: 55%;
+    & .inner {
+        padding-right: 2.2058823%;
+        padding-left: 2.2058823%;
+
+        @media #{$tablet} {
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        @media #{$mobile} {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
     }
 
-    @media #{$mobile} {
-      width: 100%;
-      padding: 0;
-      padding-top: 80%;
+    .globe {
+        // background: url('../img/projects-globe.png') no-repeat;
+        // background-position: 0 17px;
+        // background-size: 100%;
+        // width: 100%;
+        // margin: 0 auto;
+        // height: 651px;
+        // padding-top: 30px;
+        // & img {
+        //   display: block;
+        //   margin: 0 auto;
+        //   width: 100%;
+        //   height: 100%;
+        // }
     }
 
-    & p {
-      margin: 0;
-      margin-bottom: 27px;
-      color: #385461;
-      @include font(normal, 400, 18px, 27px, $pslab);
-      letter-spacing: 0.5px;
-      @media #{$mobile} {
-        @include font(normal, 400, 16px, 27px, $pslab);
-      }
-    }
-    & span {
-      color: #385461;
-      @include font(normal, 400, 18px, 27px, $pslab);
-      @media #{$mobile} {
-        @include font(normal, 400, 16px, 27px, $pslab);
-      }
-    }
-  }
+    & .content {
+        width: 1160px;
+        margin: 0 auto;
+        padding: 0 150px;
+        padding-top: 55%;
+        // padding-top: 57%;
+        // background: url('../img/projects-globe.png') no-repeat;
+        // background-position: 0px 20px;
+        // background-size: 100%;
+        // данные стили для параграфов которые - можно вынести в общак и редактировать только отдельные для каждой страницы, а общие если норм - то для каждой уже не придется прописывать отдельно.
+        background: url('../img/projects-globe.png') no-repeat;
+        background-position: left 15px;
+        background-size: 100%;
+        @media #{$desktop} {
+            padding-bottom: 95px;
+        }
 
-  & h1.title {
-    @include font(normal, 700, 36px, 36px, $ub);
-    color: #385461;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 58px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    @media #{$mobile} {
-      @include font(normal, 700, 24px, 36px, $ub);
-      margin-bottom: 25px;
-    }
-  }
+        @media #{$tablet} {
+            width: 100%;
+            padding: 0;
+            padding-top: 55%;
+        }
 
-  & ul.content-list {
-    margin-bottom: 27px;
-    & li {
-      color: #385461;
-      @include font(normal, 400, 18px, 27px, $pslab);
-      letter-spacing: 0.6px;
-      @media #{$mobile} {
-        @include font(normal, 400, 16px, 27px, $pslab);
-      }
-    }
-  }
+        @media #{$mobile} {
+            width: 100%;
+            padding: 0;
+            padding-top: 80%;
+        }
 
-  & figure {
-    padding-top: 25px;
-    & img {
-      display: block;
-      margin: 0 auto;
-      width: 100%;
-    }
-  }
+        & p {
+            margin: 0;
+            margin-bottom: 27px;
+            letter-spacing: .5px;
+            color: #385461;
 
+            @include font(normal, 400, 18px, 27px, $pslab);
+            @media #{$mobile} {
+                @include font(normal, 400, 16px, 27px, $pslab);
+            }
+        }
+        & span {
+            color: #385461;
+
+            @include font(normal, 400, 18px, 27px, $pslab);
+            @media #{$mobile} {
+                @include font(normal, 400, 16px, 27px, $pslab);
+            }
+        }
+    }
+
+    & h1.title {
+        margin: 0;
+        margin-bottom: 58px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #385461;
+
+        @include font(normal, 700, 36px, 36px, $ub);
+        @media #{$mobile} {
+            margin-bottom: 25px;
+
+            @include font(normal, 700, 24px, 36px, $ub);
+        }
+    }
+
+    & ul.content-list {
+        margin-bottom: 27px;
+        & li {
+            letter-spacing: .6px;
+            color: #385461;
+
+            @include font(normal, 400, 18px, 27px, $pslab);
+            @media #{$mobile} {
+                @include font(normal, 400, 16px, 27px, $pslab);
+            }
+        }
+    }
+
+    & figure {
+        padding-top: 25px;
+        & img {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
 } // EOF .page-projects {}

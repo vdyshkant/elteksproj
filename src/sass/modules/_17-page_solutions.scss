@@ -1,166 +1,192 @@
 .page-solutions {
-
-  & .wrap {
-
-
-    & > .inner {
-      padding-left: 2.2058823%;
-      padding-right: 2.2058823%;
-      @media #{$tablet} {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-      @media #{$mobile} {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
-  }
-// ^^^^^^ GRID.
-
-  // fix inner wraps!!!
-
-
-  & .sub-header {
-    & .phones {
-      text-align: left;
-      @media #{$tablet} {
-        float: right;
-        text-align: right;
-        & span:first-child{
-          display: none;
+    & .wrap {
+        & > .inner {
+            padding-right: 2.2058823%;
+            padding-left: 2.2058823%;
+            @media #{$tablet} {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+            @media #{$mobile} {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
         }
-      }
     }
-    & address {
-      text-align: right;
-      @media #{$tablet} {
+    // ^^^^^^ GRID.
+
+    // fix inner wraps!!!
+
+
+    & .sub-header {
+        & .phones {
+            text-align: left;
+            @media #{$tablet} {
+                float: right;
+                text-align: right;
+                & span:first-child {
+                    display: none;
+                }
+            }
+        }
+        & address {
+            text-align: right;
+            @media #{$tablet} {
+                float: left;
+            }
+        }
+    }
+
+    @media #{$tablet} {
+        & .lbl-search:hover {
+            width: 170px;
+        }
+    }
+
+
+    // module page-title
+    & .page-title {
+        & .breadcrumbs {
+            margin-bottom: 92px;
+        }
+        & h1 {
+            text-transform: none;
+            @media #{$tablet} {
+                text-transform: uppercase;
+            }
+            @media #{$mobile} {
+                text-transform: uppercase;
+            }
+        }
+    }
+    // EOF module page-title
+
+
+    & .content {
+        padding-top: 27px;
+
+        @include clearfix;
+        // word-wrap: break-word;
+
+        & h3 {
+            margin: 0;
+            margin-bottom: 27px;
+            letter-spacing: .5px;
+            color: #385461;
+
+            @include font(normal, 700, 18px, 18px, $ub);
+        }
+
+        & p {
+            margin: 0;
+            margin-bottom: 22px;
+            padding-right: 35px;
+            letter-spacing: .4px;
+            color: #385461;
+
+            @include font(normal, 400, 18px, 22px, $pslab);
+
+            @media #{$mobile} {
+                @include font(normal, 400, 14px, 22px, $pslab);
+            }
+        }
+
+        & figure {
+            margin-bottom: 17px;
+            padding-top: 3px;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+
+    & .column-left {
         float: left;
-      }
-    }
-  }
+        width: 310px;
+        width: 23.8461538%;
+        margin-right: 20px;
+        margin-right: 1.5384615%;
+        @media #{$mobile-tablet} {
+            width: 100%;
+            border-top: 1px solid #647983;
+            border-bottom: 1px solid #647983;
 
-  @media #{$tablet} {
-    & .lbl-search:hover {
-      width: 170px;
-    }
-  }
-
-
-  // module page-title
-  & .page-title {
-
-    & .breadcrumbs {
-      margin-bottom: 92px;
-    }
-    & h1 {
-      text-transform: none;
-      @media #{$tablet} {
-        text-transform: uppercase;
-      }
-      @media #{$mobile} {
-        text-transform: uppercase;
-      }
-    }
-  }
-  // EOF module page-title
-
-
-  & .content {
-    @include clearfix;
-    padding-top: 27px;
-    // word-wrap: break-word;
-
-    & h3 {
-      margin: 0;
-      @include font(normal, 700, 18px, 18px, $ub);
-      color: #385461;
-
-      margin-bottom: 27px;
-      letter-spacing: 0.5px;
+            & span.column-title {
+                display: block;
+                margin-bottom: 0;
+                padding: 15px 0;
+                cursor: pointer;
+                &::after {
+                    position: absolute;
+                    top: 13px;
+                    right: 8px;
+                    left: initial;
+                    width: 10px;
+                    height: 10px;
+                    content: '';
+                    transition: 200ms linear;
+                    transform: rotate(135deg) translateY(-50%);
+                    border-top: 1px solid #022435;
+                    border-right: 1px solid #022435;
+                    background: none;
+                }
+                &.active {
+                    &::after {
+                        top: 21px;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
     }
 
-    & p {
-      margin: 0;
-      @include font(normal, 400, 18px, 22px, $pslab);
-      color: #385461;
-
-      padding-right: 35px;
-      margin-bottom: 22px;
-      letter-spacing: 0.4px;
-
-      @media #{$mobile} {
-        @include font(normal, 400, 14px, 22px, $pslab);
-      }
+    & .column-center {
+        float: left;
+        width: 640px;
+        width: 49.2307692%;
+        margin-right: 20px;
+        margin-right: 1.5384615%;
+        padding-bottom: 70px;
+        @media #{$mobile-tablet} {
+            width: 100%;
+            padding-top: 45px;
+        }
     }
 
-    & figure {
-      margin-bottom: 17px;
-      padding-top: 3px;
-      & img {
-        width: 100%;
-      }
+    & .column-right {
+        float: right;
+        width: 310px;
+        width: 23.8461538%;
+        @media #{$mobile-tablet} {
+            display: none;
+        }
     }
-  }
 
-  & .column-left {
-    float: left;
-    width: 310px;
-    width: 23.8461538%;
-    margin-right: 20px;
-    margin-right: 1.5384615%;
-    @media #{$mobile-tablet} {
-      width: 100%;
+    & .related-products {
+        padding-top: 25px;
     }
-  }
 
-  & .column-center {
-    float: left;
-    width: 640px;
-    width: 49.2307692%;
-    margin-right: 20px;
-    margin-right: 1.5384615%;
-    padding-bottom: 70px;
-    @media #{$mobile-tablet} {
-      width: 100%;
-      padding-top: 45px;
+    & .footer {
+        & .socials {
+            & .item {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        & .uct span {
+            font-size: 28px;
+            padding-left: 4px;
+            letter-spacing: .4px;
+        }
     }
-  }
-
-  & .column-right {
-    float: right;
-    width: 310px;
-    width: 23.8461538%;
-    @media #{$mobile-tablet} {
-      display: none;
-    }
-  }
-
-  & .related-products {
-    padding-top: 25px;
-  }
-
-  & .footer {
-    & .socials {
-      & .item {
-        width: 24px;
-        height: 24px;
-      }
-    }
-    & .uct span {
-      font-size: 28px;
-      padding-left: 4px;
-      letter-spacing: .4px;
-    }
-  }
 }
 
 
-
-@media #{$tablet} {
-  .page-solutions {
-    & .products-nav-content {
-      display: none;
+@media #{$mobile-tablet} {
+    .page-solutions {
+        & .products-nav-content {
+            display: none;
+            margin-top: 10px;
+        }
     }
-  }
 }

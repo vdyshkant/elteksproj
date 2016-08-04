@@ -1,50 +1,50 @@
 // header-search
 
 .header-search {
-    background-color: $s_bg-color;
     height: 35px;
+    background-color: $s_bg-color;
     // outline: 2px dashed crimson;
     // position: relative;
     & .search-inner {
-        text-align: center;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        text-align: center;
     }
 
     .lbl-search {
-        display: inline-block;
         position: relative;
-        height: 19px;
-        width: 19px;
+        display: inline-block;
         box-sizing: border-box;
+        width: 19px;
+        height: 19px;
         margin: 0 5px 5px 0;
         padding: 0 6px 0 6px;
+        cursor: text;
+        transition: all 200ms ease;
         border: 2px solid $s_icn-color;
         border-radius: 25px;
-        transition: all 200ms ease;
-        cursor: text;
 
         &::after {
-            content: '';
             position: absolute;
+            top: 10px;
+            right: -5px;
             width: 3px;
             height: 13px;
-            right: -5px;
-            top: 10px;
-            background: $s_icn-color;
-            border-radius: 3px;
-            transform: rotate(-45deg);
+            content: '';
             transition: all 200ms ease;
+            transform: rotate(-45deg);
+            border-radius: 3px;
+            background: $s_icn-color;
         }
         &.active,
         &:hover {
             width: 300px;
-            margin: 0;
             height: 25px;
+            margin: 0;
             border-radius: 10px;
             @media #{$tablet} {
-              width: 200px;
+                width: 200px;
             }
 
             &::after {
@@ -53,15 +53,15 @@
         }
 
         input {
-            width: 100%;
-            border: none;
-            box-sizing: border-box;
             font-family: Helvetica;
             font-size: 15px;
             line-height: 12px;
+            box-sizing: border-box;
+            width: 100%;
             color: inherit;
-            background-color: transparent;
+            border: none;
             outline: none;
+            background-color: transparent;
         }
     }
 }

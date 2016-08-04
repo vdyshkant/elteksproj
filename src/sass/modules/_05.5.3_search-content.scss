@@ -1,42 +1,44 @@
 // search-content
 
 & .search-content {
-  height: auto; // issue with headers-search. rename to header-search or smth els
-  @include clearfix;
+    height: auto; // issue with headers-search. rename to header-search or smth els
 
-  & .field-wrap {
-    // padding-left: 330px; // +%
-    // padding-left: 25.3846153%;
-    min-width: 660px;
-    width: 660px;
-    display: block;
-    // padding-right: 310px; // +%
-    // padding-right: 23.846153%; // +%
-    font-size: 0;
-    white-space: nowrap;
-    @media #{$mobile} {
-      white-space: normal;
-      min-width: auto;
-      width: auto;
-    }
-    & > * {
-      font-size: initial;
-    }
-  }
+    @include clearfix;
 
-  & p {
-    margin: 0;
-    margin-bottom: 28px;
-    letter-spacing: .2px;
-    @include font(normal, 300, 15px, 23px, $ul);
-    color: #023;
-  }
-
-  & .search-form {
-    & input {
-      padding-bottom: 9px;
+    & .field-wrap {
+        // padding-right: 310px; // +%
+        // padding-right: 23.846153%; // +%
+        font-size: 0;
+        display: block;
+        width: 660px;
+        // padding-left: 330px; // +%
+        // padding-left: 25.3846153%;
+        min-width: 660px;
+        white-space: nowrap;
+        @media #{$mobile} {
+            width: auto;
+            min-width: auto;
+            white-space: normal;
+        }
+        & > * {
+            font-size: initial;
+        }
     }
-  }
+
+    & p {
+        margin: 0;
+        margin-bottom: 28px;
+        letter-spacing: .2px;
+        color: #023;
+
+        @include font(normal, 300, 15px, 23px, $ul);
+    }
+
+    & .search-form {
+        & input {
+            padding-bottom: 9px;
+        }
+    }
 }
 
 // EOF search-content

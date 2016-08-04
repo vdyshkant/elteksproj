@@ -1,0 +1,154 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Решения компании Элтекс'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-solutions')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include partials/header
+    .sub-header
+      .wrap
+        .inner
+          .phones
+            span Поговорить с консультантом: +7
+            span (727) 266-288-6
+          .header-search
+            .search-inner
+              label.lbl-search(for="inpt-search")
+                input#inpt-search(type="text")
+          address г. Алматы, ул. Тимирязева 17, офис 27
+      include partials/_sub-menu-1
+      include partials/_sub-menu-2
+      include partials/_sub-menu-3
+      include partials/_sub-menu-4
+
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Решения от компании ЭЛТЕКС' },
+            ])
+
+            h1 Решения компании ЭЛТЕКС
+
+          .content
+            //- .content-wrap
+            //-   ul
+            //-     li.faq-item.jsFaqItem
+            //-       span.faq-item-title [ACS] Как настроить Dialplan на ONT при помощи ACS сервера?
+            //-       .faq-item-content
+            //-         p
+
+            .column-left.products-nav-menu
+              span.column-title.jsColumnTitle Категории
+              //- Всё - upperCase + underlined потому что это всё(обобщение) или потому что это активное меню
+              ul.products-nav-content.jsProdMenuContent
+                li.category
+                  a.category-link(href="#") Операторские решения
+                  ul
+                    li.item.item-active
+                      a.item-link(href="#") Сеть агрегации
+                    li.item
+                      a.item-link(href="#") Широкополосный доступ
+                    li.item
+                      a.item-link(href="#") Беспроводная сеть Wi-Fi
+                    li.item
+                      a.item-link(href="#") VoIP
+                    li.item
+                      a.item-link(href="#") IPTV
+                    li.item
+                      a.item-link(href="#") Виртуализация
+
+
+
+                li.category
+                  a.category-link(href="#") Корпоративные решения
+                  ul
+                    li.item
+                      a.item-link(href="#") Доступ в интернет
+                    li.item
+                      a.item-link(href="#") VoIP
+                    li.item
+                      a.item-link(href="#") Терминальные решения
+
+
+
+                li.category
+                  a.category-link(href="#") Решения для дома и небольших офисов
+                  ul
+                    li.item
+                      a.item-link(href="#") Телевидение
+
+
+
+
+            .column-center
+              .wrapper
+                h3 Ключевые преимущества
+                p Построение транспортных сетей масштаба района или области -&nbsp;одна из тех задач, которые часто приходится решать провайдерам и операторам услуг. Увеличение объема всеобщего трафика ведет к тому, что пропускная способность каналов связи оператора должна постоянно увеличиватся для того, чтобы предоставлять все самые современные услуги связи и увеличивать число подключаемых клиентов.
+                p Коммутаторы серии MES3100 предназначены для построения кольцевых сетей. Они позволяют обеспечить необходимую пропускную способность канала на расстоянии до 160 км (полоса пропускания 1Gbps) и 80км (полоса пропускания 10Gbps). Устройства обладают высокой производительностью (до 128 Gbps) и имеют от 2 до 4 портов 10G (SFP+) для построения кольца.
+                figure
+                  img(src="img/solutions-scheme.jpg")
+                p Коммутаторы серии MES3100 имеют возможность установки до 2 модулей питания с возможностью горячей замены, что позволяет построить высоконадежную сеть и обеспечить резервирование по питанию. Одним из плюсов также является способность работать с SFP/SFP+ трансиверами различных производителей без дополнительной настройки.
+
+
+            .column-right.related-products
+              .wrap
+                span.related-title Оборудование
+                .item-list
+                  .item
+                    .preview
+                      img(src="img/related-product-01.png")
+                    a.item-title(href=linkProduct) ELTEX.EMS
+                  .item
+                    .preview
+                      img(src="img/related-product-02.png")
+                    a.item-title(href=linkProduct) ONT NTP-2C
+                  .item
+                    .preview
+                      img(src="img/related-product-04.png")
+                    a.item-title(href=linkProduct) ONT NTP-RG-1402GC-W
+                  .item
+                    .preview
+                      img(src="img/related-product-04.png")
+                    a.item-title(href=linkProduct) ONT NTP-2
+                  .item
+                    .preview
+                      img(src="img/related-product-05.png")
+                    a.item-title(href=linkProduct) OLT LTP-8X rev.B
+
+
+
+        //- FORM MIXIN
+
+
+    //- footer
+    include partials/footer
+    //- eof footer

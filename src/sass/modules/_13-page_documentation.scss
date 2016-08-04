@@ -1,149 +1,147 @@
 .page-documentation {
+    & .main {
+        padding-bottom: 100px;
 
-  & .main {
-    padding-bottom: 100px;
+        & > .wrap {
+            @include clearfix;
+            & .inner {
+                padding-right: 2.2058823%;
+                padding-right: 30px;
+                padding-left: 2.2058823%;
+                padding-left: 30px;
 
-    & > .wrap {
-      @include clearfix;
-      & .inner {
-        padding-left: 2.2058823%;
-        padding-right: 2.2058823%;
-        padding-left: 30px;
-        padding-right: 30px;
+                @include clearfix;
+                @media #{$mobile} {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    & .main .column {
+        float: left;
+        width: 420px;
+        width: 32.3076923%;
+        margin-right: 20px;
+        margin-right: 1.5384615%;
+        @media #{$mobile} {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        & h3 {
+            position: relative;
+            margin: 0;
+            margin-bottom: 45px;
+            color: #385461;
+
+            @include font(normal, 700, 18px, 18px, $ub);
+            &::before {
+                position: absolute;
+                right: 0;
+                bottom: -15px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                content: '';
+                background: #647983;
+            }
+        }
+        & a {
+            color: #385461;
+
+            @include font(normal, 300, 18px, 18px, $ul);
+        }
+    }
+
+    & .main .column-center,
+    & .main .column-right {
+        & ul {
+            & li {
+                margin-bottom: 30px;
+                padding: 15px 0 15px 70px;
+                &.pdf {
+                    background: url('../img/icon-pdf.png') no-repeat;
+                }
+                &.code {
+                    background: url('../img/icon-code.png') no-repeat;
+                }
+            }
+        }
+    }
+
+    & .main .column-left {
+        position: relative;
+
         @include clearfix;
         @media #{$mobile} {
-          padding-right: 20px;
-          padding-left: 20px;
+            margin-bottom: 40px;
         }
-      }
-    }
-  }
-
-  & .main .column {
-    width: 420px;
-    width: 32.3076923%;
-    margin-right: 20px;
-    margin-right: 1.5384615%;
-    float: left;
-    @media #{$mobile} {
-      width: 100%;
-      margin-right: 0;
     }
 
-    & h3 {
-      color: #385461;
-      @include font(normal, 700, 18px, 18px, $ub);
-      margin: 0;
-      margin-bottom: 45px;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        right: 0;
-        left: 0;
-        bottom: -15px;
-        height: 1px;
-        background: #647983;
-      }
-    }
-    & a {
-      color: #385461;
-      @include font(normal, 300, 18px, 18px, $ul);
-    }
-  }
-
-  & .main .column-center,
-  & .main .column-right {
-    & ul {
-      & li {
-        padding: 15px 0 15px 70px;
-        margin-bottom: 30px;
-        &.pdf {
-          background: url('../img/icon-pdf.png') no-repeat;
+    & .main .column-center {
+        // outline: 2px dashed hotpink;
+        // outline-offset: -2px;
+        @media #{$tablet} {
+            clear: left;
         }
-        &.code {
-          background: url('../img/icon-code.png') no-repeat;
-        }
-      }
     }
-  }
+    & .main .column-right {
+        float: right;
+        margin-right: 0;
 
-  & .main .column-left {
-    position: relative;
-    @include clearfix;
-    @media #{$mobile} {
-      margin-bottom: 40px;
+        // outline: 2px dashed burlywood;
+        // outline-offset: -2px;
     }
-  }
 
-  & .main .column-center {
-    // outline: 2px dashed hotpink;
-    // outline-offset: -2px;
-    @media #{$tablet} {
-      clear: left;
+    & .main .appointment-form {
+        clear: both;
     }
-  }
-  & .main .column-right {
-    float: right;
-    margin-right: 0;
-
-    // outline: 2px dashed burlywood;
-    // outline-offset: -2px;
-  }
-
-  & .main .appointment-form {
-    clear: both;
-  }
-
 }
 
 // tablet styles onwards:
 @media #{$tablet} {
-  .page-documentation {
-
-    & .main .union {
-      float: left;
-      margin-right: 20px;
-      width: 48.5575706%;
-      @media #{$mobile} {
-        width: 100%;
-        float: none;
-        clear: both;
-      }
-    }
-
-    & .main .column {
-
-      &-left{
-        float: none;
-        width: 100%;
-        margin-bottom: 45px;
-        clear: both;
-      }
-      &-center{
-        float: none;
-        width: 100%;
-        clear: both;
-      }
-
-
-
-      &-right{
-        float: right;
-        width: 48.5575706%;
-        @media #{$mobile} {
-          width: 100%;
-
-          float: none;
+    .page-documentation {
+        & .main .union {
+            float: left;
+            width: 48.5575706%;
+            margin-right: 20px;
+            @media #{$mobile} {
+                float: none;
+                clear: both;
+                width: 100%;
+            }
         }
-      }
-    }
 
-  }
+        & .main .column {
+            &-left {
+                float: none;
+                clear: both;
+                width: 100%;
+                margin-bottom: 45px;
+            }
+            &-center {
+                float: none;
+                clear: both;
+                width: 100%;
+            }
+
+
+
+            &-right {
+                float: right;
+                width: 48.5575706%;
+                @media #{$mobile} {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 @media #{$mobile-tablet} {
-  .bx-pager-documentation-item:nth-child(1n+3) {
-    display: none;
-  }
+    .bx-pager-documentation-item:nth-child(1n+3) {
+        display: none;
+    }
 }

@@ -1,87 +1,87 @@
 /* counter */
 
 .counter {
-    @include clearfix;
     margin: 0 auto;
-    padding-top: 7px;
     // padding-bottom: 388px;
     margin-bottom: 46px;
+    padding-top: 7px;
+
+    @include clearfix;
     // outline: 2px dashed crimson;
 
     @media #{$mobile} {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
 
     & .inner {
-        padding-left: 2.205882352%;
         padding-right: 2.205882352%;
+        padding-left: 2.205882352%;
+
         @include clearfix;
 
         @media #{$tablet} {
-          text-align: center;
-          font-size: 0;
-          & > * {
-            font-size: initial;
-          }
+            font-size: 0;
+            text-align: center;
+            & > * {
+                font-size: initial;
+            }
         }
         @media #{$mobile} {
-          padding-left: 6.25%;
-          padding-right: 6.25%;
+            padding-right: 6.25%;
+            padding-left: 6.25%;
         }
     }
 
     h1 {
-        text-align: center;
         margin: 0;
         margin-bottom: 74px;
-        @include font(normal, 700, 36px, 36px, $ub);
-        text-transform: uppercase;
+        transition: .6s;
+        text-align: center;
         letter-spacing: 1px;
+        text-transform: uppercase;
         color: #385461;
 
-        transition: .6s;
+        @include font(normal, 700, 36px, 36px, $ub);
         @media #{$mobile} {
-          @include font(normal, 700, 24px, 36px, $ub);
-          letter-spacing: .8px;
+            letter-spacing: .8px;
+
+            @include font(normal, 700, 24px, 36px, $ub);
         }
     }
 
     & .item {
+        float: left;
         width: 310px;
         width: 23.8461538%;
         min-height: 220px;
         margin-right: 20px;
         margin-right: 1.5384615%;
-        float: left;
-
+        transition: .6s;
         // outline: 2px dashed crimson;
         // outline-offset: -2px;
         text-align: center;
-
-
-        transition: .6s;
         @media #{$tablet} {
-          width: 47.6923076%;
-          width: 47.2527472%;
-          margin-right: 20px;
-          display: inline-block;
-          float: none;
+            display: inline-block;
+            float: none;
+            width: 47.6923076%;
+            width: 47.2527472%;
+            margin-right: 20px;
 
-          &:nth-of-type(2n) {
-            // clear: right;
-            margin-right: 0;
-            margin-bottom: 45px;
-          }
+            &:nth-of-type(2n) {
+                // clear: right;
+                margin-right: 0;
+                margin-bottom: 45px;
+            }
         }
         @media #{$mobile} {
-          clear: left;
-          margin: 0 auto;
-          float: none;
-          width: 280px;
-          margin-bottom: 45px;
-          &:last-child {
-            margin-bottom: 0;
-          }
+            float: none;
+            clear: left;
+            width: 280px;
+            margin: 0 auto;
+            margin-bottom: 45px;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
 
         & i {
@@ -90,38 +90,40 @@
         }
 
         & .svg-counter-icn {
-            fill: #0084C4;
             width: 100%;
+
+            fill: #0084c4;
         }
 
         & h2 {
             font-family: $ub;
-            color: #385461;
             font-size: 72px;
             line-height: 72px;
             position: relative;
-            letter-spacing: 2px;
             margin: 0;
             margin-bottom: 28px;
+            letter-spacing: 2px;
+            color: #385461;
 
             &:after {
                 position: absolute;
-                content: '';
+                top: 82px;
+                left: 50%;
                 width: 90px;
                 height: 1px;
-                left: 50%;
+                content: '';
                 transform: translateX(-50%);
-                top: 82px;
-                background-color: #0084C4;
+                background-color: #0084c4;
             }
         }
 
         & .text {
-            color: #023;
-            @include font(normal, 400, 15px, 17px, $pst);
-            text-transform: uppercase;
-            letter-spacing: .5px;
             margin: 0;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: #023;
+
+            @include font(normal, 400, 15px, 17px, $pst);
         }
 
         &:nth-child(2) {
@@ -133,7 +135,7 @@
             & .text {
                 padding: 0 10px;
                 @media #{$mobile} {
-                  padding: 0;
+                    padding: 0;
                 }
             }
         }
@@ -170,7 +172,7 @@
             & .text {
                 padding: 5px 70px;
                 @media #{$mobile} {
-                  padding: 5px 60px;
+                    padding: 5px 60px;
                 }
             }
         }
@@ -178,7 +180,7 @@
         &:nth-child(5) {
             // #4
             @media #{$tablet-desktop} {
-              margin-right: 0;
+                margin-right: 0;
             }
 
             & .svg-counter-icn-4 {
@@ -188,7 +190,7 @@
             & .text {
                 padding: 0 45px;
                 @media #{$mobile} {
-                  padding: 0 30px;
+                    padding: 0 30px;
                 }
             }
         }
@@ -201,43 +203,40 @@
 // parallax
 
 & .bottom-line {
-    width: 100%;
-    clear: both;
     float: left;
+    clear: both;
+    width: 100%;
+    height: 396px;
+    // outline: 2px dashed tan;
+    // outline-offset: -2px;
+    transition: .6s;
     background-image: url('../img/separator.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    height: 396px;
-
-    // outline: 2px dashed tan;
-    // outline-offset: -2px;
-
-    transition: .6s;
     @media #{$mobile-tablet} {
-      background-size: 100%;
+        background-size: 100%;
     }
 
     @media #{$tablet} {
-      height: 310px;
+        height: 310px;
     }
 
     @media #{$mobile} {
-      height: 180px;
+        height: 180px;
     }
 }
 
-.parallax{
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 400px; /* put your height */
+.parallax {
+    position: relative;
+    top: -50px; /* example style: not mandatory */
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* put your height */
 
-  top: -50px; /* example style: not mandatory */
-
-  @media #{$mobile} {
-    height: 230px;
-  }
+    @media #{$mobile} {
+        height: 230px;
+    }
 }
 
 // EOF parallax

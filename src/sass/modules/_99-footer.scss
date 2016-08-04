@@ -3,83 +3,84 @@
 // footer
 
 .footer {
-    background: #013C59 url('../img/bg_footer.png') center center no-repeat;
-    background-size: cover;
     padding-top: 45px;
     padding-bottom: 53px;
     text-align: center;
+    background: #013c59 url('../img/bg_footer.png') center center no-repeat;
+    background-size: cover;
 
     @media #{$mobile} {
-      padding: 0;
-      padding-top: 40px;
-      padding-bottom: 45px;
+        padding: 0;
+        padding-top: 40px;
+        padding-bottom: 45px;
     }
 
 
     & .wrap {
-      min-width: auto;
-      max-width: none;
+        min-width: auto;
+        max-width: none;
     }
 
     & .inner {
-      padding-left: 2.205882352%;
-      padding-right: 2.205882352%;
-      @include clearfix;
+        padding-right: 2.205882352%;
+        padding-left: 2.205882352%;
 
-      @media #{$tablet} {
-        padding-left: 2.6041666%;
-        padding-right: 2.6041666%;
-      }
-      @media #{$mobile} {
-        padding-left: 6.25%;
-        padding-right: 6.25%;
-      }
+        @include clearfix;
+
+        @media #{$tablet} {
+            padding-right: 2.6041666%;
+            padding-left: 2.6041666%;
+        }
+        @media #{$mobile} {
+            padding-right: 6.25%;
+            padding-left: 6.25%;
+        }
     }
 }
 
 .footer-bottom {
     font-size: 0;
     @media #{$tablet-desktop} {
-
-      width: 475px;
-      margin: 0 auto;
+        width: 475px;
+        margin: 0 auto;
     }
 
     @media #{$tablet} {
-      width: 435px;
+        width: 435px;
     }
 
     & > * {
-        display: inline-block;
         font-size: initial;
+        display: inline-block;
         @media #{$mobile} {
-          display: block;
-          float: left;
-          margin: 0 auto;
+            display: block;
+            float: left;
+            margin: 0 auto;
         }
     }
 
     & .copy {
-        font-size: 24px;
         font-family: $ub;
-        color: #FFF;
+        font-size: 24px;
         margin-right: 40px;
         margin-right: 8.4210526%;
+        color: #fff;
         @media #{$mobile} {
-          margin-right: 0;
-          text-align: center;
-          float: none;
-          padding-bottom: 20px;
+            float: none;
+            margin-right: 0;
+            padding-bottom: 20px;
+            text-align: center;
         }
     }
 
     & .manufacturer {
-        @include font(normal, 400, 15px, 15px, $ul);
-        color: #FFF;
         text-decoration: none;
+        color: #fff;
+
+        @include font(normal, 400, 15px, 15px, $ul);
 
         @media #{$tablet-desktop} {
-          float: right;
+            float: right;
         }
 
         // & span {
@@ -87,47 +88,49 @@
         //     text-transform: uppercase;
         // }
         & .icon-manufacturer {
-          width: 55px;
-          height: 21px;
-          fill: #fff;
+            width: 55px;
+            height: 21px;
+
+            fill: #fff;
         }
     }
 }
 
 .socials {
+    width: 27.5789473%;
     // margin-right: 40px;
     // margin-right: 8.4210526%;
     min-width: 98px;
-    width: 27.5789473%;
     @media #{$mobile} {
-      margin-right: 0;
-      float: right;
-      width: auto;
-      min-width: 88px;
+        float: right;
+        width: auto;
+        min-width: 88px;
+        margin-right: 0;
     }
 
     & > .inner {
-      padding: 0;
-      float: left;
-      font-size: 0;
+        font-size: 0;
+        float: left;
+        padding: 0;
     }
 
     & .item {
+        position: relative;
         display: inline-block;
-        border: 1px solid #FFF;
         width: 22px;
         height: 22px;
         margin-right: 10px;
-        position: relative;
         cursor: pointer;
         transition: .3s ease;
+        border: 1px solid #fff;
 
         & svg {
             position: absolute;
-            left: 50%;
             top: 50%;
+            left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            fill: #FFF;
+
+            fill: #fff;
         }
 
         &:nth-child(1) {
@@ -137,7 +140,7 @@
             }
 
             &:hover {
-                background-color: #3B5998;
+                background-color: #3b5998;
             }
         }
         &:nth-child(2) {
@@ -147,7 +150,7 @@
             }
 
             &:hover {
-                background-color: #597DA3;
+                background-color: #597da3;
             }
         }
         &:nth-child(3) {
@@ -157,7 +160,7 @@
                 height: 11px;
             }
             &:hover {
-                background-color: #E52D27;
+                background-color: #e52d27;
             }
         }
     }

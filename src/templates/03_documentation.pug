@@ -1,0 +1,159 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Коммутатор доступа MES1124M'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  //- - var animateNumber = true;
+  - var bxSlider = true;
+  - var jQueryEasing = true
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-documentation')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include partials/header
+    include partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Документация для оборудования', 'link':'javascript:void(0)' },
+              { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
+            ])(class='')      //- <== u can add additional class here.
+
+            h1 Коммутатор доступа MES1124M
+
+
+          .union
+            //- column - 1
+            .slider.slider-documentation.column-left.column
+              //- The main images
+              ul#slider1.bxslider
+                li
+                  img(src="img/related-product-01.png" alt="")
+                li
+                  img(src="img/related-product-02.png" alt="")
+                li
+                  img(src="img/related-product-03.png" alt="")
+                li
+                  img(src="img/related-product-04.png" alt="")
+              //- The thumbnails
+              ul#bx-pager1.bxslider-pager
+                li(data-slideIndex="0")
+                  a.slider-pager-item(href="")
+                      img(src="img/related-product-01.png")
+                li(data-slideIndex="1")
+                  a.slider-pager-item(href="")
+                      img(src="img/related-product-02.png")
+                li(data-slideIndex="2")
+                  a.slider-pager-item(href="")
+                      img(src="img/related-product-03.png")
+                li(data-slideIndex="3")
+                  a.slider-pager-item(href="")
+                      img(src="img/related-product-04.png")
+
+              .outside
+                .slider-prev
+                  .arrow
+                .slider-next
+                  .arrow
+
+
+              //- .thumb-image
+              //- .thumb-list
+              //-   .thumb-prev
+              //-   .thumb-item
+              //-   .thumb-item
+              //-   .thumb-item
+              //-   .thumb-next
+
+
+            //- column - 2
+            .column-center.column
+              h3 Описание
+              ul
+                li.pdf: a Краткое техническое описание
+
+              h3 Документация
+              ul
+                li.pdf: a Руководство по эксплуатации версии ПО 3.5.1
+                li.pdf: a Руководство по настройке SMG-1016M через отдельный Ethernet порт
+                li.pdf: a Руководство по настройке SMG-1016M с FreeRadius
+                li.pdf: a Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
+
+              h3 Сертификаты
+              ul
+                li.pdf: a Декларация соответствия
+
+
+          //- column - 3
+          .column-right.column
+            h3 Програмное обеспечение
+            ul
+              li.code: a Версия ПО 3.5.1
+              li.code: a Версия ПО 3.5.0
+              li.code: a Версия ПО 3.4.2
+              li.code: a Версия ПО 3.4.0
+              li.code: a Версия ПО 3.3.1
+              li.code: a Версия ПО 3.2.1
+              li.code: a Версия ПО 3.2.0
+              li.code: a Версия ПО rc14
+              li.pdf: a Readme
+              li.pdf: a Словарь радиус
+              li.pdf: a mib
+
+          //- MIXIN this
+          .callback
+            form.appointment-form
+              .title Остались вопросы, свяжитесь с нами!
+              p.sub-title Пожалуйста, заполните форму ниже. Мы свяжемся с вами в ближайшее время.
+
+              .form-content-wrap
+                form(action="#" method="post")
+                  .form-content-left
+                    .user-field.field
+                      input.icon-user(type="text" name="login" placeholder="Имя" required)
+                      +svg([{'class': 'icon-form-svg icon-user-svg', 'pathid': 'icon-user-svg', 'filename':'icon-user'}])
+                      span Вы ввели неверный номер телефона
+
+                    .email-field.field
+                      input.icon-email(type="email" name="email" placeholder="E-mail" required)
+                      +svg([{'class': 'icon-form-svg icon-email-svg', 'pathid': 'icon-email-svg', 'filename':'icon-email'}])
+                      span Вы ввели неверный номер телефона
+
+                    .phone-field.field
+                      input.icon-tel(type="tel" name="phone" placeholder="Телефон")
+                      +svg([{'class': 'icon-form-svg icon-phone-svg', 'pathid': 'icon-phone-svg', 'filename':'icon-phone'}])
+                      span Вы ввели неверный номер телефона
+
+                  .form-content-right
+                    textarea.callback-textarea(placeholder="Ваш комментарий")
+                    button.btn.btn-form(type="submit" title="Заказать бесплатную консультацию") Заказать бесплатную консультацию
+          //- eof MIXIN this
+
+
+    //- footer
+    include partials/footer
+    //- eof footer

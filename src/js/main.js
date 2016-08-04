@@ -80,8 +80,8 @@ jQuery(document).ready(function ($) {
 
           document.querySelector( '.cntr' ).innerHTML = ( index + 1 ) + ' / ' + total;
 
-          // pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
-          // pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
+          pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
+          pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
         }
 
         var pr = document.querySelector( '.paginate.left' );
@@ -381,15 +381,46 @@ if ($( ".faq-item-title" ).length) {
 
 // toggle documentation-grid tablet
 
-if ($( ".page-documentation-grid .jsColumnTitle" ).length) {
-  $( ".page-documentation-grid .jsColumnTitle" ).click(function() {
-    $('.products-nav-menu .products-nav-content').slideToggle();
-    $('.products-nav-menu .column-title.jsColumnTitle').toggleClass('active');
-    // $(this).parent('.jsFaqItem').toggleClass('active');
-  });
+if ( $(window).width() < 1200) {
+  if ($( ".page-documentation-grid .jsColumnTitle" ).length) {
+    $( ".page-documentation-grid .jsColumnTitle" ).click(function() {
+      $('.products-nav-menu .products-nav-content').slideToggle();
+      $('.products-nav-menu .column-title.jsColumnTitle').toggleClass('active');
+      // $(this).parent('.jsFaqItem').toggleClass('active');
+    });
+  }
 }
 
 // EOF toggle documentation-grid tablet
+
+// toggle product-grid tablet
+
+if ( $(window).width() < 1200) {
+  if ($( ".page-product-grid .jsColumnTitle" ).length) {
+    $( ".page-product-grid .jsColumnTitle" ).click(function() {
+      $('.products-nav-menu .products-nav-content').slideToggle();
+      $('.products-nav-menu .column-title.jsColumnTitle').toggleClass('active');
+      // $(this).parent('.jsFaqItem').toggleClass('active');
+    });
+  }
+}
+
+// EOF toggle product-grid tablet
+
+
+// toggle solutions tablet
+
+if ( $(window).width() < 1200) {
+  if ($( ".page-solutions .jsColumnTitle" ).length) {
+    $( ".page-solutions .jsColumnTitle" ).click(function() {
+      $('.products-nav-menu .products-nav-content').slideToggle();
+      $('.products-nav-menu .column-title.jsColumnTitle').toggleClass('active');
+      // $(this).parent('.jsFaqItem').toggleClass('active');
+    });
+  }
+}
+
+// EOF toggle solutions tablet
 
 
   // burger
@@ -633,20 +664,22 @@ $('.request-callback-nav').click(function(){
            // You pass-in jQuery and then alias it with the $-sign
            // So your internal code doesn't change
 
-           var parentW = $('.desc-nav.module-header').width();
-           var activeW = $('.desc-full-title.active').outerWidth();
-           var restW = parentW - activeW;
-           var everyRestW = restW / 2 - 0.5;
-           $('.desc-full-title:not(.active)').outerWidth( everyRestW );
+          $('.desc-full-title').click(function(){
+             $('#menu_tabs .desc-full-title').removeClass('active');
+             $(this).addClass('active');
+             $('#menu_tabs .desc-full-title:not(.desc-full-title.active)').addClass('overtabbed');
+             $('#menu_tabs .active').removeClass('overtabbed').css( 'width','auto' );
+             var nonActiveTabsCommonW = $('#menu_tabs .desc-nav.module-header').width() - $('#menu_tabs .desc-full-title.active').outerWidth();
+             var W4nonActiveTab = nonActiveTabsCommonW / 2 - 1;
+             $('#menu_tabs .desc-full-title:not(.desc-full-title.active)').outerWidth( W4nonActiveTab );
+          });
 
-           $('.desc-full-title:not(.active)').click(function(){
-                   var parentW = $('.desc-nav.module-header').width();
-                   $('.desc-full-title.active').css( 'width','auto' );
-                   var activeW = $('.desc-full-title.active').outerWidth();
-                   var restW = parentW - activeW;
-                   var everyRestW = restW / 2 - 0.5;
-                   $('.desc-full-title:not(.active)').outerWidth( everyRestW );
-           });
+          $('#menu_tabs .desc-full-title:first-child').addClass('active');
+          $('#menu_tabs .desc-full-title:not(.desc-full-title.active)').addClass('overtabbed');
+          $('#menu_tabs .active').removeClass('overtabbed').css( 'width','auto' );
+          var nonActiveTabsCommonW = $('#menu_tabs .desc-nav.module-header').width() - $('#menu_tabs .desc-full-title.active').outerWidth();
+          var W4nonActiveTab = nonActiveTabsCommonW / 2 - 1;
+          $('#menu_tabs .desc-full-title:not(.desc-full-title.active)').outerWidth( W4nonActiveTab );
 
     })(jQuery);
   }
@@ -680,7 +713,7 @@ if ( $(window).width() < 768) {
             console.log(w);
           });
         });
-        var newWidthForLastEl = parent - w;
+        var newWidthForLastEl = parent - w - 10;
 
         $('.breadcrumbs li:last-child').width( newWidthForLastEl );
 
@@ -688,6 +721,65 @@ if ( $(window).width() < 768) {
 }
 
 // EOF breadcrumbs ...
+
+
+
+// form validation
+
+
+$( '.callback' ).submit(function(e){
+    e.preventDefault();
+	var name  = $( '.callback [name=login]' ),
+		phone = $( '.callback [name=phone]' ),
+		email = $( '.callback [name=email]' );
+
+	if ( name.val() === '' ) {
+		name.parents('.user-field').addClass( 'error' );
+		return false;
+	}
+  if ( ! validateEmail( email.val()) ) {
+		email.parents('.phone-field').addClass( 'error' );
+		return false;
+	}
+
+  if ( phone.val() === '' ) {
+		phone.parents('.email-field').addClass( 'error' );
+		return false;
+	}
+
+	return true;
+
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+});
+
+// "instant"-check
+$( '.callback input[type="email"]' ).blur(function() {
+	if( ! validateEmail( $(this).val()) ){
+		$(this).addClass( 'error' );
+	} else {
+		$(this).removeClass( 'error' );
+	}
+});
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+
+
+
+
+
+
+
+
+
+// EOF form validation
+
+
 
 
 }); // EOF document.ready MAIN

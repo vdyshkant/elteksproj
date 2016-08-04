@@ -6,127 +6,150 @@ $mCloseSize: 24px;
 // callback form module
 
 .modal-content {
-  .callback {
-    & .title {
-      margin-bottom: 30px;
-    }
-    & p {
-      margin-bottom: 50px;
-      @media #{$mobile} {
-        margin-bottom: 30px;
-      }
-    }
-    & input {
-      margin-bottom: 50px;
-      width: 285px;
+    .callback {
+        & .title {
+            margin-bottom: 30px;
+        }
+        & p {
+            margin-bottom: 50px;
+            @media #{$mobile} {
+                margin-bottom: 30px;
+            }
+        }
+        & .field {
+            width: 285px;
+            margin-bottom: 50px;
 
-      @media #{$mobile-tablet} {
-        display: block;
-        width: 100%;
-        margin-bottom: 30px;
-      }
+            @media #{$mobile-tablet} {
+                display: block;
+                width: 100%;
+                margin-bottom: 30px;
+            }
 
-      &:nth-of-type(1) {
-        margin-right: 20px;
-      }
+            &:nth-of-type(1) {
+                margin-right: 20px;
+            }
+
+
+            & > span {
+                position: absolute;
+                top: -20px;
+                left: 0;
+                display: none;
+                margin: 0;
+                padding: 0;
+                padding-left: 20px;
+                transition: .3s linear;
+                text-align: left;
+                white-space: nowrap;
+                color: #f05a2e;
+
+                @include font(normal, 300, 14px, 16px, $ul);
+            }
+
+            &.error {
+                & > input {
+                    border-color: #f05a2e;
+                }
+                & > span {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+        }
     }
-  }
 }
 
 // EOF callback form module
 
 // modal content itself
 .modal {
-
-  &-overlay {
-    background: hsla(200, 100%, 20%, 0.5);
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 16;
-  }
-  &-content {
-    display: none;
-    position: fixed;
-    top: 260px;
-    left: 50%;
-    width: 918px;
-    transform: translateX(-50%);
-    background: #fff;
-    border-radius: 4px;
-    z-index: 17;
-    text-align: center;
-    padding: 50px;
-
-    @media #{$tablet} {
-      width: 500px;
+    &-overlay {
+        position: fixed;
+        z-index: 16;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: hsla(200, 100%, 20%, .5);
     }
+    &-content {
+        position: fixed;
+        z-index: 17;
+        top: 260px;
+        left: 50%;
+        display: none;
+        width: 918px;
+        padding: 50px;
+        transform: translateX(-50%);
+        text-align: center;
+        border-radius: 4px;
+        background: #fff;
 
-    @media #{$mobile} {
-      width: 280px;
-      top: 20px;
-      padding: 30px 20px;
+        @media #{$tablet} {
+            width: 500px;
+        }
+
+        @media #{$mobile} {
+            top: 20px;
+            width: 280px;
+            padding: 30px 20px;
+        }
+
+        & .wrap {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        &-close {
+            font-size: 0;
+            position: absolute;
+            top: 21px;
+            right: 21px;
+            width: $mCloseSize;
+            height: $mCloseSize;
+            cursor: pointer;
+            transition: .2s ease-out;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            // outline: 2px dashed crimson;
+            // outline-offset: -2px;
+            @media #{$mobile} {
+                top: 10px;
+                right: 10px;
+            }
+            &:hover {
+                transform: rotate(90deg) scale(1.1);
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                top: $mCloseSize * 1.375 / 3; // 11
+                right: $mCloseSize * -.625 / 3; // -5
+                width: $mCloseSize * 1.375;
+                height: $mCloseSize / 12;
+                content: '';
+                border-radius: 3px;
+                background: $mCloseFill;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+        //
+
+        // form
+        & .callback-form {
+            font-size: 0;
+            & > * {
+                font-size: initial;
+            }
+        }
     }
-
-    & .wrap {
-      min-width: 100%;
-      max-width: 100%;
-    }
-
-    &-close {
-      position: absolute;
-      width: $mCloseSize;
-      height: $mCloseSize;
-      font-size: 0;
-      border: 0;
-      outline: 0;
-      cursor: pointer;
-      background: transparent;
-      top: 21px;
-      right: 21px;
-      transition: .2s ease-out;
-      // outline: 2px dashed crimson;
-      // outline-offset: -2px;
-      @media #{$mobile} {
-        top: 10px;
-        right: 10px;
-      }
-      &:hover {
-        transform: rotate(90deg) scale(1.1);
-      }
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        width: $mCloseSize * 1.375;
-        height: $mCloseSize / 12;
-        background: $mCloseFill;
-        border-radius: 3px;
-        top: $mCloseSize * 1.375 / 3; // 11
-        right: $mCloseSize * -0.625 / 3; // -5
-
-      }
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(-45deg);
-      }
-    }
-    //
-
-    // form
-    & .callback-form {
-      font-size: 0;
-      & > * {
-        font-size: initial;
-      }
-    }
-
-
-  }
 }
