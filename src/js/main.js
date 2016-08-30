@@ -462,7 +462,7 @@ jQuery(document).ready(function($) {
     showMainModal();
 
     function showMainModal() {
-        $('.jsrequest-callback').click(function() {
+        $('.request-callback').click(function() {
             $('.modal-content').fadeIn(300);
             $('.modal-overlay').fadeIn(300);
         });

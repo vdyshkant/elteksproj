@@ -33,6 +33,7 @@
             text-align: right;
             @media #{$tablet} {
                 float: left;
+                text-align-last: auto;
             }
         }
     }
