@@ -264,8 +264,10 @@
     // display: none;
     // transform: translateY(-2000px);
     border-top: 1px solid #94a1a8;
-    background: #fff;
-    background-color: #fbfbfb;
+    // background: #fff;
+    // background-color: #fbfbfb;
+    background-color: #f6f6f6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 34, 51, 0.09);
 
     @media #{$tablet} {
         top: 169px;
@@ -287,6 +289,7 @@
         & > .inner {
             padding-right: 2.2058823%;
             padding-left: 2.2058823%;
+            @include clearfix;
         }
     }
 
@@ -353,6 +356,27 @@
             }
         }
     }
+}
+
+.dropdown.active--inner {
+  position: relative;
+
+  & .dropdown-menu {
+    width: auto;
+    min-width: 100%;
+    left: -80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: content-box;
+
+    & .block {
+      width: auto;
+      margin-right: 0;
+      padding-left: 20px;
+      // padding-left: 20px;
+    }
+
+  }
 }
 
 @keyframes bounceOut {
