@@ -42,6 +42,15 @@
         }
     }
 
+    & .content-left-inner {
+      padding-right: 19px;
+      border-right: 1px solid #ccd2d9;
+      @media #{$mobile-tablet} {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+
     & .content-right {
         float: right;
         width: 310px;

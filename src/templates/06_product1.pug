@@ -47,73 +47,74 @@ append content
 
           .content
             .content-left
-              .product-info-top
-                .slider.column-left.column.block.slider-product-desc
-                  //- The main images
-                  ul#slider2.bxslider
-                    li
-                      img(src="img/related-product-01.png" alt="")
-                    li
-                      img(src="img/related-product-02.png" alt="")
-                    li
-                      img(src="img/related-product-03.png" alt="")
-                    li
-                      img(src="img/related-product-04.png" alt="")
-                  //- The thumbnails
-                  ul#bx-pager2.bxslider-pager
-                    li(data-slideIndex="0")
-                      a.slider-pager-item(href="")
-                          img(src="img/related-product-01.png")
-                    li(data-slideIndex="1")
-                      a.slider-pager-item(href="")
-                          img(src="img/related-product-02.png")
-                    li(data-slideIndex="2")
-                      a.slider-pager-item(href="")
-                          img(src="img/related-product-03.png")
-                    li(data-slideIndex="3")
-                      a.slider-pager-item(href="")
-                          img(src="img/related-product-04.png")
-                  .outside
-                    .slider-prev
-                      .arrow
-                    .slider-next
-                      .arrow
-                //- унифицировать стили так, чтоб на все модули{слайдера/etc} были одни и те же стили.
-                //- но если вдруг надо что-либо переписать, то уже надо просто дописать в файл стилей для конкретно этой страницы.
-                .desc-short
-                  //- span/p
-                  ul
-                    span.desc-short-title Ключевые преимущества
-                    li ♦  коммутаторы L2
-                    li ♦  поддержка стекирования
-                    li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
-                    li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
-                    li ♦  эффективная защита от скачков напряжения
-                  .btn.btn-desc заказать бесплатную консультацию
+              .content-left-inner
+                .product-info-top
+                  .slider.column-left.column.block.slider-product-desc
+                    //- The main images
+                    ul#slider2.bxslider
+                      li
+                        img(src="img/related-product-01.png" alt="")
+                      li
+                        img(src="img/related-product-02.png" alt="")
+                      li
+                        img(src="img/related-product-03.png" alt="")
+                      li
+                        img(src="img/related-product-04.png" alt="")
+                    //- The thumbnails
+                    ul#bx-pager2.bxslider-pager
+                      li(data-slideIndex="0")
+                        a.slider-pager-item(href="")
+                            img(src="img/related-product-01.png")
+                      li(data-slideIndex="1")
+                        a.slider-pager-item(href="")
+                            img(src="img/related-product-02.png")
+                      li(data-slideIndex="2")
+                        a.slider-pager-item(href="")
+                            img(src="img/related-product-03.png")
+                      li(data-slideIndex="3")
+                        a.slider-pager-item(href="")
+                            img(src="img/related-product-04.png")
+                    .outside
+                      .slider-prev
+                        .arrow
+                      .slider-next
+                        .arrow
+                  //- унифицировать стили так, чтоб на все модули{слайдера/etc} были одни и те же стили.
+                  //- но если вдруг надо что-либо переписать, то уже надо просто дописать в файл стилей для конкретно этой страницы.
+                  .desc-short
+                    //- span/p
+                    ul
+                      span.desc-short-title Ключевые преимущества
+                      li ♦  коммутаторы L2
+                      li ♦  поддержка стекирования
+                      li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
+                      li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
+                      li ♦  эффективная защита от скачков напряжения
+                    .btn.btn-desc заказать бесплатную консультацию
 
-              .desc-full.js-tabs#menu_tabs
-                .desc-nav.nav.module-header
-                  ul
-                    li.desc-full-title(data-id="prod-desc") Описание товара
-                    li.desc-full-title(data-id="prod-techies") Технические характеристики
-                    li.desc-full-title(data-id="prod-manuals") Материалы для скачивания
-                .desc-item-list.tabs-outer
-                  .tab-container.active.desc-item#prod-desc
-                    P
-                      | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
-                    P
-                      | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
-                  .tab-container.desc-item#prod-techies
-                    Tab Content 222
-                  .tab-container.desc-item#prod-manuals
-                    P
-                      | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
-                    P
-                      | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+                .desc-full.js-tabs#menu_tabs
+                  .desc-nav.nav.module-header
+                    ul
+                      li.desc-full-title(data-id="prod-desc") Описание товара
+                      li.desc-full-title(data-id="prod-techies") Технические характеристики
+                      li.desc-full-title(data-id="prod-manuals") Материалы для скачивания
+                  .desc-item-list.tabs-outer
+                    .tab-container.active.desc-item#prod-desc
+                      P
+                        | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
+                      P
+                        | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+                    .tab-container.desc-item#prod-techies
+                      Tab Content 222
+                    .tab-container.desc-item#prod-manuals
+                      P
+                        | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
+                      P
+                        | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
 
-                  //- a.desc-full-title.active Описание товара
-                  //- a.desc-full-title Технические характеристики
-                  //- a.desc-full-title Материалы для скачивания
+                    //- a.desc-full-title.active Описание товара
+                    //- a.desc-full-title Технические характеристики
+                    //- a.desc-full-title Материалы для скачивания
 
 
 

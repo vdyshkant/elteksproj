@@ -145,16 +145,20 @@
         float: left;
         width: 640px;
         width: 49.2307692%;
-        margin-right: 20px;
-        margin-right: 1.5384615%;
+        // margin-right: 20px;
+        // margin-right: 1.5384615%;
         padding-bottom: 70px;
+        padding-right: 9px;
         @media #{$mobile-tablet} {
             width: 100%;
             padding-top: 45px;
+            padding-right: 0;
         }
     }
 
     & .column-right {
+        padding-left: 1.5384615%;
+        border-left: 1px solid #ccd2d9;
         float: right;
         width: 310px;
         width: 23.8461538%;

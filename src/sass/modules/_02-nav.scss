@@ -368,6 +368,12 @@
     padding-left: 80px;
     padding-right: 80px;
     box-sizing: content-box;
+    @media #{$tablet} {
+      top: 97px;
+    }
+    @media #{$mobile} {
+
+    }
 
     & .block {
       width: auto;
@@ -375,7 +381,12 @@
       padding-left: 20px;
       // padding-left: 20px;
     }
-
+  }
+  &.dropdown--inner:last-of-type .dropdown-menu {
+    @media #{$tablet} {
+      left: auto;
+      right: 0;
+    }
   }
 }
 
