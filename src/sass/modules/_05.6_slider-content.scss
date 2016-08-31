@@ -75,18 +75,21 @@
 
 
     & .bxslider-pager {
+      font-size: 0;
         & li {
             width: 88px;
             height: 88px;
             margin-right: 30px;
             margin-right: 9.2592592%;
+            display: inline-block;
+            vertical-align: top;
             &:last-child {
                 margin-right: 0;
             }
             @media #{$mobile} {
                 width: 72px !important;
                 height: 72px;
-                margin-right: 8px !important;
+                margin-right: 9px !important;
             }
         }
 

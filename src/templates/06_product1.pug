@@ -90,12 +90,12 @@ append content
                       li ♦  поддержка Multicast (IGMP, IGMP snooping, MVR)
                       li ♦  расширенные функции безопасности (L2-L4 ACL, IP Source address guard, Dynamic ARP Inspection и др.)
                       li ♦  эффективная защита от скачков напряжения
-                    .btn.btn-desc заказать бесплатную консультацию
+                    .btn.btn-desc.js-reqCallback заказать бесплатную консультацию
 
                 .desc-full.js-tabs#menu_tabs
                   .desc-nav.nav.module-header
                     ul
-                      li.desc-full-title(data-id="prod-desc") Описание товара
+                      li.desc-full-title.active(data-id="prod-desc") Описание товара
                       li.desc-full-title(data-id="prod-techies") Технические характеристики
                       li.desc-full-title(data-id="prod-manuals") Материалы для скачивания
                   .desc-item-list.tabs-outer
@@ -107,10 +107,39 @@ append content
                     .tab-container.desc-item#prod-techies
                       Tab Content 222
                     .tab-container.desc-item#prod-manuals
-                      P
-                        | Коммутаторы доступа MES – управляемые коммутаторы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X. Коммутаторы осуществляют подключение конечных пользователей к сети крупных предприятий, предприятий малого и среднего бизнеса и к сетям операторов связи с помощью интерфейсов Fast и Gigabit Ethernet. Функциональные возможности коммутатора обеспечивают физическое стекирование, поддержку виртуальных локальных сетей, многоадресных групп рассылки и расширенные функции безопасности. Эффективная защита от скачков напряжения
-                      P
-                        | Все порты коммутаторов оснащены защитой от внешних воздействий в соответствии со стандартом IEC61000-4-5 при амплитуде импульсов до 6 kV.
+                      //- column - 2
+                      .downloads-column-wrap
+                        .downloads-column.downloads-column-left
+                          h3 Описание
+                          ul
+                            li.pdf: a(href="#") Краткое техническое описание
+
+                          h3 Документация
+                          ul
+                            li.pdf: a(href="#") Руководство по эксплуатации версии ПО 3.5.1
+                            li.pdf: a(href="#") Руководство по настройке SMG-1016M через отдельный Ethernet порт
+                            li.pdf: a(href="#") Руководство по настройке SMG-1016M с FreeRadius
+                            li.pdf: a(href="#") Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
+
+                          h3 Сертификаты
+                          ul
+                            li.pdf: a(href="#") Декларация соответствия
+
+                        //- column - 3
+                        .downloads-column.downloads-column-right
+                          h3 Програмное обеспечение
+                          ul
+                            li.code: a(href="#") Версия ПО 3.5.1
+                            li.code: a(href="#") Версия ПО 3.5.0
+                            li.code: a(href="#") Версия ПО 3.4.2
+                            li.code: a(href="#") Версия ПО 3.4.0
+                            li.code: a(href="#") Версия ПО 3.3.1
+                            li.code: a(href="#") Версия ПО 3.2.1
+                            li.code: a(href="#") Версия ПО 3.2.0
+                            li.code: a(href="#") Версия ПО rc14
+                            li.pdf: a(href="#") Readme
+                            li.pdf: a(href="#") Словарь радиус
+                            li.pdf: a(href="#") mib
 
                     //- a.desc-full-title.active Описание товара
                     //- a.desc-full-title Технические характеристики

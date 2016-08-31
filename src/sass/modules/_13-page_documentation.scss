@@ -50,8 +50,13 @@
         }
         & a {
             color: #385461;
+            text-decoration: none;
 
             @include font(normal, 300, 18px, 18px, $ul);
+
+            display: block;
+            text-decoration: none;
+            padding: 15px 0 15px 70px;
         }
     }
 
@@ -60,7 +65,7 @@
         & ul {
             & li {
                 margin-bottom: 30px;
-                padding: 15px 0 15px 70px;
+                padding-right: 30px;
                 &.pdf {
                     background: url('../img/icon-pdf.png') no-repeat;
                 }

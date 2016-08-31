@@ -39,6 +39,7 @@
         margin-bottom: 40px;
         @media #{$mobile-tablet} {
             width: 100%;
+            margin-right: 0;
         }
     }
 
@@ -179,7 +180,9 @@
             background-color: #fff;
             // border-right: 1px solid #c6cbd0;
             // border-bottom: 1px solid #d5dadd;
-            box-shadow: -1px 0 4px 0 rgba(0, 34, 51, .16);
+            // box-shadow: -1px 0 4px 0 rgba(0, 34, 51, .16);
+            padding-bottom: 16px;
+            border-bottom: 1px solid #c6cbd0;
             // box-shadow
             @media #{$tablet} {
                 border-bottom: 1px solid #c6cbd0;
@@ -189,6 +192,7 @@
                 width: auto;
                 max-width: none;
                 text-overflow: clip;
+                padding-bottom: 19px;
                 border-bottom: 1px solid #c6cbd0;
             }
 
@@ -230,3 +234,80 @@
 
     // EOF content-LEFT
 }  // EOF page-product-desc
+
+
+.page-product-desc {
+  & .downloads-column {}
+}
+
+.page-product-desc {
+  & .downloads-column-wrap {
+    @include clearfix;
+  }
+}
+
+.page-product-desc {
+  & .downloads-column h3 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 45px;
+    color: #385461;
+    @include font(normal, 700, 18px, 18px, $ub);
+  }
+}
+
+.page-product-desc {
+  & .downloads-column ul li {
+    margin-bottom: 30px;
+    padding-right: 20px;
+    @media #{$mobile} {
+      padding-right: 0;
+    }
+  }
+}
+
+.page-product-desc {
+  & .downloads-column li.pdf {
+    background: url("../img/icon-pdf.png") no-repeat;
+  }
+}
+
+.page-product-desc {
+  & .downloads-column li.code {
+    background: url("../img/icon-code.png") no-repeat;
+  }
+}
+
+.page-product-desc {
+  & .downloads-column a {
+    color: #385461;
+
+    @include font(normal, 300, 18px, 18px, $ul);
+
+    display: block;
+    text-decoration: none;
+    padding: 15px 0 15px 70px;
+  }
+}
+
+.page-product-desc {
+  & .downloads-column-left {
+    float: left;
+    width: 60%;
+    @media #{$mobile} {
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+.page-product-desc {
+  & .downloads-column-right {
+    float: right;
+    width: 40%;
+    @media #{$mobile} {
+      float: none;
+      width: auto;
+    }
+  }
+}

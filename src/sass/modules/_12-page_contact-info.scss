@@ -123,7 +123,7 @@
         height: 428px;
         min-height: 428px;
         transform: translate(-50%, -50%);
-        border-radius: 4px 8px 8px 8px;
+        border-radius: 8px 8px 8px 8px;
         background: #ccc;
         //                                 // display: none;
         //
@@ -215,10 +215,11 @@
 
     & .shadow-rect {
         position: absolute;
-        top: 0;
-        right: 66px;
+        top: 56px;
+        right: 68px;
         width: 733px;
-        height: 527px;
+        border-radius: 8px 0 0 0;
+        height: 467px;
         margin-top: -25px;
         transform: skew(-7deg) rotate(-3deg) translate(10%, -10%);
         background-color: #fff;

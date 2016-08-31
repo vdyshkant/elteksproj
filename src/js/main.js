@@ -210,7 +210,7 @@ jQuery(document).ready(function($) {
                 minSlides: 2,
                 maxSlides: 3,
                 slideWidth: 88,
-                slideMargin: 30,
+                slideMargin: 29,
                 moveSlides: 1,
                 pager: false,
                 speed: 300,
@@ -463,6 +463,16 @@ jQuery(document).ready(function($) {
 
     function showMainModal() {
         $('.request-callback').click(function() {
+            $('.modal-content').fadeIn(300);
+            $('.modal-overlay').fadeIn(300);
+        });
+    }
+
+
+    showContentModal();
+
+    function showContentModal() {
+        $('.js-reqCallback').click(function() {
             $('.modal-content').fadeIn(300);
             $('.modal-overlay').fadeIn(300);
         });

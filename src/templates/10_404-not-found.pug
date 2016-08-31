@@ -1,0 +1,58 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Данная страница временно недоступна'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-not-found')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include partials/header
+    include partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+          .page-title
+            h1 404 - СТРАНИЦА НЕ НАЙДЕНА
+
+            //- cr8 breadcrumbs as mixin. would use it in every page
+
+          .content
+            h2 Данная страница временно недоступна.
+
+
+
+    //- eof main
+
+
+
+    //- footer
+    include partials/footer
+    //- eof footer
+
+
+//- bg for main block with min height
+//- insert map img as .map block>img
+  //- make map draggable
