@@ -39,7 +39,7 @@ append content
           .page-title
             +breadcrumbs([
               { 'anchor':'Главная','link':'/index.html' },
-              { 'anchor':'Документация для оборудования', 'link':'javascript:void(0)' },
+              { 'anchor':'Документация для оборудования', 'link':linkDocumentationGrid },
               { 'anchor':'Коммутатор доступа MES1124M', 'class':'active' }
             ])(class='')      //- <== u can add additional class here.
 
@@ -94,35 +94,35 @@ append content
             .column-center.column
               h3 Описание
               ul
-                li.pdf: a Краткое техническое описание
+                li.pdf: a.dl-item Краткое техническое описание
 
               h3 Документация
               ul
-                li.pdf: a Руководство по эксплуатации версии ПО 3.5.1
-                li.pdf: a Руководство по настройке SMG-1016M через отдельный Ethernet порт
-                li.pdf: a Руководство по настройке SMG-1016M с FreeRadius
-                li.pdf: a Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
+                li.pdf: a.dl-item Руководство по эксплуатации версии ПО 3.5.1
+                li.pdf: a.dl-item Руководство по настройке SMG-1016M через отдельный Ethernet порт
+                li.pdf: a.dl-item Руководство по настройке SMG-1016M с FreeRadius
+                li.pdf: a.dl-item Руководство по настройке SMG-1016M для использования в сети SIPNET.RU
 
               h3 Сертификаты
               ul
-                li.pdf: a Декларация соответствия
+                li.pdf: a.dl-item Декларация соответствия
 
 
           //- column - 3
           .column-right.column
             h3 Програмное обеспечение
             ul
-              li.code: a Версия ПО 3.5.1
-              li.code: a Версия ПО 3.5.0
-              li.code: a Версия ПО 3.4.2
-              li.code: a Версия ПО 3.4.0
-              li.code: a Версия ПО 3.3.1
-              li.code: a Версия ПО 3.2.1
-              li.code: a Версия ПО 3.2.0
-              li.code: a Версия ПО rc14
-              li.pdf: a Readme
-              li.pdf: a Словарь радиус
-              li.pdf: a mib
+              li.code: a.dl-item Версия ПО 3.5.1
+              li.code: a.dl-item Версия ПО 3.5.0
+              li.code: a.dl-item Версия ПО 3.4.2
+              li.code: a.dl-item Версия ПО 3.4.0
+              li.code: a.dl-item Версия ПО 3.3.1
+              li.code: a.dl-item Версия ПО 3.2.1
+              li.code: a.dl-item Версия ПО 3.2.0
+              li.code: a.dl-item Версия ПО rc14
+              li.pdf: a.dl-item Readme
+              li.pdf: a.dl-item Словарь радиус
+              li.pdf: a.dl-item mib
 
           //- MIXIN this
           .callback

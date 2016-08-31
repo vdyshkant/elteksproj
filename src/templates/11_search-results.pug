@@ -1,0 +1,296 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Страница поиска'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  - var bxSlider = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page_search-results')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  //- - var GoogleFonts = GoogleFonts.concat('|Roboto:400,700&subset=cyrillic')
+  //- ...
+
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include partials/header
+    include partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Страница поиска', 'class':'active' }
+            ])
+
+          .search-content
+            form.search-form
+              .field-wrap
+                input.search-field(type="text" placeholder="")
+                button.btn.btn-search(type="button") Поиск
+
+          .content
+            h2.content-title
+              | Результаты поиска для
+              | &nbsp;
+              span.up-keyword Коммутатор 24В
+
+            .result
+              .result-item
+                .result-preview
+                  img(src="img/related-product-01.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/icon-code.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/icon-pdf.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-02.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+            .result
+              .result-item
+                .result-preview
+                  img(src="img/related-product-03.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-04.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+              .result-item
+                .result-preview
+                  img(src="img/related-product-05.png" alt="")
+                .result-text
+                  .result-text-title
+                    span.up-keyword Коммутатор&nbsp;
+                    | доступа MES23
+                    span.up-keyword 24B
+                  .result-text-desc
+                    span.low-keyword Коммутатор
+                    | ы доступа MES – управляемые
+                    span.low-keyword &nbsp;коммутатор
+                    | ы уровня L2, которые имеют 24 порта 10/100Base-T и комбинированные порты 1000Base-T/Base-X.
+                    span.low-keyword &nbsp;Коммутатор
+                    | ы осуществляют подключение конечных...
+
+
+
+
+
+          .pagination
+            .cntr
+            button.paginate.left
+              i
+              i
+            button.paginate.right
+              i
+              i
+
+
+    //- footer
+    include partials/footer
+    //- eof footer
+
+
+
+
+    //- .tabs.module#menu_tabs
+    //-   .nav.module-header
+    //-     ul
+    //-       li(class="active" data-id="breakfasts") Сніданки
+    //-       li(data-id="lunches") Бізнес-ланчі
+    //-       li(data-id="menu") Меню
+    //-       li(class="active" data-id="offers") Акції
+    //-       li(data-id="posters")
+    //-   .tabs-outer
+    //-     .tab-container.active#breakfast
+    //-       Tab Content 111
+    //-     .tab-container#lunches
+    //-       Tab Content 222
+    //-     .tab-container#menu
+    //-       Tab Content 333
