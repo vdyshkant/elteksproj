@@ -87,19 +87,6 @@
             margin-right: 0;
         }
 
-        & ul {
-            margin-bottom: 40px;
-            @media #{$tablet} {
-                margin-bottom: 25px;
-            }
-            & li {
-                @include font(normal, 400, 18px, 39px, $pslab);
-                @media #{$mobile} {
-                    @include font(normal, 400, 16px, 39px, $pslab);
-                }
-            }
-        }
-
         & .column-left {
             float: left;
             width: 43.2989690%;
@@ -126,6 +113,19 @@
             }
             @media #{$mobile} {
                 width: 100%;
+            }
+
+            & ul {
+                margin-bottom: 40px;
+                @media #{$tablet} {
+                    margin-bottom: 25px;
+                }
+                & li {
+                    @include font(normal, 400, 18px, 39px, $pslab);
+                    @media #{$mobile} {
+                        @include font(normal, 400, 16px, 39px, $pslab);
+                    }
+                }
             }
         }
         & .desc-short-title {

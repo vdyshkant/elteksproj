@@ -196,11 +196,12 @@ jQuery(document).ready(function($) {
                 nextText: '',
                 prevText: '',
                 infiniteLoop: false,
-                hideControlOnEnd: true,
-                controls: false,
+                // hideControlOnEnd: true,
+                controls: false
+
                 //  onSlideBefore:function($slideElement, oldIndex, newIndex){
                 //    changeRealThumb(realThumbSlider,newIndex);
-                //
+                 //
                 //  }
 
             });
@@ -794,6 +795,11 @@ jQuery(document).ready(function($) {
     // };
 
     // eof magic zoom preferences
+    // $("#zoom_01").elevateZoom();
+    $("#zoom_01").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    $("#zoom_02").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
 
 
 }); // EOF document.ready MAIN

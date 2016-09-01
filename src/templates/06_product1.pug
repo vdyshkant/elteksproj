@@ -35,7 +35,7 @@ append content
     .main
       .wrap
         .inner
-
+          .inner-magic--wrap
           .page-title
             +breadcrumbs([
               { 'anchor':'Главная','link':'/index.html' },
@@ -52,17 +52,13 @@ append content
                     //- The main images
                     ul#slider2.bxslider
                       li
-                        a.MagicZoom.mz__link(href="img/product-10.jpg" data-options="expand: window; zoomWidth: 100%; zoomHeight: 100%; zoomDistance: 25; hint: off;")
-                          img.mz__image(src="img/related-product-02.png" alt="")
+                        img(id="zoom_01" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt="")
                       li
-                        a.MagicZoom.mz__link(href="img/product-12.jpg" data-options="zoomWidth: 100%; zoomHeight: 100%; zoomDistance: 25; hint: off;")
-                          img.mz__image(src="img/related-product-04.png" alt="")
+                        img(id="zoom_02" data-zoom-image="img/product-12.jpg" src="img/related-product-04.png" alt="")
                       li
-                        a.MagicZoom.mz__link(href="img/product-06.jpg" data-options="zoomWidth: 100%; zoomHeight: 100%; zoomDistance: 25; hint: off;")
-                          img.mz__image(src="img/related-product-03.png" alt="")
+                        img(id="zoom_03" data-zoom-image="img/product-06.jpg" src="img/related-product-03.png" alt="")
                       li
-                        a.MagicZoom.mz__link(href="img/product-08.jpg" data-options="zoomWidth: 100%; zoomHeight: 100%; zoomDistance: 25; hint: off;")
-                          img.mz__image(src="img/related-product-05.png" alt="")
+                        img(id="zoom_04" data-zoom-image="img/product-08.jpg" src="img/related-product-05.png" alt="")
 
 
                     //- The thumbnails
