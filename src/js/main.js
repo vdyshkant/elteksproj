@@ -784,6 +784,16 @@ jQuery(document).ready(function($) {
     // EOF form validation
 
 
+    // magic zoom preferences
+
+    // var mzOptions = {
+    //   zoomWidth: "200%",
+    //   zoomHeight: "200%",
+    //   zoomDistance: 25,
+    //   hint: "off"
+    // };
+
+    // eof magic zoom preferences
 
 
 }); // EOF document.ready MAIN
