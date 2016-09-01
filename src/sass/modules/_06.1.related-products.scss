@@ -26,6 +26,9 @@
         &:hover {
             cursor: pointer;
             box-shadow: 0 4px 7px 0 rgba(0, 34, 51, .16);
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
         &:hover > .preview {
@@ -46,6 +49,8 @@
             height: 110px;
             transition: .2s linear;
             background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
             box-shadow: 0 4px 7px 0 rgba(0, 34, 51, .16);
 
 
@@ -55,6 +60,7 @@
                 left: 50%;
                 display: block;
                 transform: translate(-50%, -50%);
+                // z-index: -1;
             }
         }
         &-title {
