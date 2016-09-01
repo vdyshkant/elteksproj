@@ -81,6 +81,22 @@
     .page_search-results {
       .result-item {
         margin-bottom: 20px;
+        @include clearfix;
+        display: block;
+        text-decoration: none;
+        transition: .4s ease-out;
+      }
+    }
+
+    .page_search-results {
+      .result-item:hover {
+        border-radius: 5px;
+
+        box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
+
+        & .result-preview {
+          box-shadow: none;
+        }
       }
     }
 
@@ -90,6 +106,7 @@
         box-shadow: 0px 4px 7px 0px rgba(0, 34, 51, 0.16);
         width: 110px;
         height: 110px;
+        transition: .4s ease-out;
         border-radius: 5px;
 
         @media #{$mobile} {
