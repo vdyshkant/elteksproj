@@ -265,15 +265,35 @@ jQuery(document).ready(function($) {
     }
 
 
+
+    // new home slider
+
+    // $('#h-slider').bxSlider({
+    //     speed: 1000,
+    //     pause:3000,
+    //     auto:true,
+    //     pager: true,
+    //     // easing: 'swing',
+    //     // mode: 'fade',
+    //     nextText: '',
+    //     prevText: '',
+    //     prevSelector: ('.nextend-arrow-previous'),
+    //     nextSelector: ('.nextend-arrow-next'),
+    //     infiniteLoop: true,
+    //     pagerCustom: true,
+    // });
+    // new home slider
+
+
     // home slider
-    if ($("#slider-home").length) {
-        $('#slider-home').bxSlider({
+    if ($("#h-slider").length) {
+        $('#h-slider').bxSlider({
             speed: 1000,
-            // pause:200,
-            // auto:true,
+            pause:3000,
+            auto:true,
             pager: true,
             // easing: 'swing',
-            mode: 'fade',
+            // mode: 'fade',
             nextText: '',
             prevText: '',
             prevSelector: ('.nextend-arrow-previous'),
@@ -281,26 +301,26 @@ jQuery(document).ready(function($) {
             infiniteLoop: true,
             pagerCustom: true,
             onSliderLoad: function() {
-                $('.img-item').delay(400).animate({
+                $('.hs-content__img').delay(400).animate({
                     'left': '+=450',
                     'opacity': 1
                 }, 1200);
 
                 if ($(window).width() < 768) {
-                  $('.slide-content').animate({
+                  $('.hs-content__content').animate({
                       'top': '58%',
                       'opacity': 1
                   }, 1200);
                 }
                 if ($(window).width() > 768) {
-                  $('.slide-content').animate({
+                  $('.hs-content__content').animate({
                       'top': '50%',
                       'opacity': 1
                   }, 1200);
                 }
 
 
-                $('.slide-btn-outer').delay(900).animate({
+                $('.hs-content__btn').delay(900).animate({
                     'opacity': 1
                 }, 800);
 
@@ -309,60 +329,60 @@ jQuery(document).ready(function($) {
                 // }, 1200);
             },
             onSlideAfter: function($slideElement, oldIndex, newIndex) {
-                $('.img-item').delay(400).animate({
+                $('.hs-content__img').delay(400).animate({
                     'left': '+=450',
                     'opacity': 1
                 }, 1200);
 
                 if ($(window).width() < 768) {
-                  $('.slide-content').animate({
+                  $('.hs-content__content').animate({
                       'top': '58%',
                       'opacity': 1
                   }, 1200);
                 }
                 if ($(window).width() > 768) {
-                  $('.slide-content').animate({
+                  $('.hs-content__content').animate({
                       'top': '50%',
                       'opacity': 1
                   }, 1200);
                 }
 
-                $('.slide-btn-outer').delay(900).animate({
+                $('.hs-content__btn').delay(900).animate({
                     'opacity': 1
                 }, 800);
 
-                // $('.slide-btn-outer').delay(1000).animate({
+                // $('.hs-content__btn').delay(1000).animate({
                 //   'opacity': 1
                 // }, 1200);
             },
             onSlideBefore: function($slideElement, oldIndex, newIndex) {
                 // hiding elements before rebase
-                $('.img-item').animate({
+                $('.hs-content__img').animate({
                     'opacity': '0'
                 }, 500);
 
-                $('.slide-content').animate({
+                $('.hs-content__content').animate({
                     'opacity': 0
                 }, 500);
 
-                $('.slide-btn-outer').animate({
+                $('.hs-content__btn').animate({
                     'opacity': 0
                 }, 500);
 
                 // changing parameters
-                $('.img-item').animate({
+                $('.hs-content__img').animate({
                     'left': '-=450'
                 }, 50);
 
-                $('.slide-content').animate({
+                $('.hs-content__content').animate({
                     'top': '25%'
                 }, 50);
 
-                // $('.slide-btn-outer').animate({
+                // $('.hs-content__btn').animate({
                 //   'top': '67%'
                 // }, 50);
 
-                // $('.slide-btn-outer').animate({
+                // $('.hs-content__btn').animate({
                 //   'opacity': 0
                 // }, 500);
             }
@@ -371,13 +391,48 @@ jQuery(document).ready(function($) {
 
 
     // show slide arrows via hover
-    (function($) {
-        $('.home-slider').hover(function() {
 
-            clearTimeout($.data(this, 'timer'));
-            $('.nextend-arrow').stop(true, true).fadeToggle(300);
-        });
-    })(jQuery);
+
+    // $('.home-slider').mouseover(function() {
+    //     $('.nextend-arrow').fadeIn(300);
+    //     console.info('.nextend-arrow).fade IN;');
+    // }).mouseout(function() {
+    //     $('.nextend-arrow').fadeOut(300);
+    //     console.info('.nextend-arrow).fade OUT;');
+    // });
+
+    $('.h-slider').mouseenter(function() {
+        $('.hs-controls').fadeIn(300);
+
+        console.info('.nextend-arrow).fade IN;');
+    }).mouseleave(function() {
+        $('.hs-controls').fadeOut(300);
+
+        console.info('.nextend-arrow).fade OUT;');
+    });
+
+
+    // $('.home-slider').mouseover(
+    //   function() {
+    //       // clearTimeout($.data(this, 'timer'));
+    //
+    //       $('.nextend-arrow').fadeIn(700);
+    //       // $(this).addClass('active');
+    //       console.info('.nextend-arrow).fadeIn(700);');
+    //   }
+    // );
+    // $('.home-slider').mouseout(
+    //     function() {
+    //         // $.data(this, 'timer', setTimeout($.proxy(function() {
+    //
+    //             $('.nextend-arrow').fadeOut(700);
+    //             // $(this).removeClass('active');
+    //         // }, this), 200));
+    //         console.info('.nextend-arrow).fadeOUT(700);');
+    //
+    //     }
+    // );
+
     // EOF home slider
 
     // EOF bx sliders
