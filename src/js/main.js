@@ -266,23 +266,6 @@ jQuery(document).ready(function($) {
 
 
 
-    // new home slider
-
-    // $('#h-slider').bxSlider({
-    //     speed: 1000,
-    //     pause:3000,
-    //     auto:true,
-    //     pager: true,
-    //     // easing: 'swing',
-    //     // mode: 'fade',
-    //     nextText: '',
-    //     prevText: '',
-    //     prevSelector: ('.nextend-arrow-previous'),
-    //     nextSelector: ('.nextend-arrow-next'),
-    //     infiniteLoop: true,
-    //     pagerCustom: true,
-    // });
-    // new home slider
 
 
     // home slider
@@ -393,13 +376,6 @@ jQuery(document).ready(function($) {
     // show slide arrows via hover
 
 
-    // $('.home-slider').mouseover(function() {
-    //     $('.nextend-arrow').fadeIn(300);
-    //     console.info('.nextend-arrow).fade IN;');
-    // }).mouseout(function() {
-    //     $('.nextend-arrow').fadeOut(300);
-    //     console.info('.nextend-arrow).fade OUT;');
-    // });
 
     $('.h-slider').mouseenter(function() {
         $('.hs-controls').fadeIn(300);
@@ -411,27 +387,6 @@ jQuery(document).ready(function($) {
         console.info('.nextend-arrow).fade OUT;');
     });
 
-
-    // $('.home-slider').mouseover(
-    //   function() {
-    //       // clearTimeout($.data(this, 'timer'));
-    //
-    //       $('.nextend-arrow').fadeIn(700);
-    //       // $(this).addClass('active');
-    //       console.info('.nextend-arrow).fadeIn(700);');
-    //   }
-    // );
-    // $('.home-slider').mouseout(
-    //     function() {
-    //         // $.data(this, 'timer', setTimeout($.proxy(function() {
-    //
-    //             $('.nextend-arrow').fadeOut(700);
-    //             // $(this).removeClass('active');
-    //         // }, this), 200));
-    //         console.info('.nextend-arrow).fadeOUT(700);');
-    //
-    //     }
-    // );
 
     // EOF home slider
 
