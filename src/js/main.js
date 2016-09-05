@@ -271,8 +271,8 @@ jQuery(document).ready(function($) {
     // home slider
     if ($("#h-slider").length) {
         $('#h-slider').bxSlider({
-            speed: 1000,
-            pause:3000,
+            speed: 1200,
+            pause: 3000,
             auto:true,
             pager: true,
             // easing: 'swing',
@@ -544,16 +544,16 @@ jQuery(document).ready(function($) {
                     $(this).addClass('active');
                 }
             );
-            $('.dropdown').mouseleave(
-                function() {
-                    $.data(this, 'timer', setTimeout($.proxy(function() {
-
-                        $(this).children('.sub-menu').stop(true, true).slideUp(200, 'easeInOutCubic');
-                        $(this).removeClass('active');
-                    }, this), 200));
-
-                }
-            );
+            // $('.dropdown').mouseleave(
+            //     function() {
+            //         $.data(this, 'timer', setTimeout($.proxy(function() {
+            //
+            //             $(this).children('.sub-menu').stop(true, true).slideUp(200, 'easeInOutCubic');
+            //             $(this).removeClass('active');
+            //         }, this), 200));
+            //
+            //     }
+            // );
         }
     })();
     // EOF dropDown menu
