@@ -544,16 +544,16 @@ jQuery(document).ready(function($) {
                     $(this).addClass('active');
                 }
             );
-            // $('.dropdown').mouseleave(
-            //     function() {
-            //         $.data(this, 'timer', setTimeout($.proxy(function() {
-            //
-            //             $(this).children('.sub-menu').stop(true, true).slideUp(200, 'easeInOutCubic');
-            //             $(this).removeClass('active');
-            //         }, this), 200));
-            //
-            //     }
-            // );
+            $('.dropdown').mouseleave(
+                function() {
+                    $.data(this, 'timer', setTimeout($.proxy(function() {
+
+                        $(this).children('.sub-menu').stop(true, true).slideUp(200, 'easeInOutCubic');
+                        $(this).removeClass('active');
+                    }, this), 200));
+
+                }
+            );
         }
     })();
     // EOF dropDown menu
