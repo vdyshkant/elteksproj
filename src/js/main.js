@@ -806,10 +806,34 @@ jQuery(document).ready(function($) {
 
     // eof magic zoom preferences
     // $("#zoom_01").elevateZoom();
-    $("#zoom_01").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
-    $("#zoom_02").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
-    $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
-    $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    $("#zoom_01").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true,debug:true,cursor:"crosshair"});
+    // $("#zoom_02").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    // $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    // $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+
+
+    // fancybox
+
+
+
+    // $("#fancyZoom").fancybox({
+    //   'hideOnContentClick': true,
+    //   'transitionIn'	:	'elastic',
+    //   'transitionOut'	:	'elastic',
+    //   'fitToView'	:	false,
+    //   'speedIn'		:	600,
+    //   'speedOut'		:	300,
+    //   'helpers' : {
+    //       'overlay' : {
+    //           'locked' : false // try changing to true and scrolling around the page
+    //       }
+    //   },
+    //   'overlayShow'	:	false,
+    //   'maxWidth' : 250
+    // });
+
+
+    // eof fancybox
 
 
 }); // EOF document.ready MAIN
