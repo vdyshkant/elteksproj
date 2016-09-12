@@ -192,6 +192,7 @@ jQuery(document).ready(function($) {
 
             var realSlider = $j("ul#slider2").bxSlider({
                 speed: 300,
+                mode: 'fade',
                 pager: false,
                 nextText: '',
                 prevText: '',
@@ -806,10 +807,10 @@ jQuery(document).ready(function($) {
 
     // eof magic zoom preferences
     // $("#zoom_01").elevateZoom();
-    $("#zoom_01").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true,debug:true,cursor:"crosshair"});
-    // $("#zoom_02").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
-    // $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
-    // $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true});
+    $("#zoom_01").elevateZoom({galleryActiveClass: 'active', imageCrossfade: true,tint:true, tintColour:'#F90', tintOpacity:0.5, containLensZoom: true, zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
+    $("#zoom_02").elevateZoom({tint:true, tintColour:'#F90', tintOpacity:0.5,zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
+    $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
+    $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
 
 
     // fancybox
