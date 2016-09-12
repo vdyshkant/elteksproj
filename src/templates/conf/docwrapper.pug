@@ -29,14 +29,15 @@ html( lang="en" )
 
     //- This will load jQuery, but only if you switch it on in config
     if jQuery
-      script( src='//code.jquery.com/jquery-2.2.4.min.js' )
+      //- script( src='//code.jquery.com/jquery-2.2.4.min.js' )
+      script(src='https://code.jquery.com/jquery-3.0.0.js')
 
     if jQueryUI
       script( src='//code.jquery.com/ui/1.12.0/jquery-ui.min.js' )
 
     if jQueryEasing
       script( src='http://cdn.jsdelivr.net/bxslider/4.1.1/plugins/jquery.easing.1.3.js' )
-      
+
     if jQueryFancybox
       script( src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js' )
 
@@ -45,6 +46,9 @@ html( lang="en" )
 
     if bxSlider
       script( src=bxSliderJsSrc )
+
+    if bxSliderRahisified
+      script( src=bxSliderRahisifiedJsSrc )
 
     if elevatezoom
       script( src='elevatezoom-master/jquery.elevateZoom-3.0.8.min.js' )

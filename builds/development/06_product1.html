@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="http://static.ucttest.in.ua/eltex/favicon.ico">
-    <link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="bxslider/jquery.bxslider.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body class="page-product-desc">
@@ -143,21 +144,18 @@
                   <div class="product-info-top">
                     <div class="slider column-left column block slider-product-desc">
                       <ul class="bxslider" id="slider2">
-                        <li>
-                          <div class="hh"><img id="zoom_01" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt=""></div>
-                        </li>
-                        <li>
-                          <div class="hh"><img id="zoom_02" data-zoom-image="img/product-12.jpg" src="img/related-product-04.png" alt=""></div>
-                        </li>
-                        <li><img id="zoom_03" src="img/product-12.jpg" width="100"></li>
-                        <li><img id="zoom_04" data-zoom-image="img/product-06.jpg" src="img/related-product-03.png" alt=""></li>
-                        <li><img id="zoom_01" data-zoom-image="img/product-08.jpg" src="img/related-product-05.png" alt=""></li>
+                        <li><img class="zoom" id="zoom_02a" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt=""></li>
+                        <li><img class="zoom" id="zoom_02b" data-zoom-image="img/product-12.jpg" src="img/related-product-04.png" alt=""></li>
+                        <li><img class="zoom" id="zoom_02c" data-zoom-image="img/product-12.jpg" src="img/product-12.jpg" width="100"></li>
+                        <li><img class="zoom" id="zoom_02d" data-zoom-image="img/product-06.jpg" src="img/related-product-03.png" alt=""></li>
+                        <li><img class="zoom" id="zoom_02e" data-zoom-image="img/product-08.jpg" src="img/related-product-05.png" alt=""></li>
                       </ul>
                       <ul class="bxslider-pager" id="bx-pager2">
                         <li data-slideIndex="0"><a class="slider-pager-item" href=""><img src="img/related-product-02.png"></a></li>
                         <li data-slideIndex="1"><a class="slider-pager-item" href=""><img src="img/related-product-04.png"></a></li>
                         <li data-slideIndex="2"><a class="slider-pager-item" href=""><img src="img/related-product-03.png"></a></li>
                         <li data-slideIndex="3"><a class="slider-pager-item" href=""><img src="img/related-product-05.png"></a></li>
+                        <li data-slideIndex="4"><a class="slider-pager-item" href=""><img src="img/related-product-05.png"></a></li>
                       </ul>
                       <div class="outside">
                         <div class="slider-prev">
@@ -360,9 +358,10 @@
       <div class="modal-overlay"></div>
       <!-- осталось thumbnails сделать для input-ов-->
     </div>
-    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-    <script src="jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="bxslider/jquery.bxslider-rahisified.min.js"></script>
     <script src="elevatezoom-master/jquery.elevateZoom-3.0.8.min.js"></script>
     <script src="js/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.--><script>

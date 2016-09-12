@@ -6,9 +6,10 @@ append config
   //- - var MetaDesc = 'Now we override default configed MetaDesc'
   - var jQuery = true;
   //- - var animateNumber = true;
-  - var bxSlider = true;
+  - var bxSliderRahisified = true
+  //- - var bxSlider = true;
   - var elevatezoom = true;
-  - var jQueryFancybox = false;
+  - var jQueryFancybox = true;
   //- - var mainJsSrc = 'js/main.min.js'
   - var updateBodyClass = bodyClasses.push('page-product-desc')
 
@@ -53,18 +54,18 @@ append content
                   .slider.column-left.column.block.slider-product-desc
                     //- The main images
                     ul#slider2.bxslider
+                      //- li
+                      //-   img(id="zoom_02a" class="zoom" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt="")
                       li
-                        .hh
-                          img(id="zoom_01" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt="")
+                        img(id="zoom_02a" class="zoom" data-zoom-image="img/product-02_huge.jpg" src="img/product-02.jpg" alt="")
                       li
-                        .hh
-                          img(id="zoom_02" data-zoom-image="img/product-12.jpg" src="img/related-product-04.png" alt="")
+                        img(id="zoom_02b" class="zoom" data-zoom-image="img/product-12.jpg" src="img/related-product-04.png" alt="")
                       li
-                        img#zoom_03(src='img/product-12.jpg' width="100")
+                        img(id="zoom_02c" class="zoom" data-zoom-image="img/product-12.jpg" src='img/product-12.jpg' width="100")
                       li
-                        img(id="zoom_04" data-zoom-image="img/product-06.jpg" src="img/related-product-03.png" alt="")
+                        img(id="zoom_02d" class="zoom" data-zoom-image="img/product-06.jpg" src="img/related-product-03.png" alt="")
                       li
-                        img(id="zoom_01" data-zoom-image="img/product-08.jpg" src="img/related-product-05.png" alt="")
+                        img(id="zoom_02e" class="zoom" data-zoom-image="img/product-08.jpg" src="img/related-product-05.png" alt="")
 
 
                     //- The thumbnails
@@ -79,6 +80,9 @@ append content
                         a.slider-pager-item(href="")
                             img(src="img/related-product-03.png")
                       li(data-slideIndex="3")
+                        a.slider-pager-item(href="")
+                            img(src="img/related-product-05.png")
+                      li(data-slideIndex="4")
                         a.slider-pager-item(href="")
                             img(src="img/related-product-05.png")
                     .outside

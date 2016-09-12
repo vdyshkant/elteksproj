@@ -185,85 +185,180 @@ jQuery(document).ready(function($) {
     }
 
 
-    // slider #2
-    if ($("ul#slider2").length) {
-        (function() {
-            var $j = jQuery.noConflict();
 
-            var realSlider = $j("ul#slider2").bxSlider({
-                speed: 300,
-                mode: 'fade',
-                pager: false,
-                nextText: '',
-                prevText: '',
-                infiniteLoop: false,
-                // hideControlOnEnd: true,
-                controls: false
+    (function($) {
 
-                //  onSlideBefore:function($slideElement, oldIndex, newIndex){
-                //    changeRealThumb(realThumbSlider,newIndex);
-                 //
+        if ($("ul#slider2").length) {
+            (function() {
+                // var $j = jQuery.noConflict();
+
+                var realSlider = $("ul#slider2").bxSlider({
+                    speed: 300,
+                    pager: false,
+                    // mode: 'fade',
+                    nextText: '',
+                    prevText: '',
+                    infiniteLoop: false,
+                    // hideControlOnEnd: true,
+                    controls: false
+
+                    //  onSlideBefore:function($slideElement, oldIndex, newIndex){
+                    //    changeRealThumb(realThumbSlider,newIndex);
+                     //
+                    //  }
+
+                });
+
+
+                var realThumbSlider = $("ul#bx-pager2").bxSlider({
+                    minSlides: 2,
+                    maxSlides: 3,
+                    slideWidth: 88,
+                    slideMargin: 29,
+                    moveSlides: 1,
+                    pager: false,
+                    speed: 300,
+                    infiniteLoop: false,
+                    hideControlOnEnd: true,
+                    nextText: '<span></span>',
+                    prevText: '<span></span>',
+
+                    prevSelector: ('.slider-prev'),
+                    nextSelector: ('.slider-next'),
+                    onSlideBefore: function($slideElement, oldIndex, newIndex) {
+                        /*$j("#sliderThumbReal ul .active").removeClass("active");
+                        $slideElement.addClass("active"); */
+
+                    },
+
+                });
+
+                linkRealSliders(realSlider, realThumbSlider);
+
+                //  if($j("#bx-pager1 li").length<5){
+                //    $j("#bx-pager1 .bx-next").hide();
                 //  }
 
-            });
+                // sincronizza sliders realizzazioni
+                function linkRealSliders(bigS, thumbS) {
 
-
-            var realThumbSlider = $j("ul#bx-pager2").bxSlider({
-                minSlides: 2,
-                maxSlides: 3,
-                slideWidth: 88,
-                slideMargin: 29,
-                moveSlides: 1,
-                pager: false,
-                speed: 300,
-                infiniteLoop: false,
-                hideControlOnEnd: true,
-                nextText: '<span></span>',
-                prevText: '<span></span>',
-
-                prevSelector: ('.slider-prev'),
-                nextSelector: ('.slider-next'),
-                onSlideBefore: function($slideElement, oldIndex, newIndex) {
-                    /*$j("#sliderThumbReal ul .active").removeClass("active");
-                    $slideElement.addClass("active"); */
-
-                }
-            });
-
-            linkRealSliders(realSlider, realThumbSlider);
-
-            //  if($j("#bx-pager1 li").length<5){
-            //    $j("#bx-pager1 .bx-next").hide();
-            //  }
-
-            // sincronizza sliders realizzazioni
-            function linkRealSliders(bigS, thumbS) {
-
-                $j("ul#bx-pager2").on("click", "a", function(event) {
-                    event.preventDefault();
-                    var newIndex = $j(this).parent().attr("data-slideIndex");
-                    bigS.goToSlide(newIndex);
-                });
-            }
-
-            //slider!=$thumbSlider. slider is the realslider
-            function changeRealThumb(slider, newIndex) {
-
-                var $thumbS = $j("#bx-pager2");
-                $thumbS.find('.active').removeClass("active");
-                $thumbS.find('li[data-slideIndex="' + newIndex + '"]').addClass("active");
-
-                if (slider.getSlideCount() - newIndex >= 4) {
-                    slider.goToSlide(newIndex);
-                } else {
-                    slider.goToSlide(slider.getSlideCount() - 4);
+                    $("ul#bx-pager2").on("click", "a", function(event) {
+                        event.preventDefault();
+                        var newIndex = $(this).parent().attr("data-slideIndex");
+                        bigS.goToSlide(newIndex);
+                    });
                 }
 
+                //slider!=$thumbSlider. slider is the realslider
+                function changeRealThumb(slider, newIndex) {
+
+                    var $thumbS = $("#bx-pager2");
+                    $thumbS.find('.active').removeClass("active");
+                    $thumbS.find('li[data-slideIndex="' + newIndex + '"]').addClass("active");
+
+                    if (slider.getSlideCount() - newIndex >= 4) {
+                        slider.goToSlide(newIndex);
+                    } else {
+                        slider.goToSlide(slider.getSlideCount() - 4);
+                    }
 
 
-            }
-        })();
+
+                }
+            })();
+        }
+
+    })(jQuery);
+
+      // var $q = jQuery.noConflict();
+    if ($(window).width() > 768) {
+      $(".zoom").bind("click", function(e) {
+        var ez =   $('.zoom').data('elevateZoom');
+        $.fancybox(ez.getGalleryList());
+        return false;
+      });
     }
+
+    (function($) {
+          if ($(window).width() > 768) {
+            $("#zoom_02a.zoom").elevateZoom({
+              zoomWindowOffetx:80,
+              cursor: 'crosshair',
+              borderColour:'#ccd2d9',
+              zoomWindowPosition: 2
+            });
+            $("#zoom_02b.zoom").elevateZoom({
+              zoomWindowOffetx:80,
+              cursor: 'crosshair',
+              borderColour:'#ccd2d9',
+              zoomWindowPosition: 2
+            });
+            $("#zoom_02c.zoom").elevateZoom({
+              zoomWindowOffetx:80,
+              cursor: 'crosshair',
+              borderColour:'#ccd2d9',
+              zoomWindowPosition: 2
+            });
+            $("#zoom_02d.zoom").elevateZoom({
+              zoomWindowOffetx:80,
+              cursor: 'crosshair',
+              borderColour:'#ccd2d9',
+              zoomWindowPosition: 2
+            });
+            $("#zoom_02e.zoom").elevateZoom({
+              zoomWindowOffetx:80,
+              cursor: 'crosshair',
+              borderColour:'#ccd2d9',
+              zoomWindowPosition: 2
+            });
+
+
+            var imageTop;
+            var imageLeft;
+            var imageBottom;
+            var imageRight;
+
+            $(window).mousemove(getMousePosition);
+
+            $(window).on('load', function() { init(); });
+            $(window).resize(init);
+
+            function getMousePosition(event){
+                var mouseX;
+                var mouseY;
+                mouseX = event.pageX;
+                mouseY = event.pageY;
+
+                // console.info(mouseX);
+                // console.info(mouseY);
+
+                if (mouseX < imageLeft || mouseX > imageRight || mouseY < imageTop || mouseY > imageBottom) {
+                  $(".zoomContainer").hide();
+                } else {
+                  $(".zoomContainer").show();
+                }
+            }
+
+            function init(){
+              var mouseX;
+              var mouseY;
+                mouseX = 0;
+                mouseY = 0;
+
+                // imageLeft = $(".slider").offset().left;
+                // imageRight = imageLeft + $(".slider").width();
+                // imageTop = $(".slider").offset().top;
+                // imageBottom = imageTop + $(".slider").height();
+                var $ = jQuery.noConflict();
+                imageLeft = $(".bx-viewport img:visible").offset().left;
+                imageRight = imageLeft + $(".bx-viewport img:visible").width();
+                imageTop = $(".bx-viewport img:visible").offset().top;
+                imageBottom = imageTop + $(".bx-viewport img:visible").height();
+
+            }
+          }
+    })(jQuery);
+
 
 
 
@@ -807,10 +902,6 @@ jQuery(document).ready(function($) {
 
     // eof magic zoom preferences
     // $("#zoom_01").elevateZoom();
-    $("#zoom_01").elevateZoom({galleryActiveClass: 'active', imageCrossfade: true,tint:true, tintColour:'#F90', tintOpacity:0.5, containLensZoom: true, zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
-    $("#zoom_02").elevateZoom({tint:true, tintColour:'#F90', tintOpacity:0.5,zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
-    $("#zoom_03").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
-    $("#zoom_04").elevateZoom({zoomWindowHeight: 200, zoomWindowWidth:200, borderSize: 0, easing:true, cursor:"crosshair"});
 
 
     // fancybox
