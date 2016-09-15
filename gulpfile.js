@@ -145,7 +145,7 @@ gulp.task('watch', function() {
 gulp.task('connect', function() {
     connect.server({
         root: [outputDir],
-        port: 8882,
+        port: 8802,
         livereload: true
     });
 });
