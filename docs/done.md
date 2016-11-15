@@ -45,7 +45,3 @@
    1. footer ++
    2. paginator ++
    3. burger ++
-
-
-
-   
