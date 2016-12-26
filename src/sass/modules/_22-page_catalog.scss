@@ -8,17 +8,19 @@
             padding-left: 30px;
         }
         @media #{$mobile} {
-            padding-right: 20px;
-            padding-left: 20px;
+            padding-right: 10px;
+            padding-left: 10px;
         }
     }
 
     & .content {
         padding-top: 50px; // !! OR breadcrumbs mb60
+        padding-bottom: 40px;
 
         @include clearfix;
+
         @media #{$tablet} {
-            padding-top: 65px;
+          padding-top: 65px;
         }
     }
 }
@@ -35,89 +37,76 @@
   }
 }
 
-.page-catalog {
-  .content {
-    padding-bottom: 60px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-    max-width: 1340px;
-
-    @media #{$tablet} {
-      min-width: 768px;
-      max-width: 768px;
-    }
-
-    @media #{$mobile} {
-      min-width: 320px;
-      max-width: 320px;
-    }
-  }
-}
 
 .page-catalog {
-  .catalog-heading {
-    width: 260px;
+  & .content > .column {
     float: left;
-    margin-bottom: 60px;
-
-    @media #{$tablet} {
-      width: 222px;
-      margin-right: 20px;
-    }
+    width: 310px;
+    width: 23.8461538%;
+    margin-right: 20px;
+    margin-right: 1.5384615%;
 
     @media #{$mobile} {
-      width: 280px;
+
+      width: 47.6923076%;
+      &:nth-child(3n) {
+        clear: left;
+      }
     }
 
-    & > .catalog-heading-link {
-      display: block;
-      color: #003d64;
-      background: none;
-      position: relative;
-      font: normal 13px/23px 'PT Sans';
-      text-transform: uppercase;
-      text-decoration: underline;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & .block {
+      margin-bottom: 40px;
+
+      & .block-title {
+        color: #00111a;
+        display: block;
+        margin-bottom: 12px;
+        text-decoration: none;
+        letter-spacing: .5px;
+        white-space: normal;
+        font: normal 700 18px/21px "Ubuntu-B", Arial, Helvetica, sans-serif;
+
+        @media #{$mobile} {
+          font: normal 700 14px/18px "Ubuntu-B", Arial, Helvetica, sans-serif;
+        }
+        &:hover {
+            text-decoration: none;
+            color: #0084c4;
+            cursor: pointer;
+        }
+      }
     }
   }
 }
 
-
 .page-catalog {
-  .catalog-list {
-
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
+  & .content > .column {
+    & .block-item {
+        margin-bottom: 12px;
     }
-  }
-}
 
-.page-catalog {
-  .catalog-item-link {
-
-    margin-left: 16px;
-    font: normal 14px/21px 'PT Sans';
-    color: #4a4a4a;
-    text-decoration: underline;
-
-    &:hover {
-      color: #003d64;
+    & .block-item a {
       text-decoration: none;
+      letter-spacing: .5px;
+      text-transform: none;
+      color: #023;
+      white-space: normal;
+      font: normal 300 14px/21px "Ubuntu-Light", Arial, Helvetica, sans-serif;
+      font-size: 0.875rem;
+
+      @media #{$mobile} {
+        font: normal 300 12px/18px "Ubuntu-Light", Arial, Helvetica, sans-serif;
+      }
+      &:hover {
+          text-decoration: none;
+          color: #0084c4;
+          cursor: pointer;
+      }
     }
-  }
-}
-
-.page-catalog {
-  .selector {
-
-  }
-}
-
-.page-catalog {
-  .selector {
-
   }
 }
 
