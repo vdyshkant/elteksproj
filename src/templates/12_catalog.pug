@@ -1,0 +1,177 @@
+extends conf/docwrapper
+
+
+append config
+  - var PageTitle = 'Продукты'
+  //- - var MetaDesc = 'Now we override default configed MetaDesc'
+  - var jQuery = true;
+  - var animateNumber = true;
+  //- - var mainJsSrc = 'js/main.min.js'
+  - var updateBodyClass = bodyClasses.push('page-catalog')
+
+  //- - var GoogleFonts = 'Poiret+One'
+  - var GoogleFonts = GoogleFonts.concat('PT+Sans|PT+Sans+Narrow&subset=cyrillic')
+  //- ...
+append stylesheets
+  //- link( href='css/extrastyles.css', rel='stylesheet' )
+
+
+  //- ------------------------------------------------
+
+append content
+  .wrapper
+
+    //- header
+    include partials/header
+    include partials/sub-header
+    //- eof header
+
+
+
+    //- main
+
+    .main
+      .wrap
+        .inner
+          .page-title
+            +breadcrumbs([
+              { 'anchor':'Главная','link':'/index.html' },
+              { 'anchor':'Оборудование XPON', 'class':'active' }
+            ])
+
+            h1 ПРОДУКТЫ
+
+          .content
+
+            ul.catalog-list
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Оборудование PON
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") Turbo GEPON
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Ethernet коммутаторы
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") Ethernet коммутаторы для ЦОД
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Коммутаторы агрегации
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Коммутаторы доступа
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") ЦАТС МС240
+                ul.catalog-item-list
+                  li.catalog-item
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Оборудование VOIP
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") MSAN
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Абонентские шлюзы
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Цифровые шлюзы
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") ECSS-10 (SOFTSWITCH)
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") SBC
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Программный коммутатор
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") ECSS-10 (Softswitch)
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Оборудование
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") IP DSLAM
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") MXA-32
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") MXA-64
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") ECSS-10 (Softswitch)
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Транспорт
+                ul.catalog-item-list
+                  li.catalog-item
+                    a.catalog-item-link(href="") Маком-МХ
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") SHDSL-модемы
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Мультиплексоры TopGATE
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+                  li.catalog-item
+                    a.catalog-item-link(href="") Регенераторы DSL-линии
+                    ul.catalog-subitem-list
+                      li.catalog-subitem
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Оборудование доступа
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Оборудование ТЧ канала
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Устройства электропитания
+
+              li.catalog-heading
+                a.catalog-heading-link(href="") Телеком шкафы
+
+
+
+
+
+
+
+
+
+
+        //- FORM MIXIN
+
+
+    //- footer
+    include partials/footer
+    //- eof footer

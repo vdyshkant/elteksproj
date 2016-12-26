@@ -941,3 +941,16 @@ jQuery(document).ready(function($) {
 
 
 }); // EOF document.ready MAIN
+
+
+(function($) {
+ if($('body').is('.page-catalog')){
+
+   $('.grid').masonry({
+     itemSelector: '.catalog-heading',
+     columnWidth: 260
+   });
+
+ }
+})(jQuery); // eof autoFunction
+/* eof ^^^ */
