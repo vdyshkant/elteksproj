@@ -407,6 +407,21 @@
 
     .page-product-grid {
     }
-    .page-product-grid {
-    }
+}
+
+.page-product-grid {
+  & .page-title > h1 {
+    font: normal 26px/30px 'PT Sans Narrow';
+    font-weight: 700;
+    color: #545454;
+  }
+}
+
+.page-product-grid {
+  & .content-right span.column-title {
+    font: normal 26px/30px 'PT Sans Narrow';
+    font-weight: 700;
+    text-transform: none;
+    color: #4a4a4a;
+  }
 }
